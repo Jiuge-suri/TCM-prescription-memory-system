@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.prescription.memory.dao.ZyyjExchangeintegralDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.prescription.memory.entity.po.ZyyjExchangeintegralPo">
+        <id column="exchange_id" property="exchangeId" />
+        <result column="rule_id" property="ruleId" />
+        <result column="stu_id" property="stuId" />
+        <result column="createdate" property="createdate" />
+        <result column="score" property="score" />
+        <result column="integral" property="integral" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        exchange_id, rule_id, stu_id, createdate, score, integral
+    </sql>
+
+</mapper>

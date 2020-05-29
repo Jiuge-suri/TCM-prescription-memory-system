@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.prescription.memory.dao.ZyyjUserDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.prescription.memory.entity.po.ZyyjUserPo">
+        <id column="user_id" property="userId" />
+        <result column="post_id" property="postId" />
+        <result column="department_id" property="departmentId" />
+        <result column="name" property="name" />
+        <result column="realname" property="realname" />
+        <result column="password" property="password" />
+        <result column="phone" property="phone" />
+        <result column="email" property="email" />
+        <result column="gender" property="gender" />
+        <result column="status" property="status" />
+        <result column="photo" property="photo" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, post_id, department_id, name, realname, password, phone, email, gender, status, photo
+    </sql>
+
+</mapper>

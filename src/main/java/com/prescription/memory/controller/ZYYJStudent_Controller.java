@@ -1,0 +1,70 @@
+package com.prescription.memory.controller;
+
+import com.prescription.memory.entity.PageInfo;
+import com.prescription.memory.entity.po.ZyyjStudentPo;
+import com.prescription.memory.entity.vo.StudentVo;
+import com.prescription.memory.error.BusinessException;
+import com.prescription.memory.service.ZyyjStudentService;
+import com.prescription.memory.utils.CommonreturnType;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import org.checkerframework.checker.units.qual.A;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+/**
+ * Created by Yinjie on 2020/5/12
+ */
+@RestController
+@Api(tags = "学院秘书--学生管理--学生信息管理", value = "学生相关接口")
+public class ZYYJStudent_Controller extends BaseController{
+    @Autowired
+    private ZyyjStudentService studentService;
+
+    @ApiOperation(value = "查询所有数据")
+    @GetMapping("/student")
+    public CommonreturnType selectAll(@ApiParam("专业id") @RequestParam(value = "majorId",required = false) Integer majorId,
+                                      @ApiParam("年级id") @RequestParam(value = "gradeId",required = false) Integer gradeId,
+                                      @ApiParam("班级id") @RequestParam(value = "classId",required = false)Integer classId,
+                                      @ApiParam("性别") @RequestParam(value = "sex",required = false)Integer sex,
+                                      @ApiParam("学号") @RequestParam(value = "account",required = false)String account,
+                                      @ApiParam("姓名") @RequestParam(value = "name",required = false)String name){
+        List<StudentVo> list = studentService.ConditionQuery(majorId, gradeId, classId, sex, account, name);
+        return CommonreturnType.create(list);
+    }
+
+    @ApiOperation(value = "多表关联分页查询")
+    @GetMapping("/student/{pageNum}/{pageSize}")
+    public CommonreturnType getStudentByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
+                                             @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize) throws BusinessException {
+        PageInfo<StudentVo> pageInfo = studentService.getStudentByPage(pageNum,pageSize);
+        return CommonreturnType.create(pageInfo);
+    }
+    @ApiOperation(value = "更新数据")
+    @PutMapping("/student")
+    public CommonreturnType updateStudent(@RequestBody ZyyjStudentPo studentPo) throws BusinessException {
+        boolean result = studentService.updateStudent(studentPo);
+        return CommonreturnType.create(result);
+    }
+
+    @ApiOperation(value = "删除数据")
+    @DeleteMapping("/student")
+    public CommonreturnType deleteStudent(@ApiParam(value = "编号",required = true)
+                                          @RequestParam(value = "studentId") Integer[] studentIds) throws BusinessException {
+        boolean result = studentService.deleteStudent(studentIds);
+        return CommonreturnType.create(result);
+    }
+
+    @ApiOperation(value = "插入数据")
+    @PostMapping("/student")
+    public CommonreturnType insertStudent(@RequestBody ZyyjStudentPo studentPo){
+        //将Vo转换成Po
+        boolean result = studentService.insertStudent(studentPo);
+        return CommonreturnType.create(result);
+    }
+
+
+}

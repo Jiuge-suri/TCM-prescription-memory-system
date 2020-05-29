@@ -1,0 +1,1282 @@
+2020-05-21 09:47:45.246 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 5432 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 09:47:45.249 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 09:47:45.368 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-21 09:47:45.368 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-21 09:47:49.770 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 09:47:49.780 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 09:47:49.780 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 09:47:49.781 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 09:47:49.916 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 09:47:49.916 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4547 ms
+2020-05-21 09:47:52.910 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 09:47:53.035 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 09:47:53.094 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 09:47:53.353 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 09:47:53.374 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 09:47:53.434 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 09:47:53.633 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 09:47:53.640 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 09:47:53.649 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 09:47:53.651 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 09:47:53.656 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 09:47:53.657 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 09:47:53.658 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 09:47:53.659 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 09:47:53.661 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 09:47:53.662 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 09:47:53.663 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 09:47:53.665 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 09:47:53.670 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 09:47:53.673 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 09:47:53.678 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 09:47:53.682 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 09:47:53.683 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 09:47:53.690 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 09:47:53.696 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 09:47:53.704 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 09:47:53.711 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 09:47:53.714 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 09:47:53.717 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 09:47:53.725 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 09:47:53.728 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 09:47:53.729 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 09:47:53.730 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 09:47:53.738 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 09:47:53.740 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 09:47:53.741 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 09:47:53.742 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 09:47:53.744 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 09:47:53.749 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 09:47:53.783 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 09:47:53.803 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 09:47:53.818 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 11.037 seconds (JVM running for 16.977)
+2020-05-21 09:50:34.735 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 09:50:34.736 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 09:50:34.753 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 17 ms
+2020-05-21 09:50:48.182 [http-nio-8080-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-05-21 09:50:48.406 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course 
+2020-05-21 09:50:48.424 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==> Parameters: 
+2020-05-21 09:50:48.443 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - <==      Total: 3
+2020-05-21 09:50:48.447 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 09:50:48.448 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 0(Integer)
+2020-05-21 09:50:48.448 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 0
+2020-05-21 09:50:48.459 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 09:50:48.460 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 09:50:48.461 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 09:50:48.462 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 09:50:48.462 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 09:50:48.463 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 11:06:10.303 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 14592 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 11:06:10.307 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 11:06:10.364 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-21 11:06:10.365 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-21 11:06:11.948 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 11:06:11.956 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:06:11.956 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 11:06:11.956 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 11:06:12.074 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 11:06:12.074 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1709 ms
+2020-05-21 11:06:14.313 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 11:06:14.391 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 11:06:14.430 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 11:06:14.632 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 11:06:14.641 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 11:06:14.687 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 11:06:14.858 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 11:06:14.868 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 11:06:14.875 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 11:06:14.877 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 11:06:14.882 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 11:06:14.883 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 11:06:14.884 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 11:06:14.885 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 11:06:14.887 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 11:06:14.889 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 11:06:14.890 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 11:06:14.892 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 11:06:14.897 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 11:06:14.900 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 11:06:14.905 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 11:06:14.910 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 11:06:14.911 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 11:06:14.918 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 11:06:14.925 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 11:06:14.932 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 11:06:14.939 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 11:06:14.942 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 11:06:14.945 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 11:06:14.955 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 11:06:14.958 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 11:06:14.959 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 11:06:14.960 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 11:06:14.967 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 11:06:14.970 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 11:06:14.971 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 11:06:14.972 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 11:06:14.974 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 11:06:14.979 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 11:06:14.995 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:06:15.015 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 11:06:15.019 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 5.302 seconds (JVM running for 6.774)
+2020-05-21 11:06:20.924 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 11:06:20.925 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 11:06:20.933 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-05-21 11:06:33.648 [http-nio-8080-exec-9] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-05-21 11:06:33.750 [http-nio-8080-exec-9] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==>  Preparing: SELECT max(practice_id),b.`name` As point_name,c.`name` As course_name FROM zyyj_student_practice a LEFT JOIN zyyj_checkpoint b ON a.checkpoint_id = b.checkpoint_id LEFT JOIN zyyj_course c ON c.course_id = a.course_id WHERE a.stu_id = ? GROUP BY course_name 
+2020-05-21 11:06:33.770 [http-nio-8080-exec-9] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==> Parameters: 1(Integer)
+2020-05-21 11:06:33.789 [http-nio-8080-exec-9] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - <==      Total: 2
+2020-05-21 11:07:24.468 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - ==>  Preparing: SELECT major_id,college_id,name,comment FROM zyyj_major 
+2020-05-21 11:07:24.469 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - ==> Parameters: 
+2020-05-21 11:07:24.471 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - <==      Total: 3
+2020-05-21 11:07:24.491 [http-nio-8080-exec-3] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 11:07:24.492 [http-nio-8080-exec-3] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 11:07:24.494 [http-nio-8080-exec-3] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 11:07:24.496 [http-nio-8080-exec-3] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 11:07:24.496 [http-nio-8080-exec-3] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 11:07:24.497 [http-nio-8080-exec-3] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 11:07:24.498 [http-nio-8080-exec-3] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 11:07:24.498 [http-nio-8080-exec-3] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 11:07:24.499 [http-nio-8080-exec-3] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 11:10:56.402 [http-nio-8080-exec-6] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectById - ==>  Preparing: SELECT major_id,college_id,name,comment FROM zyyj_major WHERE major_id=? 
+2020-05-21 11:10:56.403 [http-nio-8080-exec-6] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectById - ==> Parameters: 100(Integer)
+2020-05-21 11:10:56.404 [http-nio-8080-exec-6] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectById - <==      Total: 0
+2020-05-21 11:10:56.410 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.prescription.memory.error.BusinessException]
+2020-05-21 11:12:18.576 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 4684 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 11:12:18.580 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 11:12:18.666 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-21 11:12:18.666 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-21 11:12:20.354 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 11:12:20.362 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:12:20.363 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 11:12:20.363 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 11:12:20.480 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 11:12:20.481 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1814 ms
+2020-05-21 11:12:22.760 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 11:12:22.840 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 11:12:22.870 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 11:12:23.065 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 11:12:23.075 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 11:12:23.121 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 11:12:23.283 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 11:12:23.291 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 11:12:23.300 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 11:12:23.303 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 11:12:23.307 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 11:12:23.308 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 11:12:23.309 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 11:12:23.310 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 11:12:23.312 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 11:12:23.314 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 11:12:23.315 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 11:12:23.317 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 11:12:23.323 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 11:12:23.326 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 11:12:23.331 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 11:12:23.335 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 11:12:23.337 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 11:12:23.343 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 11:12:23.350 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 11:12:23.359 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 11:12:23.367 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 11:12:23.371 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 11:12:23.375 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 11:12:23.387 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 11:12:23.391 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 11:12:23.392 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 11:12:23.394 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 11:12:23.402 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 11:12:23.405 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 11:12:23.406 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 11:12:23.407 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 11:12:23.408 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 11:12:23.413 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 11:12:23.431 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:12:23.453 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 11:12:23.457 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 5.507 seconds (JVM running for 7.027)
+2020-05-21 11:12:32.093 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 11:12:32.094 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 11:12:32.103 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2020-05-21 11:12:36.758 [http-nio-8080-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-05-21 11:12:36.865 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - ==>  Preparing: SELECT major_id,college_id,name,comment FROM zyyj_major 
+2020-05-21 11:12:36.886 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - ==> Parameters: 
+2020-05-21 11:12:36.903 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - <==      Total: 3
+2020-05-21 11:12:36.918 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 11:12:36.918 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 11:12:36.919 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 11:12:36.920 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 11:12:36.920 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 11:12:36.921 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 11:12:36.922 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 11:12:36.923 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 11:12:36.924 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 11:13:20.085 [http-nio-8080-exec-10] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectById - ==>  Preparing: SELECT major_id,college_id,name,comment FROM zyyj_major WHERE major_id=? 
+2020-05-21 11:13:20.085 [http-nio-8080-exec-10] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectById - ==> Parameters: 100(Integer)
+2020-05-21 11:13:20.087 [http-nio-8080-exec-10] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectById - <==      Total: 0
+2020-05-21 11:13:20.094 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.prescription.memory.error.BusinessException]
+2020-05-21 11:13:23.087 [http-nio-8080-exec-1] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectById - ==>  Preparing: SELECT major_id,college_id,name,comment FROM zyyj_major WHERE major_id=? 
+2020-05-21 11:13:23.087 [http-nio-8080-exec-1] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectById - ==> Parameters: 100(Integer)
+2020-05-21 11:13:23.088 [http-nio-8080-exec-1] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectById - <==      Total: 0
+2020-05-21 11:13:23.090 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.prescription.memory.error.BusinessException]
+2020-05-21 11:32:10.279 [Thread-4] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-21 11:32:10.295 [Thread-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-05-21 11:32:11.503 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 4684 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 11:32:11.504 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 11:32:12.899 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 11:32:12.901 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:32:12.901 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 11:32:12.901 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 11:32:12.965 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 11:32:12.965 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1458 ms
+2020-05-21 11:32:14.875 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 11:32:14.937 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 11:32:14.946 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 11:32:15.196 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 11:32:15.197 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 11:32:15.229 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 11:32:15.305 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 11:32:15.325 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 11:32:15.340 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 11:32:15.345 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 11:32:15.354 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 11:32:15.357 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 11:32:15.360 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 11:32:15.362 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 11:32:15.364 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 11:32:15.369 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 11:32:15.372 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 11:32:15.377 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 11:32:15.384 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 11:32:15.390 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 11:32:15.404 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 11:32:15.419 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 11:32:15.423 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 11:32:15.438 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 11:32:15.455 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 11:32:15.474 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 11:32:15.498 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 11:32:15.505 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 11:32:15.513 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 11:32:15.537 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 11:32:15.546 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 11:32:15.547 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 11:32:15.550 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 11:32:15.566 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 11:32:15.571 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 11:32:15.572 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 11:32:15.575 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 11:32:15.580 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 11:32:15.599 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 11:32:15.615 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:32:15.623 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 11:32:15.624 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 4.183 seconds (JVM running for 1199.194)
+2020-05-21 11:32:15.636 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-05-21 11:32:19.074 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 11:32:19.076 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 11:32:19.082 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-05-21 11:32:37.110 [http-nio-8080-exec-9] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2020-05-21 11:32:37.117 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - ==>  Preparing: SELECT major_id,college_id,name,comment FROM zyyj_major 
+2020-05-21 11:32:37.117 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - ==> Parameters: 
+2020-05-21 11:32:37.121 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - <==      Total: 3
+2020-05-21 11:32:37.130 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 11:32:37.130 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 11:32:37.132 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 11:32:37.133 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 11:32:37.134 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 11:32:37.135 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 11:32:37.137 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 11:32:37.137 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 11:32:37.139 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 11:33:15.657 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 5444 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 11:33:15.661 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 11:33:15.741 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-21 11:33:15.742 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-21 11:33:17.765 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 11:33:17.775 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:33:17.776 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 11:33:17.776 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 11:33:17.915 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 11:33:17.915 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2171 ms
+2020-05-21 11:33:20.402 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 11:33:20.495 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 11:33:20.529 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 11:33:20.754 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 11:33:20.765 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 11:33:20.816 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 11:33:20.994 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 11:33:21.006 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 11:33:21.017 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 11:33:21.020 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 11:33:21.027 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 11:33:21.029 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 11:33:21.031 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 11:33:21.032 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 11:33:21.034 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 11:33:21.036 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 11:33:21.037 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 11:33:21.038 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 11:33:21.047 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 11:33:21.049 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 11:33:21.056 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 11:33:21.063 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 11:33:21.065 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 11:33:21.076 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 11:33:21.084 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 11:33:21.093 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 11:33:21.101 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 11:33:21.104 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 11:33:21.107 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 11:33:21.119 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 11:33:21.122 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 11:33:21.123 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 11:33:21.125 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 11:33:21.134 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 11:33:21.137 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 11:33:21.138 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 11:33:21.139 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 11:33:21.142 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 11:33:21.149 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 11:33:21.167 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:33:21.189 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 11:33:21.193 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 6.43 seconds (JVM running for 8.079)
+2020-05-21 11:33:41.840 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 11:33:41.842 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 11:33:41.849 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-05-21 11:33:49.743 [http-nio-8080-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-05-21 11:33:49.859 [http-nio-8080-exec-7] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==>  Preparing: SELECT max(practice_id),b.`name` As point_name,c.`name` As course_name FROM zyyj_student_practice a LEFT JOIN zyyj_checkpoint b ON a.checkpoint_id = b.checkpoint_id LEFT JOIN zyyj_course c ON c.course_id = a.course_id WHERE a.stu_id = ? GROUP BY course_name 
+2020-05-21 11:33:49.886 [http-nio-8080-exec-7] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==> Parameters: 1(Integer)
+2020-05-21 11:33:49.905 [http-nio-8080-exec-7] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - <==      Total: 2
+2020-05-21 11:35:18.862 [Thread-4] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-21 11:35:18.873 [Thread-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-05-21 11:35:19.552 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 5444 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 11:35:19.553 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 11:35:20.221 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 11:35:20.222 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:35:20.222 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 11:35:20.223 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 11:35:20.285 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 11:35:20.285 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 730 ms
+2020-05-21 11:35:21.863 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 11:35:21.897 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 11:35:21.904 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 11:35:22.025 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 11:35:22.025 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 11:35:22.037 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 11:35:22.085 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 11:35:22.093 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 11:35:22.098 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 11:35:22.099 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 11:35:22.104 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 11:35:22.105 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 11:35:22.106 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 11:35:22.106 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 11:35:22.107 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 11:35:22.108 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 11:35:22.109 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 11:35:22.111 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 11:35:22.115 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 11:35:22.119 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 11:35:22.124 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 11:35:22.127 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 11:35:22.128 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 11:35:22.142 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 11:35:22.148 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 11:35:22.154 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 11:35:22.158 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 11:35:22.161 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 11:35:22.163 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 11:35:22.171 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 11:35:22.173 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 11:35:22.174 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 11:35:22.175 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 11:35:22.181 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 11:35:22.183 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 11:35:22.184 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 11:35:22.185 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 11:35:22.187 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 11:35:22.191 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 11:35:22.196 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:35:22.199 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 11:35:22.199 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 2.687 seconds (JVM running for 129.085)
+2020-05-21 11:35:22.201 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-05-21 11:35:25.449 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 11:35:25.450 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 11:35:25.453 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-05-21 11:35:32.006 [http-nio-8080-exec-9] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2020-05-21 11:35:32.011 [http-nio-8080-exec-9] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==>  Preparing: SELECT max(practice_id) as practice_id,b.`name` As point_name,c.`name` As course_name FROM zyyj_student_practice a LEFT JOIN zyyj_checkpoint b ON a.checkpoint_id = b.checkpoint_id LEFT JOIN zyyj_course c ON c.course_id = a.course_id WHERE a.stu_id = ? GROUP BY course_name 
+2020-05-21 11:35:32.012 [http-nio-8080-exec-9] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==> Parameters: 1(Integer)
+2020-05-21 11:35:32.014 [http-nio-8080-exec-9] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - <==      Total: 2
+2020-05-21 11:36:08.757 [http-nio-8080-exec-10] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==>  Preparing: SELECT max(practice_id) as practice_id,b.`name` As point_name,c.`name` As course_name FROM zyyj_student_practice a LEFT JOIN zyyj_checkpoint b ON a.checkpoint_id = b.checkpoint_id LEFT JOIN zyyj_course c ON c.course_id = a.course_id WHERE a.stu_id = ? GROUP BY course_name 
+2020-05-21 11:36:08.757 [http-nio-8080-exec-10] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==> Parameters: 1(Integer)
+2020-05-21 11:36:08.759 [http-nio-8080-exec-10] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - <==      Total: 2
+2020-05-21 11:38:27.237 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3788 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 11:38:27.240 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 11:38:27.312 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-21 11:38:27.313 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-21 11:38:29.013 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 11:38:29.021 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:38:29.022 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 11:38:29.022 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 11:38:29.146 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 11:38:29.146 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1833 ms
+2020-05-21 11:38:31.403 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 11:38:31.488 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 11:38:31.527 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 11:38:31.736 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 11:38:31.746 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 11:38:31.791 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 11:38:31.958 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 11:38:31.967 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 11:38:31.974 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 11:38:31.978 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 11:38:31.983 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 11:38:31.984 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 11:38:31.985 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 11:38:31.986 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 11:38:31.987 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 11:38:31.989 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 11:38:31.990 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 11:38:31.992 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 11:38:32.000 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 11:38:32.005 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 11:38:32.011 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 11:38:32.017 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 11:38:32.018 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 11:38:32.029 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 11:38:32.035 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 11:38:32.043 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 11:38:32.051 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 11:38:32.054 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 11:38:32.057 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 11:38:32.068 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 11:38:32.071 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 11:38:32.072 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 11:38:32.073 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 11:38:32.084 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 11:38:32.087 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 11:38:32.088 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 11:38:32.089 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 11:38:32.091 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 11:38:32.097 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 11:38:32.114 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 11:38:32.136 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 11:38:32.140 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 5.588 seconds (JVM running for 7.126)
+2020-05-21 11:39:19.190 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 11:39:19.191 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 11:39:19.200 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-05-21 11:39:25.622 [http-nio-8080-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-05-21 11:39:25.739 [http-nio-8080-exec-7] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==>  Preparing: SELECT max(practice_id) as practice_id,b.`name` As point_name,c.`name` As course_name FROM zyyj_student_practice a LEFT JOIN zyyj_checkpoint b ON a.checkpoint_id = b.checkpoint_id LEFT JOIN zyyj_course c ON c.course_id = a.course_id WHERE a.stu_id = ? GROUP BY course_name 
+2020-05-21 11:39:25.759 [http-nio-8080-exec-7] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==> Parameters: 1(Integer)
+2020-05-21 11:39:25.776 [http-nio-8080-exec-7] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - <==      Total: 2
+2020-05-21 14:59:20.590 [Thread-4] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-21 14:59:20.606 [Thread-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-05-21 14:59:21.472 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3788 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 14:59:21.473 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 14:59:22.437 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.prescription.memory.controller.AppStuController] for bean with name 'appStuController' defined in file [D:\idea\memory\target\classes\com\prescription\memory\controller\AppStuController.class]; nested exception is java.lang.ClassNotFoundException: com.prescription.memory.controller.AppStuController
+2020-05-21 14:59:22.447 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-21 14:59:22.516 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.prescription.memory.controller.AppStuController] for bean with name 'appStuController' defined in file [D:\idea\memory\target\classes\com\prescription\memory\controller\AppStuController.class]; nested exception is java.lang.ClassNotFoundException: com.prescription.memory.controller.AppStuController
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1477)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:649)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1605)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:494)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:616)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:608)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1242)
+	at org.mybatis.spring.mapper.MapperScannerConfigurer.processPropertyPlaceHolders(MapperScannerConfigurer.java:367)
+	at org.mybatis.spring.mapper.MapperScannerConfigurer.postProcessBeanDefinitionRegistry(MapperScannerConfigurer.java:338)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:125)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:706)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:532)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.prescription.memory.MemoryApplication.main(MemoryApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.ClassNotFoundException: com.prescription.memory.controller.AppStuController
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:144)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:285)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1469)
+	... 26 common frames omitted
+2020-05-21 14:59:37.307 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 5860 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 14:59:37.311 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 14:59:37.381 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-21 14:59:37.382 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-21 14:59:39.009 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 14:59:39.018 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 14:59:39.018 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 14:59:39.018 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 14:59:39.148 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 14:59:39.148 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1766 ms
+2020-05-21 14:59:41.236 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 14:59:41.309 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 14:59:41.340 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 14:59:41.542 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 14:59:41.552 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 14:59:41.597 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 14:59:41.748 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 14:59:41.757 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 14:59:41.764 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 14:59:41.767 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 14:59:41.771 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 14:59:41.772 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 14:59:41.773 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 14:59:41.774 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 14:59:41.776 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 14:59:41.778 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 14:59:41.779 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 14:59:41.781 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 14:59:41.786 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 14:59:41.789 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 14:59:41.793 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 14:59:41.797 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 14:59:41.799 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 14:59:41.805 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 14:59:41.812 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 14:59:41.824 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 14:59:41.834 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 14:59:41.838 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 14:59:41.842 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 14:59:41.851 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 14:59:41.854 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 14:59:41.855 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 14:59:41.856 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 14:59:41.865 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 14:59:41.868 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 14:59:41.868 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 14:59:41.869 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 14:59:41.871 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 14:59:41.875 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 14:59:41.891 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 14:59:41.911 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 14:59:41.914 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 5.192 seconds (JVM running for 6.614)
+2020-05-21 14:59:48.166 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 14:59:48.168 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 14:59:48.174 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-05-21 15:00:02.735 [http-nio-8080-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-05-21 15:00:02.864 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - ==>  Preparing: SELECT c.name, a.score, COUNT(b.score)+1 AS rank FROM zyyj_stu_score a LEFT JOIN zyyj_stu_score b ON a.score < b.score LEFT JOIN zyyj_student c ON a.stu_id = c.stu_id WHERE a.stu_id = ? 
+2020-05-21 15:00:02.886 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - ==> Parameters: 1(Integer)
+2020-05-21 15:00:02.904 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - <==      Total: 1
+2020-05-21 15:00:02.906 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - ==>  Preparing: SELECT b.`name`,a.score, count(c.score)+1 AS 'rank' FROM zyyj_stu_score a LEFT JOIN zyyj_stu_score c ON a.score < c.score LEFT JOIN zyyj_student b ON a.stu_id = b.stu_id GROUP BY a.score_id ORDER BY rank ASC LIMIT 30 
+2020-05-21 15:00:02.906 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - ==> Parameters: 
+2020-05-21 15:00:02.908 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - <==      Total: 3
+2020-05-21 15:00:23.352 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - ==>  Preparing: SELECT c.name, a.score, COUNT(b.score)+1 AS rank FROM zyyj_stu_score a LEFT JOIN zyyj_stu_score b ON a.score < b.score LEFT JOIN zyyj_student c ON a.stu_id = c.stu_id WHERE a.stu_id = ? 
+2020-05-21 15:00:23.352 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - ==> Parameters: 2(Integer)
+2020-05-21 15:00:23.353 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - <==      Total: 1
+2020-05-21 15:00:23.354 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - ==>  Preparing: SELECT b.`name`,a.score, count(c.score)+1 AS 'rank' FROM zyyj_stu_score a LEFT JOIN zyyj_stu_score c ON a.score < c.score LEFT JOIN zyyj_student b ON a.stu_id = b.stu_id GROUP BY a.score_id ORDER BY rank ASC LIMIT 30 
+2020-05-21 15:00:23.355 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - ==> Parameters: 
+2020-05-21 15:00:23.356 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - <==      Total: 3
+2020-05-21 20:31:36.148 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3156 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 20:31:36.151 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 20:31:36.209 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-21 20:31:36.210 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-21 20:31:37.943 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 20:31:37.952 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 20:31:37.952 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 20:31:37.952 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 20:31:38.081 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 20:31:38.081 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1871 ms
+2020-05-21 20:31:40.764 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 20:31:40.889 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 20:31:40.931 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 20:31:41.166 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 20:31:41.179 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 20:31:41.233 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 20:31:41.515 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 20:31:41.527 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 20:31:41.537 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 20:31:41.542 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 20:31:41.551 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 20:31:41.553 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 20:31:41.555 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 20:31:41.557 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 20:31:41.559 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 20:31:41.561 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 20:31:41.562 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 20:31:41.564 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 20:31:41.570 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 20:31:41.575 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 20:31:41.580 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 20:31:41.589 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 20:31:41.591 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 20:31:41.602 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 20:31:41.610 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 20:31:41.620 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 20:31:41.632 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 20:31:41.637 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 20:31:41.642 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 20:31:41.655 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 20:31:41.659 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 20:31:41.660 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 20:31:41.661 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 20:31:41.669 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 20:31:41.672 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 20:31:41.673 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 20:31:41.674 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 20:31:41.677 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 20:31:41.685 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 20:31:41.703 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 20:31:41.731 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 20:31:41.758 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 6.153 seconds (JVM running for 7.774)
+2020-05-21 20:31:56.964 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 20:31:56.965 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 20:31:56.973 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-05-21 20:32:34.598 [Thread-4] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-21 20:32:35.352 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3156 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 20:32:35.352 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 20:32:36.055 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 20:32:36.057 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 20:32:36.057 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 20:32:36.057 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 20:32:36.138 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 20:32:36.139 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 784 ms
+2020-05-21 20:32:37.423 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 20:32:37.458 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 20:32:37.463 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 20:32:37.580 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 20:32:37.581 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 20:32:37.592 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 20:32:37.636 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 20:32:37.642 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 20:32:37.647 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 20:32:37.648 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 20:32:37.651 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 20:32:37.652 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 20:32:37.653 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 20:32:37.654 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 20:32:37.656 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 20:32:37.657 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 20:32:37.658 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 20:32:37.660 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 20:32:37.664 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 20:32:37.666 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 20:32:37.670 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 20:32:37.673 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 20:32:37.675 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 20:32:37.686 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 20:32:37.692 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 20:32:37.697 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 20:32:37.703 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 20:32:37.706 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 20:32:37.709 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 20:32:37.716 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 20:32:37.719 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 20:32:37.720 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 20:32:37.721 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 20:32:37.728 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 20:32:37.730 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 20:32:37.731 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 20:32:37.732 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 20:32:37.733 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 20:32:37.737 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 20:32:37.741 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 20:32:37.745 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 20:32:37.745 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 2.429 seconds (JVM running for 63.762)
+2020-05-21 20:32:37.747 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-05-21 20:32:43.124 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 20:32:43.126 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 20:32:43.129 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-05-21 20:32:54.146 [http-nio-8080-exec-10] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-05-21 20:32:54.275 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - ==>  Preparing: SELECT c.name, a.score, COUNT(b.score)+1 AS rank FROM zyyj_stu_score a LEFT JOIN zyyj_stu_score b ON a.score < b.score LEFT JOIN zyyj_student c ON a.stu_id = c.stu_id WHERE a.stu_id = ? 
+2020-05-21 20:32:54.294 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - ==> Parameters: 1(Integer)
+2020-05-21 20:32:54.310 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - <==      Total: 1
+2020-05-21 20:32:54.311 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - ==>  Preparing: SELECT b.`name`,a.score, count(c.score)+1 AS 'rank' FROM zyyj_stu_score a LEFT JOIN zyyj_stu_score c ON a.score < c.score LEFT JOIN zyyj_student b ON a.stu_id = b.stu_id GROUP BY a.score_id ORDER BY rank ASC LIMIT 30 
+2020-05-21 20:32:54.312 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - ==> Parameters: 
+2020-05-21 20:32:54.314 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - <==      Total: 13
+2020-05-21 20:33:25.113 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - ==>  Preparing: SELECT major_id,college_id,name,comment FROM zyyj_major 
+2020-05-21 20:33:25.113 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - ==> Parameters: 
+2020-05-21 20:33:25.118 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjMajorDao.selectList - <==      Total: 38
+2020-05-21 20:33:25.131 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.132 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:25.133 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.134 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.134 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:25.136 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.138 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.138 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:33:25.140 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.142 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.142 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:33:25.143 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.144 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.145 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:33:25.146 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.147 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.147 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:33:25.148 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.149 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.149 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:33:25.150 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.151 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.152 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:33:25.153 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.155 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.155 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:33:25.157 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.159 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.159 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:33:25.160 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.161 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.161 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 3(Integer)
+2020-05-21 20:33:25.162 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.163 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.163 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 3(Integer)
+2020-05-21 20:33:25.164 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.166 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.166 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 3(Integer)
+2020-05-21 20:33:25.168 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.170 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.171 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 3(Integer)
+2020-05-21 20:33:25.172 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.173 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.174 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 3(Integer)
+2020-05-21 20:33:25.175 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.177 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.177 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 4(Integer)
+2020-05-21 20:33:25.178 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.179 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.179 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 5(Integer)
+2020-05-21 20:33:25.180 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.182 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.182 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 5(Integer)
+2020-05-21 20:33:25.183 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.184 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.184 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 6(Integer)
+2020-05-21 20:33:25.185 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.187 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.187 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 7(Integer)
+2020-05-21 20:33:25.189 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.191 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.191 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 7(Integer)
+2020-05-21 20:33:25.192 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.193 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.194 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 7(Integer)
+2020-05-21 20:33:25.195 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.195 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.196 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 8(Integer)
+2020-05-21 20:33:25.197 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.198 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.198 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 8(Integer)
+2020-05-21 20:33:25.199 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.200 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.200 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 8(Integer)
+2020-05-21 20:33:25.201 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.202 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.202 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 8(Integer)
+2020-05-21 20:33:25.203 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.204 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.205 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 9(Integer)
+2020-05-21 20:33:25.206 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:25.207 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.207 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 10(Integer)
+2020-05-21 20:33:25.208 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 0
+2020-05-21 20:33:25.209 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.209 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 11(Integer)
+2020-05-21 20:33:25.210 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 0
+2020-05-21 20:33:25.210 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.211 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 11(Integer)
+2020-05-21 20:33:25.211 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 0
+2020-05-21 20:33:25.212 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.212 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 11(Integer)
+2020-05-21 20:33:25.212 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 0
+2020-05-21 20:33:25.213 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.213 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 11(Integer)
+2020-05-21 20:33:25.214 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 0
+2020-05-21 20:33:25.215 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.215 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 12(Integer)
+2020-05-21 20:33:25.215 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 0
+2020-05-21 20:33:25.216 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.216 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 12(Integer)
+2020-05-21 20:33:25.216 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 0
+2020-05-21 20:33:25.217 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.217 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 12(Integer)
+2020-05-21 20:33:25.218 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 0
+2020-05-21 20:33:25.219 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.219 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 13(Integer)
+2020-05-21 20:33:25.220 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 0
+2020-05-21 20:33:25.221 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.221 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 13(Integer)
+2020-05-21 20:33:25.222 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 0
+2020-05-21 20:33:25.224 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:25.224 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 13(Integer)
+2020-05-21 20:33:25.224 [http-nio-8080-exec-9] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 0
+2020-05-21 20:33:43.610 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department 
+2020-05-21 20:33:43.610 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - ==> Parameters: 
+2020-05-21 20:33:43.612 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - <==      Total: 11
+2020-05-21 20:33:43.614 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:33:43.615 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:33:43.615 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:33:43.616 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:43.616 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.617 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.625 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:33:43.625 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:33:43.626 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:33:43.627 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:43.628 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.629 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.629 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:33:43.630 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:33:43.631 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:33:43.633 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:43.633 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.635 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.637 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:33:43.637 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:33:43.638 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:33:43.639 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:43.639 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.642 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.643 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:33:43.643 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:33:43.644 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:33:43.645 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:43.645 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.646 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.647 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:33:43.647 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:33:43.648 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:33:43.648 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:43.648 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.649 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.650 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:33:43.650 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.652 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.653 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:43.654 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.655 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.656 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:33:43.656 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.657 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.658 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:43.658 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.658 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.659 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:33:43.659 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:33:43.660 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.660 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:43.660 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.661 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.662 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:33:43.662 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:33:43.663 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.663 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:43.663 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.664 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.664 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:33:43.664 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 4(Integer)
+2020-05-21 20:33:43.666 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-05-21 20:33:43.667 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:33:43.667 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:33:43.669 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:33:57.352 [http-nio-8080-exec-4] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department 
+2020-05-21 20:33:57.352 [http-nio-8080-exec-4] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - ==> Parameters: 
+2020-05-21 20:33:57.354 [http-nio-8080-exec-4] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - <==      Total: 11
+2020-05-21 20:33:57.362 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException]
+2020-05-21 20:34:18.752 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department 
+2020-05-21 20:34:18.752 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - ==> Parameters: 
+2020-05-21 20:34:18.754 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - <==      Total: 11
+2020-05-21 20:34:18.754 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:34:18.755 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:34:18.755 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:34:18.756 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:34:18.756 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.757 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.757 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:34:18.757 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:34:18.758 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:34:18.758 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:34:18.759 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.759 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.760 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:34:18.760 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:34:18.761 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:34:18.761 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:34:18.761 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.762 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.763 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:34:18.763 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:34:18.763 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:34:18.764 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:34:18.764 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.765 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.766 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:34:18.766 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:34:18.767 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:34:18.767 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:34:18.768 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.769 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.770 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:34:18.770 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: null
+2020-05-21 20:34:18.771 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 0
+2020-05-21 20:34:18.772 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:34:18.772 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.772 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.773 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:34:18.773 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.783 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.784 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:34:18.784 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.785 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.786 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:34:18.786 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.786 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.787 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:34:18.787 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.788 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.788 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:34:18.788 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:34:18.789 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.790 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:34:18.790 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.790 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.791 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:34:18.791 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 2(Integer)
+2020-05-21 20:34:18.792 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.792 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:34:18.792 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.793 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.794 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-05-21 20:34:18.794 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 4(Integer)
+2020-05-21 20:34:18.795 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-05-21 20:34:18.795 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==>  Preparing: SELECT college_id,university_id,name,comment FROM zyyj_college WHERE college_id=? 
+2020-05-21 20:34:18.795 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 20:34:18.796 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjCollegeDao.selectById - <==      Total: 1
+2020-05-21 20:35:02.419 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course 
+2020-05-21 20:35:02.419 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==> Parameters: 
+2020-05-21 20:35:02.423 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - <==      Total: 22
+2020-05-21 21:04:49.095 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course 
+2020-05-21 21:04:49.096 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==> Parameters: 
+2020-05-21 21:04:49.100 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - <==      Total: 22
+2020-05-21 21:05:02.463 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course 
+2020-05-21 21:05:02.463 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==> Parameters: 
+2020-05-21 21:05:02.466 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - <==      Total: 22
+2020-05-21 21:05:02.467 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.468 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 21:05:02.469 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.476 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.476 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 21:05:02.477 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.478 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.479 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 21:05:02.481 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.482 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.482 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 21:05:02.483 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.484 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.485 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 21:05:02.487 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.488 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.488 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 21:05:02.489 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.489 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.490 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 3(Integer)
+2020-05-21 21:05:02.490 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.491 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.491 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 3(Integer)
+2020-05-21 21:05:02.491 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.492 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.492 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 3(Integer)
+2020-05-21 21:05:02.492 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.493 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.493 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 3(Integer)
+2020-05-21 21:05:02.494 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.494 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.494 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 3(Integer)
+2020-05-21 21:05:02.495 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.496 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.496 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 3(Integer)
+2020-05-21 21:05:02.497 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.498 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.499 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 4(Integer)
+2020-05-21 21:05:02.500 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.501 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.501 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 4(Integer)
+2020-05-21 21:05:02.502 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.502 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.503 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 4(Integer)
+2020-05-21 21:05:02.503 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.504 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.504 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 4(Integer)
+2020-05-21 21:05:02.504 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.506 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.506 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 4(Integer)
+2020-05-21 21:05:02.507 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.507 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.508 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 4(Integer)
+2020-05-21 21:05:02.508 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.509 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.509 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 6(Integer)
+2020-05-21 21:05:02.510 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.510 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.510 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 6(Integer)
+2020-05-21 21:05:02.511 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.512 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.512 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 6(Integer)
+2020-05-21 21:05:02.513 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:05:02.514 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course WHERE course_id=? 
+2020-05-21 21:05:02.515 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - ==> Parameters: 6(Integer)
+2020-05-21 21:05:02.516 [http-nio-8080-exec-3] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectById - <==      Total: 1
+2020-05-21 21:06:05.810 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-21 21:06:05.821 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-05-21 21:06:06.587 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3156 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 21:06:06.588 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 21:06:07.327 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 21:06:07.328 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 21:06:07.329 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 21:06:07.329 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 21:06:07.409 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 21:06:07.409 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 816 ms
+2020-05-21 21:06:07.458 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appStuController': Unsatisfied dependency expressed through field 'stuService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.prescription.memory.service.AppStuService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-05-21 21:06:07.459 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-05-21 21:06:07.465 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-21 21:06:07.747 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field stuService in com.prescription.memory.controller.AppStuController required a bean of type 'com.prescription.memory.service.AppStuService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.prescription.memory.service.AppStuService' in your configuration.
+
+2020-05-21 21:06:21.350 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 15228 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 21:06:21.353 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 21:06:21.412 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-21 21:06:21.413 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-21 21:06:22.908 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 21:06:22.917 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 21:06:22.917 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 21:06:22.917 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 21:06:23.054 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 21:06:23.054 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1641 ms
+2020-05-21 21:06:25.188 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 21:06:25.266 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 21:06:25.316 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 21:06:25.518 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 21:06:25.528 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 21:06:25.572 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 21:06:25.735 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 21:06:25.744 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 21:06:25.753 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 21:06:25.756 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 21:06:25.763 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 21:06:25.764 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 21:06:25.765 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 21:06:25.766 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 21:06:25.768 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 21:06:25.770 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 21:06:25.771 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 21:06:25.773 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 21:06:25.778 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 21:06:25.781 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 21:06:25.787 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 21:06:25.792 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 21:06:25.794 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 21:06:25.801 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 21:06:25.810 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 21:06:25.820 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 21:06:25.827 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 21:06:25.830 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 21:06:25.833 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 21:06:25.843 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 21:06:25.846 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 21:06:25.846 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 21:06:25.848 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 21:06:25.856 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 21:06:25.858 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 21:06:25.859 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 21:06:25.860 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 21:06:25.862 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 21:06:25.868 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 21:06:25.884 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 21:06:25.904 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 21:06:25.909 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 5.205 seconds (JVM running for 6.785)
+2020-05-21 21:06:43.926 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 21:06:43.928 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 21:06:43.934 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-05-21 21:06:51.651 [http-nio-8080-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-05-21 21:06:51.749 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course 
+2020-05-21 21:06:51.767 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==> Parameters: 
+2020-05-21 21:06:51.788 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - <==      Total: 24
+2020-05-21 21:08:54.978 [Thread-4] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-21 21:08:54.991 [Thread-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-05-21 21:08:55.808 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 15228 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 21:08:55.809 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 21:08:56.514 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 21:08:56.515 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 21:08:56.515 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 21:08:56.516 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 21:08:56.572 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 21:08:56.572 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 760 ms
+2020-05-21 21:08:58.036 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 21:08:58.094 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 21:08:58.107 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 21:08:58.299 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 21:08:58.300 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 21:08:58.318 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 21:08:58.395 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 21:08:58.406 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 21:08:58.414 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 21:08:58.416 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 21:08:58.420 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 21:08:58.422 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 21:08:58.423 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 21:08:58.424 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 21:08:58.426 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 21:08:58.428 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 21:08:58.430 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 21:08:58.433 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 21:08:58.441 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 21:08:58.446 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 21:08:58.453 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 21:08:58.458 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 21:08:58.460 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 21:08:58.469 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 21:08:58.478 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 21:08:58.490 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 21:08:58.499 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 21:08:58.503 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 21:08:58.507 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 21:08:58.517 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 21:08:58.522 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 21:08:58.523 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 21:08:58.525 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 21:08:58.539 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 21:08:58.541 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 21:08:58.542 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 21:08:58.544 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 21:08:58.546 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 21:08:58.560 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 21:08:58.567 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 21:08:58.572 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 21:08:58.573 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 2.819 seconds (JVM running for 159.449)
+2020-05-21 21:08:58.575 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-05-21 21:09:06.513 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 21:09:06.515 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 21:09:06.517 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-05-21 21:09:10.636 [http-nio-8080-exec-9] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2020-05-21 21:09:10.643 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course 
+2020-05-21 21:09:10.643 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==> Parameters: 
+2020-05-21 21:09:10.648 [http-nio-8080-exec-9] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - <==      Total: 24
+2020-05-21 21:11:02.957 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 17028 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-21 21:11:02.962 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-21 21:11:03.040 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-21 21:11:03.041 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-21 21:11:04.802 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-21 21:11:04.811 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-21 21:11:04.812 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-21 21:11:04.812 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-21 21:11:04.944 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-21 21:11:04.945 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1904 ms
+2020-05-21 21:11:07.339 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-21 21:11:07.426 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-21 21:11:07.472 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-21 21:11:07.706 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-21 21:11:07.717 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-21 21:11:07.775 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-21 21:11:07.965 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+2020-05-21 21:11:07.974 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+2020-05-21 21:11:07.985 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+2020-05-21 21:11:07.987 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_1
+2020-05-21 21:11:07.991 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-05-21 21:11:07.992 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-05-21 21:11:07.993 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-05-21 21:11:07.994 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+2020-05-21 21:11:07.998 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByDeptIdUsingGET_1
+2020-05-21 21:11:07.999 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_2
+2020-05-21 21:11:08.000 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-05-21 21:11:08.002 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-05-21 21:11:08.007 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_3
+2020-05-21 21:11:08.011 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-05-21 21:11:08.018 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_4
+2020-05-21 21:11:08.022 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-05-21 21:11:08.023 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_5
+2020-05-21 21:11:08.032 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+2020-05-21 21:11:08.040 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+2020-05-21 21:11:08.050 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+2020-05-21 21:11:08.057 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+2020-05-21 21:11:08.060 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-05-21 21:11:08.064 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_6
+2020-05-21 21:11:08.074 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+2020-05-21 21:11:08.077 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-05-21 21:11:08.078 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-05-21 21:11:08.081 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_7
+2020-05-21 21:11:08.089 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+2020-05-21 21:11:08.092 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-05-21 21:11:08.093 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-05-21 21:11:08.094 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_8
+2020-05-21 21:11:08.097 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-05-21 21:11:08.103 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectByPageUsingGET_9
+2020-05-21 21:11:08.120 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-21 21:11:08.148 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-21 21:11:08.159 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 5.847 seconds (JVM running for 7.432)
+2020-05-21 21:11:12.526 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-21 21:11:12.527 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-21 21:11:12.536 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2020-05-21 21:11:16.960 [http-nio-8080-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-05-21 21:11:17.061 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course 
+2020-05-21 21:11:17.080 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==> Parameters: 
+2020-05-21 21:11:17.101 [http-nio-8080-exec-7] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - <==      Total: 24
+2020-05-21 21:13:44.980 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - ==>  Preparing: SELECT exchange_id,rule_id,stu_id,createdate,score,integral FROM zyyj_exchangeintegral WHERE (stu_id = ?) 
+2020-05-21 21:13:44.980 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - ==> Parameters: 1(Integer)
+2020-05-21 21:13:44.982 [http-nio-8080-exec-6] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - <==      Total: 1
+2020-05-21 21:14:02.933 [http-nio-8080-exec-2] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - ==>  Preparing: SELECT exchange_id,rule_id,stu_id,createdate,score,integral FROM zyyj_exchangeintegral WHERE (stu_id = ?) 
+2020-05-21 21:14:02.933 [http-nio-8080-exec-2] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - ==> Parameters: 2(Integer)
+2020-05-21 21:14:02.935 [http-nio-8080-exec-2] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - <==      Total: 1
+2020-05-21 21:14:14.823 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - ==>  Preparing: SELECT exchange_id,rule_id,stu_id,createdate,score,integral FROM zyyj_exchangeintegral WHERE (stu_id = ?) 
+2020-05-21 21:14:14.824 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - ==> Parameters: 9(Integer)
+2020-05-21 21:14:14.825 [http-nio-8080-exec-8] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - <==      Total: 1
+2020-05-21 21:18:22.618 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - ==>  Preparing: SELECT exchange_id,rule_id,stu_id,createdate,score,integral FROM zyyj_exchangeintegral WHERE (stu_id = ?) 
+2020-05-21 21:18:22.619 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - ==> Parameters: 15(Integer)
+2020-05-21 21:18:22.620 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjExchangeintegralDao.selectOne - <==      Total: 0
+2020-05-21 21:18:22.624 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjStuScoreDao.selectList - ==>  Preparing: SELECT score_id,stu_id,programme_id,score,comment,create_date,type FROM zyyj_stu_score WHERE (stu_id = ?) 
+2020-05-21 21:18:22.625 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjStuScoreDao.selectList - ==> Parameters: 15(Integer)
+2020-05-21 21:18:22.626 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjStuScoreDao.selectList - <==      Total: 0
+2020-05-21 21:18:22.630 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjExchangeruleDao.selectList - ==>  Preparing: SELECT rule_id,name,createdate,score,integral,status FROM zyyj_exchangerule WHERE (status = ?) 
+2020-05-21 21:18:22.630 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjExchangeruleDao.selectList - ==> Parameters: 1(Integer)
+2020-05-21 21:18:22.677 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjExchangeruleDao.selectList - <==      Total: 12
+2020-05-21 21:18:47.903 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.ZyyjExchangeruleDao.selectById - ==>  Preparing: SELECT rule_id,name,createdate,score,integral,status FROM zyyj_exchangerule WHERE rule_id=? 
+2020-05-21 21:18:47.904 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.ZyyjExchangeruleDao.selectById - ==> Parameters: 1(Integer)
+2020-05-21 21:18:47.905 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.ZyyjExchangeruleDao.selectById - <==      Total: 1
+2020-05-21 21:18:47.908 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.ZyyjStuScoreDao.selectList - ==>  Preparing: SELECT score_id,stu_id,programme_id,score,comment,create_date,type FROM zyyj_stu_score WHERE (stu_id = ?) 
+2020-05-21 21:18:47.908 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.ZyyjStuScoreDao.selectList - ==> Parameters: 15(Integer)
+2020-05-21 21:18:47.909 [http-nio-8080-exec-10] DEBUG c.p.memory.dao.ZyyjStuScoreDao.selectList - <==      Total: 0
+2020-05-21 21:20:04.007 [http-nio-8080-exec-1] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - ==>  Preparing: SELECT c.name, a.score, COUNT(b.score)+1 AS rank FROM zyyj_stu_score a LEFT JOIN zyyj_stu_score b ON a.score < b.score LEFT JOIN zyyj_student c ON a.stu_id = c.stu_id WHERE a.stu_id = ? 
+2020-05-21 21:20:04.008 [http-nio-8080-exec-1] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - ==> Parameters: 1(Integer)
+2020-05-21 21:20:04.010 [http-nio-8080-exec-1] DEBUG c.p.memory.dao.AppStuDao.getStuScoreInfo - <==      Total: 1
+2020-05-21 21:20:04.011 [http-nio-8080-exec-1] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - ==>  Preparing: SELECT b.`name`,a.score, count(c.score)+1 AS 'rank' FROM zyyj_stu_score a LEFT JOIN zyyj_stu_score c ON a.score < c.score LEFT JOIN zyyj_student b ON a.stu_id = b.stu_id GROUP BY a.score_id ORDER BY rank ASC LIMIT 30 
+2020-05-21 21:20:04.011 [http-nio-8080-exec-1] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - ==> Parameters: 
+2020-05-21 21:20:04.013 [http-nio-8080-exec-1] DEBUG c.p.memory.dao.AppStuDao.getBeforeThirty - <==      Total: 13
+2020-05-21 21:20:36.429 [http-nio-8080-exec-3] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==>  Preparing: SELECT max(practice_id) as practice_id,b.`name` As point_name,c.`name` As course_name FROM zyyj_student_practice a LEFT JOIN zyyj_checkpoint b ON a.checkpoint_id = b.checkpoint_id LEFT JOIN zyyj_course c ON c.course_id = a.course_id WHERE a.stu_id = ? GROUP BY course_name 
+2020-05-21 21:20:36.430 [http-nio-8080-exec-3] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - ==> Parameters: 1(Integer)
+2020-05-21 21:20:36.432 [http-nio-8080-exec-3] DEBUG com.prescription.memory.dao.AppStuDao.getPointData - <==      Total: 1

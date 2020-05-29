@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.prescription.memory.dao.ZyyjDepartmentDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.prescription.memory.entity.po.ZyyjDepartmentPo">
+        <id column="department_id" property="departmentId" />
+        <result column="college_id" property="collegeId" />
+        <result column="parent_id" property="parentId" />
+        <result column="name" property="name" />
+        <result column="comment" property="comment" />
+        <result column="tree_code" property="treeCode" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        department_id, college_id, parent_id, name, comment, tree_code
+    </sql>
+
+</mapper>

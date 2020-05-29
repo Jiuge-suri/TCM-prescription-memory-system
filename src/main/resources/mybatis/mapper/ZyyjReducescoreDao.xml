@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.prescription.memory.dao.ZyyjReducescoreDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.prescription.memory.entity.po.ZyyjReducescorePo">
+        <id column="reduce_id" property="reduceId" />
+        <result column="updatedate" property="updatedate" />
+        <result column="score" property="score" />
+        <result column="frist_reduce" property="fristReduce" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        reduce_id, updatedate, score, frist_reduce
+    </sql>
+
+</mapper>

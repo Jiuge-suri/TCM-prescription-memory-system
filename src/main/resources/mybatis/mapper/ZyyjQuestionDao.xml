@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.prescription.memory.dao.ZyyjQuestionDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.prescription.memory.entity.po.ZyyjQuestionPo">
+        <id column="question_id" property="questionId" />
+        <result column="level_id" property="levelId" />
+        <result column="know_id" property="knowId" />
+        <result column="question_type_id" property="questionTypeId" />
+        <result column="question" property="question" />
+        <result column="answer1" property="answer1" />
+        <result column="answer2" property="answer2" />
+        <result column="answer3" property="answer3" />
+        <result column="answer4" property="answer4" />
+        <result column="rightanswer" property="rightanswer" />
+        <result column="photo" property="photo" />
+        <result column="comment" property="comment" />
+        <result column="course_id" property="courseId" />
+        <result column="chapter_id" property="chapterId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        question_id, level_id, know_id, question_type_id, question, answer1, answer2, answer3, answer4, rightanswer, photo, comment, course_id, chapter_id
+    </sql>
+
+</mapper>

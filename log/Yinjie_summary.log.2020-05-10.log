@@ -1,0 +1,411 @@
+2020-05-10 17:14:55.142 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 12376 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 17:14:55.143 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 17:14:55.715 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.prescription.memory.dao]' package. Please check your configuration.
+2020-05-10 17:14:55.827 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 17:14:55.828 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 17:14:55.828 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 17:14:55.910 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 17:14:55.910 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 764 ms
+2020-05-10 17:14:56.151 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'xmlModelPlugin': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [springfox.documentation.schema.XmlModelPlugin] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+2020-05-10 17:14:56.153 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-05-10 17:14:56.170 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-10 17:14:56.198 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'xmlModelPlugin': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [springfox.documentation.schema.XmlModelPlugin] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1286)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:895)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.prescription.memory.MemoryApplication.main(MemoryApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [springfox.documentation.schema.XmlModelPlugin] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:267)
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlType
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3167)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2310)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.annotation.XmlType
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 29 common frames omitted
+2020-05-10 17:17:04.476 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 12376 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 17:17:04.476 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 17:17:04.733 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.prescription.memory.dao]' package. Please check your configuration.
+2020-05-10 17:17:04.788 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 17:17:04.789 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 17:17:04.789 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 17:17:04.875 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 17:17:04.876 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 398 ms
+2020-05-10 17:17:04.920 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 17:17:05.614 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-10 17:17:05.632 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 17:17:05.633 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 1.205 seconds (JVM running for 576.123)
+2020-05-10 17:17:05.634 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-05-10 17:17:17.801 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-10 17:17:17.803 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-10 17:17:17.808 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-05-10 17:21:34.719 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 17:21:35.510 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 12376 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 17:21:35.510 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 17:21:35.934 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.prescription.memory.dao]' package. Please check your configuration.
+2020-05-10 17:21:36.035 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 17:21:36.035 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 17:21:36.036 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 17:21:36.115 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 17:21:36.115 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 602 ms
+2020-05-10 17:21:36.184 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'xmlModelPlugin': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [springfox.documentation.schema.XmlModelPlugin] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+2020-05-10 17:21:36.185 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-05-10 17:21:36.190 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-10 17:21:36.191 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'xmlModelPlugin': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [springfox.documentation.schema.XmlModelPlugin] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1286)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:895)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.prescription.memory.MemoryApplication.main(MemoryApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [springfox.documentation.schema.XmlModelPlugin] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:267)
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlType
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3167)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2310)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.annotation.XmlType
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 29 common frames omitted
+2020-05-10 17:21:51.744 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 12376 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 17:21:51.745 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 17:21:52.166 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.prescription.memory.dao]' package. Please check your configuration.
+2020-05-10 17:21:52.230 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 17:21:52.232 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 17:21:52.232 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 17:21:52.352 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 17:21:52.352 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 605 ms
+2020-05-10 17:21:52.432 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'xmlModelPlugin': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [springfox.documentation.schema.XmlModelPlugin] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+2020-05-10 17:21:52.432 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-05-10 17:21:52.437 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-10 17:21:52.438 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'xmlModelPlugin': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [springfox.documentation.schema.XmlModelPlugin] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1286)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:895)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.prescription.memory.MemoryApplication.main(MemoryApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [springfox.documentation.schema.XmlModelPlugin] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:267)
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlType
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3167)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2310)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.annotation.XmlType
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 29 common frames omitted
+2020-05-10 17:22:12.421 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3060 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 17:22:12.423 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 17:22:12.469 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-10 17:22:12.469 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-10 17:22:13.393 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.prescription.memory.dao]' package. Please check your configuration.
+2020-05-10 17:22:13.920 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 17:22:13.928 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 17:22:13.928 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 17:22:13.928 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 17:22:14.084 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 17:22:14.084 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1615 ms
+2020-05-10 17:22:14.440 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-10 17:22:14.553 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 17:22:14.607 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-10 17:22:15.833 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-10 17:22:15.849 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-10 17:22:15.900 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-10 17:22:16.012 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 17:22:16.032 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 17:22:16.036 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 4.215 seconds (JVM running for 5.892)
+2020-05-10 17:22:26.945 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-10 17:22:26.946 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-10 17:22:26.952 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-05-10 17:31:22.616 [Thread-4] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 17:31:23.345 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3060 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 17:31:23.345 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 17:31:23.887 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.prescription.memory.dao]' package. Please check your configuration.
+2020-05-10 17:31:24.040 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 17:31:24.041 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 17:31:24.042 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 17:31:24.042 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 17:31:24.147 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 17:31:24.147 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 800 ms
+2020-05-10 17:31:24.230 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-10 17:31:24.262 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 17:31:24.268 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-10 17:31:24.847 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-10 17:31:24.848 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-10 17:31:24.851 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-10 17:31:24.859 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 17:31:24.863 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 17:31:24.864 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 1.561 seconds (JVM running for 554.719)
+2020-05-10 17:31:24.865 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-05-10 17:31:32.082 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-10 17:31:32.083 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-10 17:31:32.085 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-05-10 17:39:59.576 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 17:40:00.338 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3060 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 17:40:00.338 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 17:40:00.820 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.prescription.memory.dao]' package. Please check your configuration.
+2020-05-10 17:40:00.930 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 17:40:00.930 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 17:40:00.931 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 17:40:00.931 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 17:40:01.006 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 17:40:01.006 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 665 ms
+2020-05-10 17:40:01.159 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-10 17:40:01.217 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 17:40:01.225 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-10 17:40:01.843 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-10 17:40:01.844 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-10 17:40:01.847 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-10 17:40:01.853 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 17:40:01.856 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 17:40:01.857 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 1.612 seconds (JVM running for 1071.712)
+2020-05-10 17:40:01.858 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-05-10 17:42:24.514 [Thread-13] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 17:42:25.222 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3060 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 17:42:25.222 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 17:42:25.643 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.prescription.memory.dao]' package. Please check your configuration.
+2020-05-10 17:42:25.705 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 17:42:25.705 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 17:42:25.705 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 17:42:25.706 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 17:42:25.832 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 17:42:25.833 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 608 ms
+2020-05-10 17:42:25.968 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-10 17:42:26.008 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 17:42:26.013 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-10 17:42:26.578 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-10 17:42:26.579 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-10 17:42:26.583 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-10 17:42:26.589 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 17:42:26.594 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 17:42:26.595 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 1.422 seconds (JVM running for 1216.451)
+2020-05-10 17:42:26.602 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration; SearchStrategy: all) found beans of type 'org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration' org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.CglibAutoProxyConfiguration:
+      Did not match:
+         - Ancestor org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+      Matched:
+         - @ConditionalOnProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2020-05-10 17:42:56.413 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-10 17:42:56.498 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-10 17:42:56.501 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-05-10 18:00:07.390 [Thread-18] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 18:00:08.012 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3060 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 18:00:08.012 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 18:00:08.461 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.prescription.memory.dao]' package. Please check your configuration.
+2020-05-10 18:00:08.520 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 18:00:08.520 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 18:00:08.520 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 18:00:08.521 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 18:00:08.601 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 18:00:08.601 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 587 ms
+2020-05-10 18:00:08.685 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-10 18:00:08.717 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 18:00:08.723 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-10 18:00:09.372 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-10 18:00:09.372 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-10 18:00:09.375 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-10 18:00:09.381 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 18:00:09.384 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 18:00:09.384 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 1.413 seconds (JVM running for 2279.24)
+2020-05-10 18:00:09.385 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-05-10 18:00:13.822 [Thread-23] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 18:00:14.554 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3060 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 18:00:14.554 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 18:00:15.103 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.prescription.memory.dao]' package. Please check your configuration.
+2020-05-10 18:00:15.184 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 18:00:15.185 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 18:00:15.185 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 18:00:15.185 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 18:00:15.296 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 18:00:15.297 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 740 ms
+2020-05-10 18:00:15.484 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-10 18:00:15.532 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 18:00:15.538 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-10 18:00:16.291 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-10 18:00:16.291 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-10 18:00:16.295 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-10 18:00:16.305 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 18:00:16.310 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 18:00:16.311 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 1.797 seconds (JVM running for 2286.167)
+2020-05-10 18:00:16.314 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-05-10 23:56:09.035 [Thread-28] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 23:56:10.478 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3060 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 23:56:10.479 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 23:56:11.663 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 23:56:11.664 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:56:11.665 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 23:56:11.665 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 23:56:11.755 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 23:56:11.755 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1270 ms
+2020-05-10 23:56:13.611 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-10 23:56:13.692 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 23:56:13.705 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-10 23:56:13.871 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-10 23:56:13.873 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-10 23:56:13.881 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-10 23:56:13.901 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:56:13.976 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 23:56:13.978 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 3.793 seconds (JVM running for 23643.838)
+2020-05-10 23:56:13.980 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-05-10 23:56:20.300 [Thread-33] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 23:56:21.123 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 3060 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 23:56:21.123 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 23:56:21.994 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 23:56:21.996 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:56:21.997 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 23:56:21.997 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 23:56:22.207 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 23:56:22.207 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1063 ms
+2020-05-10 23:56:23.272 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-10 23:56:23.327 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 23:56:23.338 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-10 23:56:23.432 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-10 23:56:23.433 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-10 23:56:23.439 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-10 23:56:23.452 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:56:23.459 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 23:56:23.462 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 2.392 seconds (JVM running for 23653.323)
+2020-05-10 23:56:23.468 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-05-10 23:56:52.423 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 19760 (D:\idea\memory\target\classes started by admin in D:\idea\memory)
+2020-05-10 23:56:52.427 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: dev
+2020-05-10 23:56:52.529 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-10 23:56:52.529 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-10 23:56:55.784 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-05-10 23:56:55.818 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:56:55.818 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-10 23:56:55.819 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-10 23:56:56.171 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-10 23:56:56.172 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3643 ms
+2020-05-10 23:56:58.334 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-10 23:56:58.510 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 23:56:58.602 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-10 23:56:58.882 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-05-10 23:56:58.904 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-05-10 23:56:58.953 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-05-10 23:56:59.095 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:56:59.184 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 23:56:59.194 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 7.998 seconds (JVM running for 10.105)
+2020-05-10 23:57:03.960 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-10 23:57:03.963 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-10 23:57:03.976 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
