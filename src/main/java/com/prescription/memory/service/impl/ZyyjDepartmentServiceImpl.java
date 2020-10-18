@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.ZyyjCollegeDao;
 import com.prescription.memory.entity.PageInfo;
@@ -8,6 +9,7 @@ import com.prescription.memory.entity.po.ZyyjCollegePo;
 import com.prescription.memory.entity.po.ZyyjDepartmentPo;
 import com.prescription.memory.dao.ZyyjDepartmentDao;
 import com.prescription.memory.entity.vo.DepartmentVo;
+import com.prescription.memory.entity.vo.DeptRespNodeChild;
 import com.prescription.memory.entity.vo.DeptRespNodeVo;
 import com.prescription.memory.error.BusinessException;
 import com.prescription.memory.error.EmBusinessError;
@@ -60,15 +62,8 @@ public class ZyyjDepartmentServiceImpl extends ServiceImpl<ZyyjDepartmentDao, Zy
     }
 
     @Override
-    public List<DeptRespNodeVo> deptTreeList() {
-        List<ZyyjDepartmentPo> list = departmentDao.selectList(null);
-        DeptRespNodeVo deptRespNodeVo = new DeptRespNodeVo();
-        deptRespNodeVo.setDepartmentId(0);
-        deptRespNodeVo.setName("默认顶级部门");
-        deptRespNodeVo.setChildren(getTree(list));
-        List<DeptRespNodeVo> result = new ArrayList<>();
-        result.add(deptRespNodeVo);
-        return result;
+    public Page<DepartmentVo> getDepartmentByPage(String name) {
+        return departmentDao.getDepartmentByPage(name);
     }
 
     @Override
@@ -82,10 +77,14 @@ public class ZyyjDepartmentServiceImpl extends ServiceImpl<ZyyjDepartmentDao, Zy
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public boolean deleteDept(Integer[] departmentIds) {
+    public boolean deleteDept(Integer[] departmentIds) throws BusinessException {
         int count = 0;
         for (int i = 0; i < departmentIds.length; i++){
-            count += departmentDao.deleteById(departmentIds[i]);
+            try {
+                count += departmentDao.deleteById(departmentIds[i]);
+            } catch (Exception e) {
+                throw new BusinessException(EmBusinessError.NOTALLOWDELETE);
+            }
         }
         if (count != departmentIds.length){
             return false;
@@ -114,6 +113,18 @@ public class ZyyjDepartmentServiceImpl extends ServiceImpl<ZyyjDepartmentDao, Zy
         return pageInfo;
     }
 
+    @Override
+    public List<DeptRespNodeVo> deptTreeList() {
+        List<ZyyjDepartmentPo> list = departmentDao.selectList(null);
+        DeptRespNodeVo deptRespNodeVo = new DeptRespNodeVo();
+        deptRespNodeVo.setDepartmentId(0);
+        deptRespNodeVo.setName("默认顶级部门");
+        deptRespNodeVo.setChildren(getTree(list));
+        List<DeptRespNodeVo> result = new ArrayList<>();
+        result.add(deptRespNodeVo);
+        return result;
+    }
+
     private List<DeptRespNodeVo> getTree(List<ZyyjDepartmentPo> all){
         List<DeptRespNodeVo> list = new ArrayList<>();
         for (ZyyjDepartmentPo departmentPo: all){
@@ -126,15 +137,23 @@ public class ZyyjDepartmentServiceImpl extends ServiceImpl<ZyyjDepartmentDao, Zy
         }
         return list;
     }
-    private List<DeptRespNodeVo> getChild(Integer departmentId, List<ZyyjDepartmentPo> all){
-        List<DeptRespNodeVo> list = new ArrayList<>();
+    private List<DeptRespNodeChild> getChild(Integer departmentId, List<ZyyjDepartmentPo> all){
+        int flag = 1;
+        List<DeptRespNodeChild> list = new ArrayList<>();
         for (ZyyjDepartmentPo departmentPo: all){
             if (departmentPo.getParentId().equals(departmentId)){
-                DeptRespNodeVo deptRespNodeVo = new DeptRespNodeVo();
-                BeanUtils.copyProperties(departmentPo,deptRespNodeVo);
-                deptRespNodeVo.setChildren(getChild(departmentPo.getDepartmentId(), all));
-                list.add(deptRespNodeVo);
+                DeptRespNodeChild deptRespNodeChild = new DeptRespNodeChild();
+                BeanUtils.copyProperties(departmentPo,deptRespNodeChild);
+                //deptRespNodeVo.setChildren(getChild(departmentPo.getDepartmentId(), all));
+                flag = 0;
+                list.add(deptRespNodeChild);
             }
+        }
+        if (flag==1){
+            DeptRespNodeChild deptRespNodeChild = new DeptRespNodeChild();
+            ZyyjDepartmentPo departmentPo = departmentDao.selectById(departmentId);
+            BeanUtils.copyProperties(departmentPo,deptRespNodeChild);
+            list.add(deptRespNodeChild);
         }
         return list;
     }

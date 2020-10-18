@@ -1,5 +1,6 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjStudentPo;
 import com.prescription.memory.entity.po.ZyyjStudentPracticePo;
@@ -17,9 +18,7 @@ import java.util.List;
  * @since 2020-05-12
  */
 public interface ZyyjStudentPracticeService extends IService<ZyyjStudentPracticePo> {
-    public List<StudentPracticeVo> getAll();
 
-    public List<List<StudentPracticeVo>> conditionQuery(String name, String account, Integer majorId, Integer gradeId, Integer classId);
+    public Page<StudentPracticeVo> getStudentPracticeByPage(Integer pageNum, Integer pageSize, String name, String account, Integer majorId, Integer gradeId, Integer classId, Integer collegeId);
 
-    public PageInfo<StudentPracticeVo> selectByPage(Integer pageNum, Integer pageSize);
 }

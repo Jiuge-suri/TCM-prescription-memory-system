@@ -10,10 +10,34 @@
         <result column="photo" property="photo" />
         <result column="comment" property="comment" />
     </resultMap>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.ChapterVo">
+        <id column="chapter_id" property="chapterId" />
+        <result column="name" property="name" />
+        <result column="course_id" property="courseId" />
+        <!--<result column="parentId" property="parentId"/>-->
+        <result column="courseName" property="courseName"/>
+        <result column="photo" property="photo" />
+        <result column="comment" property="comment" />
+    </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         chapter_id, name, course_id, photo, comment
     </sql>
-
+    <select id="getChapterByPage" resultMap="MyResultMap">
+        SELECT
+        a.*,b.name AS courseName,b.parent_id AS parentId
+        FROM
+        zyyj_chapter a
+        LEFT JOIN
+        zyyj_course b ON a.course_id = b.course_id
+        <where>
+            1=1
+            <if test="name != null and name != ''">
+                and a.name like concat('%',#{name},'%')
+            </if>
+            <if test="courseId != null and courseId != 0">
+                and a.course_id = #{courseId}
+            </if>
+        </where>
+    </select>
 </mapper>

@@ -1,5 +1,8 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjCheckpointPo;
 import com.prescription.memory.entity.vo.CheckpointVo;
@@ -25,28 +28,31 @@ public class ZYYJCheckpoint_Controller extends BaseController{
 
     @ApiOperation(value = "条件查询关卡数据")
     @GetMapping("/checkpoint")
-    public CommonreturnType ConditionQuery(@ApiParam("关卡名") @RequestParam(value = "name",required = false) String name) {
-        List<CheckpointVo> list = checkpointService.ConditionQuery(name);
-        return CommonreturnType.create(list);
-    }
-    @ApiOperation(value = "多表关联分页查询")
-    @GetMapping("/checkpoint/{pageNum}/{pageSize}")
-    public CommonreturnType getCheckpointByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                                @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize){
-        PageInfo<CheckpointVo> pageInfo = checkpointService.getCheckpointByPage(pageNum,pageSize);
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                            @ApiParam("关卡名") @RequestParam(value = "name",required = false) String name) {
+        PageHelper.startPage(pageNum,pageSize);
+        Page<CheckpointVo> page = checkpointService.getCheckpointByPage(name);
+        PageInfo<CheckpointVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
+    @ApiOperation(value = "查询关卡所有的数据")
+    @GetMapping("/checkpoint/getall")
+    public CommonreturnType getAll(){
+        return CommonreturnType.create(checkpointService.getAll());
+    }
+
     @ApiOperation(value = "更新数据")
     @PutMapping("/checkpoint")
-    public CommonreturnType updateCheckpoint(@RequestBody ZyyjCheckpointPo checkpointPo) throws BusinessException {
+    public CommonreturnType updateCheckpoint(@ApiParam(value = "编号") @RequestBody ZyyjCheckpointPo checkpointPo) throws BusinessException {
         boolean result = checkpointService.updateCheckpoint(checkpointPo);
         return CommonreturnType.create(result);
     }
 
     @ApiOperation(value = "删除数据")
     @DeleteMapping("/checkpoint")
-    public CommonreturnType deleteCheckpoint(@ApiParam(value = "编号",required = true) @RequestParam(value = "checkpointId") Integer[] checkpointIds) throws BusinessException {
-        boolean result = checkpointService.deleteCheckpoint(checkpointIds);
+    public CommonreturnType deleteCheckpoint(@ApiParam(value = "编号",required = true) @RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result = checkpointService.deleteCheckpoint(deleteArr.getArray());
         return CommonreturnType.create(result);
     }
 

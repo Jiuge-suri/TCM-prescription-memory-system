@@ -38,30 +38,13 @@ public class ZyyjCheckpointServiceImpl extends ServiceImpl<ZyyjCheckpointDao, Zy
     ZyyjProgrammeDao programmeDao;
 
     @Override
-    public List<CheckpointVo> ConditionQuery(String name) {
-        LambdaQueryWrapper<ZyyjCheckpointPo> queryWrapper = new LambdaQueryWrapper<>();
-        if (name != null && name != ""){
-            queryWrapper.like(ZyyjCheckpointPo::getName,name);
-        }
-        List<ZyyjCheckpointPo> checkpointPos = checkpointDao.selectList(null);
-        List<CheckpointVo> result_list = new ArrayList<>();
-        for (ZyyjCheckpointPo checkpointPo: checkpointPos){
-            CheckpointVo checkpointVo = new CheckpointVo();
-            ZyyjProgrammePo programmePo = programmeDao.selectById(checkpointPo.getProgrammeId());
-            BeanUtils.copyProperties(checkpointPo,checkpointVo);
-            if (programmePo != null){
-                checkpointVo.setProgrammeName(programmePo.getName());
-            }
-            result_list.add(checkpointVo);
-        }
-        return result_list;
+    public Page<CheckpointVo> getCheckpointByPage(String name) {
+        return checkpointDao.getCheckpointByPage(name);
     }
+
     @Override
-    public PageInfo<CheckpointVo> getCheckpointByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<CheckpointVo> all = ConditionQuery(null);
-        PageInfo<CheckpointVo> pageInfo = new PageInfo<>(all);
-        return pageInfo;
+    public List<ZyyjCheckpointPo> getAll() {
+        return checkpointDao.selectList(null);
     }
 
     @Override

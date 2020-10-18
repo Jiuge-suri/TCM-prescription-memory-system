@@ -12,7 +12,27 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        grade_id, major_id, name, comment
+        a.grade_id, a.major_id, a.name, a.comment,b.name as majorName
     </sql>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.GradeVo">
+        <id column="grade_id" property="gradeId" />
+        <result column="major_id" property="majorId" />
+        <result column="majorName" property="majorName"/>
+        <result column="name" property="name" />
+        <result column="comment" property="comment" />
+    </resultMap>
+    <select id="getGradeByPage" resultMap="MyResultMap">
+        select
+            <include refid="Base_Column_List"></include>
+        from
+            zyyj_grade a
+        left join
+            zyyj_major b on b.major_id = a.major_id
+        <where>
+            1=1
+            <if test="majorId != null and majorId != 0">
+                and a.major_id = #{majorId}
+            </if>
+        </where>
+    </select>
 </mapper>

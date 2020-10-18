@@ -20,6 +20,9 @@ public class CheckpointVo implements Serializable {
     @ApiModelProperty(value = "关卡名称")
     private String name;
 
+    @ApiModelProperty(value = "方案id")
+    private Integer programmeId;
+
     @ApiModelProperty(value = "方案名称")
     private String programmeName;
 

@@ -1,6 +1,8 @@
 package com.prescription.memory.entity;
 
 import com.github.pagehelper.Page;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -12,21 +14,22 @@ import java.util.List;
  */
 @SuppressWarnings({"rawtypes", "unchecked"})
 @Data
+@ApiModel("分页查询")
 public class PageInfo<T> implements Serializable {
     private static final long serialVersionUID = 1L;
-    //当前页
+    @ApiModelProperty(value = "当前页")
     private int current;
-    //每页的数量
+    @ApiModelProperty(value = "每页的数量")
     private int size;
-    //总记录数
+    @ApiModelProperty(value = "总条数")
     private long total;
-    //总页数
+    @ApiModelProperty(value = "总页数")
     private int pages;
-    //结果集
+    @ApiModelProperty(value = "结果集")
     private List<T> records;
-    //是否为第一页
+    @ApiModelProperty(value = "是否为第一页")
     private boolean isFirstPage = false;
-    //是否为最后一页
+    @ApiModelProperty(value = "是否为最后一页")
     private boolean isLastPage = false;
 
 
@@ -61,12 +64,8 @@ public class PageInfo<T> implements Serializable {
         }
     }
 
-    /**
-     * 判定页面边界
-     */
     private void judgePageBoudary() {
         isFirstPage = current == 1;
         isLastPage = current == pages;
     }
-
 }

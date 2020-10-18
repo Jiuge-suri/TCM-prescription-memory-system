@@ -1,5 +1,6 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.vo.ExchangeintegralVo;
 import com.prescription.memory.service.ZyyjExchangeintegralService;
@@ -25,27 +26,17 @@ public class ZYYJExchangeintegral_Controller extends BaseController{
     ZyyjExchangeintegralService service;
 
     @GetMapping("/exchange_integral")
-    @ApiOperation(value = "查询所有的数据")
-    public CommonreturnType getAll(){
-        List<ExchangeintegralVo> all = service.getAll();
-        return CommonreturnType.create(all);
-    }
-    @GetMapping("/exchange_integral/name/{name}/account/{account}/major/{major}/grade/{grade}/class/{class}")
     @ApiOperation(value = "条件查询")
-    public CommonreturnType conditionQuery(@RequestParam(value = "name",required = false) String name,
+    public CommonreturnType conditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                            @RequestParam(value = "name",required = false) String name,
                                            @RequestParam(value = "account",required = false) String account,
                                            @RequestParam(value = "majorId",required=false)Integer majorId,
                                            @RequestParam(value = "gradeId",required=false)Integer gradeId,
-                                           @RequestParam(value = "classId",required=false)Integer classId) {
-        System.out.println("测试是否进入函数");
-        List<List<ExchangeintegralVo>> lists = service.conditionQuery(name, account, majorId, gradeId, classId);
-        return CommonreturnType.create(lists);
-    }
-    @GetMapping("/exchange_integral/{pageNum}/{pageSize}")
-    @ApiOperation(value = "分页查询")
-    public CommonreturnType selectByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                         @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize){
-        PageInfo<ExchangeintegralVo> pageInfo = service.selectByPage(pageNum, pageSize);
+                                           @RequestParam(value = "classId",required=false)Integer classId,
+                                           @ApiParam(value = "学院id",required = true) @RequestParam(value = "collegeId") Integer collegeId) {
+        Page<ExchangeintegralVo> page = service.getIntegralByPage(pageNum,pageSize,name, account, majorId, gradeId, classId,collegeId);
+        PageInfo<ExchangeintegralVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
 }

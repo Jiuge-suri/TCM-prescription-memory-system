@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.*;
 import com.prescription.memory.entity.PageInfo;
@@ -30,74 +31,12 @@ import java.util.List;
 @Service
 public class ZyyjStudentServiceImpl extends ServiceImpl<ZyyjStudentDao, ZyyjStudentPo> implements ZyyjStudentService {
     @Autowired
-    ZyyjClassDao classDao;
-    @Autowired
-    ZyyjGradeDao gradeDao;
-    @Autowired
-    ZyyjCollegeDao collegeDao;
-    @Autowired
-    ZyyjUniversityDao universityDao;
-    @Autowired
     ZyyjStudentDao studentDao;
-    @Autowired
-    ZyyjMajorDao majorDao;
-    @Override
-    public List<StudentVo> ConditionQuery(Integer majorId, Integer gradeId, Integer classId, Integer sex, String account, String name){
-        LambdaQueryWrapper<ZyyjStudentPo> queryWrapper = new LambdaQueryWrapper<>();
-        if (majorId != null && majorId != 0){
-            queryWrapper.eq(ZyyjStudentPo::getMajorId,majorId);
-        }
-        if (gradeId != null && gradeId != 0){
-            queryWrapper.eq(ZyyjStudentPo::getGradeId,gradeId);
-        }
-        if (classId != null && classId != 0){
-            queryWrapper.eq(ZyyjStudentPo::getClassId,classId);
-        }
-        if (sex != null){
-            queryWrapper.eq(ZyyjStudentPo::getGender,sex);
-        }
-        if (account != null && account != ""){
-            queryWrapper.like(ZyyjStudentPo::getAccount,account);
-        }
-        if (name != null && name != ""){
-            queryWrapper.like(ZyyjStudentPo::getName,name);
-        }
-        List<ZyyjStudentPo> list = studentDao.selectList(queryWrapper);
-        List<StudentVo> result_list = new ArrayList<>();
-        for (ZyyjStudentPo studentPo: list){
-            StudentVo studentVo = new StudentVo();
-            ZyyjClassPo classPo = classDao.selectById(studentPo.getClassId());
-            ZyyjGradePo gradePo = gradeDao.selectById(studentPo.getGradeId());
-            ZyyjCollegePo collegePo = collegeDao.selectById(studentPo.getCollegeId());
-            ZyyjUniversityPo universityPo = universityDao.selectById(studentPo.getUniversityId());
-            ZyyjMajorPo majorPo = majorDao.selectById(studentPo.getMajorId());
-            BeanUtils.copyProperties(studentPo,studentVo);
-            if (classPo != null){
-                studentVo.setClassName(classPo.getName());
-            }
-            if (gradePo != null){
-                studentVo.setGradeName(gradePo.getName());
-            }
-            if (collegePo != null){
-                studentVo.setCollegeName(collegePo.getName());
-            }
-            if (universityPo != null){
-                studentVo.setUniversityName(universityPo.getName());
-            }
-            if (majorPo != null){
-                studentVo.setMajorName(majorPo.getName());
-            }
-            result_list.add(studentVo);
-        }
-        return result_list;
-    }
+
 
     @Override
-    public PageInfo<StudentVo> getStudentByPage(Integer pageNum, Integer pageSize) throws BusinessException {
-        PageHelper.startPage(pageNum,pageSize);
-        List<StudentVo> list = ConditionQuery(null,null,null,null,null,null);
-        PageInfo<StudentVo> pageInfo = new PageInfo<>(list);
-        return pageInfo;
+    public Page<StudentVo> getStudentByPage(Integer majorId, Integer gradeId, Integer classId, Integer sex, String account, String name, Integer collegeId) {
+        return studentDao.getStudentByPage(majorId,gradeId,classId,sex,account,name,collegeId);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.po.ZyyjQuestionRecordPo;
 import com.prescription.memory.entity.po.ZyyjStudentExamPo;
 import com.prescription.memory.entity.po.ZyyjStudentPracticePo;
@@ -39,4 +40,8 @@ public interface AppStuService {
     public List<ReqPracticeRecord> getPracticeRecord(Integer stuId);
     //查看考试记录
     public List<ReqExamRecord> getExamRecord(Integer stuId);
+    //个人积分记录
+    public Page<IntegralRecord> getIntegralRecode(Integer pageNum, Integer pageSize, Integer stuId);
+    //更换头像信息
+    public boolean changePhoto(Integer stuId, String photo);
 }

@@ -1,5 +1,6 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjMajorPo;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -18,9 +19,9 @@ import java.util.List;
  * @since 2020-05-12
  */
 public interface ZyyjMajorService extends IService<ZyyjMajorPo> {
-    List<MajorVo> ConditionQuery(Integer collegeId);
+    Page<MajorVo> getMajorByPage(Integer collegeId, Integer majorId);
 
-    PageInfo<MajorVo> getMajorByPage(Integer pageNum, Integer pageSize);
+    List<ZyyjMajorPo> getAll(Integer collegeId);
 
     boolean insertMajor(ZyyjMajorPo majorPo);
 

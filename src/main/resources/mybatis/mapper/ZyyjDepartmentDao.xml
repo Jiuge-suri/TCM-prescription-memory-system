@@ -11,10 +11,32 @@
         <result column="comment" property="comment" />
         <result column="tree_code" property="treeCode" />
     </resultMap>
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.DepartmentVo">
+        <id column="department_id" property="departmentId" />
+        <result column="college_id" property="collegeId" />
+        <result column="collegeName" property="collegeName"/>
+        <result column="parent_id" property="parentId" />
+        <result column="name" property="name" />
+        <result column="comment" property="comment" />
+        <result column="tree_code" property="treeCode" />
+    </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         department_id, college_id, parent_id, name, comment, tree_code
     </sql>
-
+    <select id="getDepartmentByPage" resultMap="MyResultMap">
+        SELECT
+            a.department_id, a.college_id, b.name as collegeName, a.parent_id, a.name, a.comment, tree_code
+        FROM
+            zyyj_department a
+        LEFT JOIN
+            zyyj_college b ON b.college_id = a.college_id
+        <where>
+            1=1
+            <if test="name != null and name != ''">
+                and a.name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
 </mapper>

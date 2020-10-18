@@ -18,8 +18,14 @@ public class DepartmentVo implements Serializable {
     @ApiModelProperty(value = "部门编号")
     private Integer departmentId;
 
+    @ApiModelProperty(value = "学院编号")
+    private Integer collegeId;
+
     @ApiModelProperty(value = "学院名称")
     private String collegeName;
+
+    @ApiModelProperty(value = "上级id")
+    private Integer parentId;
 
     @ApiModelProperty(value = "上级部门名称")
     private String parentName;

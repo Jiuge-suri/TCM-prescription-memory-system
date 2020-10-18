@@ -1,6 +1,8 @@
 package com.prescription.memory.controller;
 
 import com.baomidou.mybatisplus.generator.config.INameConvert;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.vo.StudentExamVo;
 import com.prescription.memory.entity.vo.StudentVo;
@@ -29,20 +31,18 @@ public class ZyyjStudent_Exam_Controller extends BaseController {
     private ZyyjStudentExamService studentExamService;
     @ApiOperation(value = "多条件查询")
     @GetMapping("/student_exam")
-    public CommonreturnType ConditionQuery(@ApiParam(value = "学号")@RequestParam(value = "account",required = false) String account,
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                            @ApiParam(value = "学号")@RequestParam(value = "account",required = false) String account,
                                            @ApiParam(value = "姓名")@RequestParam(value = "name",required = false)String name,
                                            @ApiParam(value = "专业")@RequestParam(value = "majorId",required = false)Integer majorId,
                                            @ApiParam(value = "年级")@RequestParam(value = "gradeId",required = false)Integer gradeId,
                                            @ApiParam(value = "班级")@RequestParam(value = "classId",required = false)Integer classId,
-                                           @ApiParam(value = "科目")@RequestParam(value = "courseId",required = false)Integer courseId){
-        List<StudentExamVo> lists = studentExamService.ConditionQuery(account, name, majorId, gradeId, classId, courseId);
-        return CommonreturnType.create(lists);
-    }
-    @ApiOperation(value = "多表关联分页查询")
-    @GetMapping("/studentExam/{pageNum}/{pageSize}")
-    public CommonreturnType getExamRecordByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                             @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize) throws BusinessException {
-        PageInfo<StudentExamVo> pageInfo = studentExamService.getExamRecordByPage(pageNum,pageSize);
+                                           @ApiParam(value = "科目")@RequestParam(value = "courseId",required = false)Integer courseId,
+                                           @ApiParam(value = "学院")@RequestParam(value = "collegeId") Integer collegeId){
+
+        Page<StudentExamVo> page = studentExamService.getStudentExamByPage(pageNum,pageSize,account, name, majorId, gradeId, classId, courseId,collegeId);
+        PageInfo<StudentExamVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
 }

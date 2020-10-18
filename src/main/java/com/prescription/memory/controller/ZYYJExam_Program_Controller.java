@@ -1,5 +1,8 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjExamProgramPo;
 import com.prescription.memory.entity.vo.ExamProgramVo;
@@ -25,17 +28,20 @@ public class ZYYJExam_Program_Controller extends BaseController{
 
     @GetMapping("/exam_program")
     @ApiOperation(value = "条件查询考试方案数据")
-    public CommonreturnType ConditionQuery(@ApiParam("考试方案名") @RequestParam(value = "name",required = false) String name){
-        List<ExamProgramVo> all = service.ConditionQuery(name);
-        return CommonreturnType.create(all);
-    }
-    @GetMapping("/exam_program/pageNum/{pageNum}/pageSize/{pageSize}")
-    @ApiOperation(value = "分页查询")
-    public CommonreturnType selectByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                         @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize){
-        PageInfo<ExamProgramVo> pageInfo = service.selectByPage(pageNum,pageSize);
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                            @ApiParam("考试方案名") @RequestParam(value = "name",required = false) String name){
+        PageHelper.startPage(pageNum,pageSize);
+        Page<ExamProgramVo> page = service.getExamProgrammeByPage(name);
+        PageInfo<ExamProgramVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
+    @GetMapping("/exam_program/getall")
+    @ApiOperation(value = "查询考试方案所有的数据")
+    public CommonreturnType getAll(){
+        return CommonreturnType.create(service.getAll());
+    }
+
     @ApiOperation(value = "更新数据")
     @PutMapping("/exam_program")
     public CommonreturnType updateExamProgram(@RequestBody ZyyjExamProgramPo examProgramPo) throws BusinessException {
@@ -45,9 +51,9 @@ public class ZYYJExam_Program_Controller extends BaseController{
 
     @ApiOperation(value = "删除数据")
     @DeleteMapping("/exam_program")
-    public CommonreturnType deleteExamProgram(@ApiParam(value = "编号",required = true)
-                                        @RequestParam(value = "classId") Integer[] examProgramIds) throws BusinessException {
-        boolean result = service.deleteExamProgram(examProgramIds);
+    public CommonreturnType deleteExamProgram(@ApiParam(value = "编号")
+                                                  @RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result = service.deleteExamProgram(deleteArr.getArray());
         return CommonreturnType.create(result);
     }
 

@@ -13,10 +13,32 @@
         <result column="question_num" property="questionNum" />
         <result column="limit_time" property="limitTime" />
     </resultMap>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.ExamLevelVo">
+        <id column="level_id" property="levelId" />
+        <result column="program_id" property="programId" />
+        <result column="programName" property="programName"/>
+        <result column="name" property="name" />
+        <result column="total_question" property="totalQuestion" />
+        <result column="total_score" property="totalScore" />
+        <result column="pass_score" property="passScore" />
+        <result column="question_num" property="questionNum" />
+        <result column="limit_time" property="limitTime" />
+    </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         level_id, program_id, name, total_question, total_score, pass_score, question_num, limit_time
     </sql>
-
+    <select id="getExamLevelByPage" resultMap="MyResultMap">
+        SELECT
+        a.*,b.name AS programName
+        FROM
+        zyyj_exam_level a
+        LEFT JOIN
+        zyyj_exam_program b ON a.program_id = b.program_id
+        <where>
+            <if test="name != null and name != ''">
+                a.name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
 </mapper>

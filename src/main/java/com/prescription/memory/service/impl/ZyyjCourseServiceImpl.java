@@ -1,13 +1,11 @@
 package com.prescription.memory.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.github.pagehelper.PageHelper;
-import com.prescription.memory.entity.PageInfo;
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.po.ZyyjCoursePo;
 import com.prescription.memory.dao.ZyyjCourseDao;
+import com.prescription.memory.entity.vo.CourseTreeChild;
 import com.prescription.memory.entity.vo.CourseTreeVo;
 import com.prescription.memory.entity.vo.CourseVo;
-import com.prescription.memory.entity.vo.DeptRespNodeVo;
 import com.prescription.memory.error.BusinessException;
 import com.prescription.memory.error.EmBusinessError;
 import com.prescription.memory.service.ZyyjCourseService;
@@ -33,37 +31,20 @@ public class ZyyjCourseServiceImpl extends ServiceImpl<ZyyjCourseDao, ZyyjCourse
     @Autowired
     ZyyjCourseDao courseDao;
 
-    @Override
-    public List<CourseVo> ConditionQuery(String name) {
-        LambdaQueryWrapper<ZyyjCoursePo> queryWrapper = new LambdaQueryWrapper<>();
-        if (name != null && name != ""){
-            queryWrapper.eq(ZyyjCoursePo::getName,name);
-        }
-        List<ZyyjCoursePo> list = courseDao.selectList(queryWrapper);
-        List<CourseVo> result_list = new ArrayList<>();
-        for (ZyyjCoursePo coursePo: list){
-            CourseVo courseVo = new CourseVo();
-            ZyyjCoursePo parent = courseDao.selectById(coursePo.getParentId());
-            BeanUtils.copyProperties(coursePo,courseVo);
-            if (parent != null){
-                courseVo.setParentName(parent.getName());
-            }
-            result_list.add(courseVo);
-        }
-        return result_list;
 
-    }
     @Override
-    public PageInfo<CourseVo> getCourseByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<CourseVo> list = ConditionQuery(null);
-        PageInfo<CourseVo> pageInfo = new PageInfo<>(list);
-        return pageInfo;
+    public Page<CourseVo> getCourseByPage(String name) {
+        return courseDao.getCourseByPage(name);
+    }
+
+    @Override
+    public List<ZyyjCoursePo> getAll() {
+        return courseDao.selectList(null);
     }
 
     @Override
     public boolean insertCourse(ZyyjCoursePo coursePo) {
-        int count = courseDao.updateById(coursePo);
+        int count = courseDao.insert(coursePo);
         if (count != 1){
             return false;
         }
@@ -122,15 +103,23 @@ public class ZyyjCourseServiceImpl extends ServiceImpl<ZyyjCourseDao, ZyyjCourse
         }
         return list;
     }
-    private List<CourseTreeVo> getChild(Integer id, List<ZyyjCoursePo> all){
-        List<CourseTreeVo> list = new ArrayList<>();
+    private List<CourseTreeChild> getChild(Integer id, List<ZyyjCoursePo> all){
+        List<CourseTreeChild> list = new ArrayList<>();
+        int flag = 1;
         for (ZyyjCoursePo coursePo:all){
             if (coursePo.getParentId().equals(id)){
-                CourseTreeVo courseTreeVo = new CourseTreeVo();
-                BeanUtils.copyProperties(coursePo,courseTreeVo);
-                courseTreeVo.setChildren(getChild(coursePo.getCourseId(),all));
-                list.add(courseTreeVo);
+                CourseTreeChild courseTreeChild = new CourseTreeChild();
+                BeanUtils.copyProperties(coursePo,courseTreeChild);
+                //courseTreeVo.setChildren(getChild(coursePo.getCourseId(),all));
+                flag= 0;
+                list.add(courseTreeChild);
             }
+        }
+        if (flag==1){
+            CourseTreeChild courseTreeChild = new CourseTreeChild();
+            ZyyjCoursePo coursePo = courseDao.selectById(id);
+            BeanUtils.copyProperties(coursePo,courseTreeChild);
+            list.add(courseTreeChild);
         }
         return list;
     }

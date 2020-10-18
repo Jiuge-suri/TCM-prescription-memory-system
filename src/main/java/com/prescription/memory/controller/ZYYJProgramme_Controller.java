@@ -1,5 +1,8 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjCheckpointPo;
 import com.prescription.memory.entity.po.ZyyjProgrammePo;
@@ -26,16 +29,18 @@ public class ZYYJProgramme_Controller extends BaseController{
 
     @GetMapping("/programme")
     @ApiOperation(value = "条件查询练习方案数据")
-    public CommonreturnType ConditionQuery(@ApiParam("方案名") @RequestParam(value = "name",required = false) String name){
-        List<ProgrammeVo> all = service.ConditionQuery(name);
-        return CommonreturnType.create(all);
-    }
-    @GetMapping("/programme/pageNum/{pageNum}/pageSize/{pageSize}")
-    @ApiOperation(value = "分页查询")
-    public CommonreturnType selectByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                         @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize){
-        PageInfo<ProgrammeVo> pageInfo = service.selectByPage(pageNum, pageSize);
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                            @ApiParam("方案名") @RequestParam(value = "name",required = false) String name){
+        PageHelper.startPage(pageNum,pageSize);
+        Page<ProgrammeVo> page = service.getProgrammeByPage(name);
+        PageInfo<ProgrammeVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
+    }
+    @GetMapping("/programme/getall")
+    @ApiOperation(value = "查询所有的练习方案数据")
+    public CommonreturnType getAll(){
+        return CommonreturnType.create(service.getAll());
     }
     @ApiOperation(value = "更新数据")
     @PutMapping("/programme")
@@ -46,8 +51,8 @@ public class ZYYJProgramme_Controller extends BaseController{
 
     @ApiOperation(value = "删除数据")
     @DeleteMapping("/programme")
-    public CommonreturnType deleteProgramme(@ApiParam(value = "编号",required = true) @RequestParam(value = "checkpointId") Integer[] programmeIds) throws BusinessException {
-        boolean result = service.deleteProgrammeById(programmeIds);
+    public CommonreturnType deleteProgramme(@ApiParam(value = "编号") @RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result = service.deleteProgrammeById(deleteArr.getArray());
         return CommonreturnType.create(result);
     }
 

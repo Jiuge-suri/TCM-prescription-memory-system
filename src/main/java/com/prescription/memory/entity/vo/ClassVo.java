@@ -32,4 +32,13 @@ public class ClassVo implements Serializable {
     @ApiModelProperty(value = "专业编号")
     private Integer majorId;
 
+    @ApiModelProperty(value = "专业名字")
+    private String majorName;
+
+    @ApiModelProperty(value = "年纪编号")
+    private Integer gradeId;
+
+    @ApiModelProperty(value = "部门编号")
+    private Integer departmentId;
+
 }

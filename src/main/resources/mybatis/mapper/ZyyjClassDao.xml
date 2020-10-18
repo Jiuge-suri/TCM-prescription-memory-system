@@ -14,7 +14,36 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        class_id, grade_id, department_id, name, comment, major_id
+        a.class_id, a.grade_id, a.department_id, a.name, a.comment, a.major_id,
+        b.name as gradeName, c.name as majorName, d.name as departmentName
     </sql>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.ClassVo">
+        <id column="class_id" property="classId" />
+        <result column="grade_id" property="gradeId" />
+        <result column="gradeName" property="gradeName"/>
+        <result column="department_id" property="departmentId" />
+        <result column="departmentName" property="departmentName"/>
+        <result column="name" property="name" />
+        <result column="comment" property="comment" />
+        <result column="major_id" property="majorId" />
+        <result column="majorName" property="majorName"/>
+    </resultMap>
+    <select id="getClassByPage" resultMap="MyResultMap">
+        select
+            <include refid="Base_Column_List"></include>
+        from
+            zyyj_class a
+        left join
+            zyyj_grade b on a.grade_id = b.grade_id
+        left join
+            zyyj_major c on c.major_id = a.major_id
+        left join
+            zyyj_department d on a.department_id = d.department_id
+        <where>
+            1=1
+            <if test="gradeId != null and gradeId != 0">
+                and a.grade_id = #{gradeId}
+            </if>
+        </where>
+    </select>
 </mapper>

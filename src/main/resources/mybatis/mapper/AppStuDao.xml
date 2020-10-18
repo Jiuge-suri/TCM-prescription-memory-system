@@ -8,12 +8,14 @@
     </resultMap>
     <resultMap id="ReqScoreRank" type="com.prescription.memory.entity.stuVo.ReqScoreRank">
         <result column="rank" property="myrank"/>
+        <result column="account" property="account"/>
         <result column="score" property="myscore"/>
         <result column="name" property="myname"/>
     </resultMap>
     <resultMap id="RankInfo" type="com.prescription.memory.entity.stuVo.RankInfo">
         <result column="name" property="stuname"/>
         <result column="score" property="tscore"/>
+        <result column="account" property="account"/>
         <result column="rank" property="rank"/>
     </resultMap>
     <resultMap id="QuestionInfo" type="com.prescription.memory.entity.stuVo.Questions">
@@ -31,6 +33,7 @@
         <result column="collegeName" property="stuCollege"/>
         <result column="majorName" property="stuMajor"/>
         <result column="className" property="stuClass"/>
+        <result column="photo" property="photo"/>
     </resultMap>
     <resultMap id="ReqQuestionRecord" type="com.prescription.memory.entity.stuVo.ReqQuestionRecord">
         <id column="record_id" property="recordId" />
@@ -54,6 +57,13 @@
         <result column="score" property="score"/>
         <result column="create_time" property="createTime"/>
     </resultMap>
+    <resultMap id="IntegralRecord" type="com.prescription.memory.entity.stuVo.IntegralRecord">
+        <result column="create_time" property="createDate"/>
+        <result column="score" property="score"/>
+        <result column="activity" property="activity"/>
+        <result column="courseName" property="courseName"/>
+        <result column="name" property="name"/>
+    </resultMap>
     <select id="getPointData" parameterType="Integer" resultMap="PointRecord">
         SELECT
             max(practice_id) as practice_id,b.`name` As point_name,c.`name` As course_name
@@ -70,7 +80,7 @@
     </select>
     <select id="getStuScoreInfo" parameterType="Integer" resultMap="ReqScoreRank">
         SELECT
-            c.name, a.score, COUNT(b.score)+1 AS rank
+            c.name, a.score, COUNT(b.score)+1 AS rank, c.account
         FROM
             zyyj_stu_score a
         LEFT JOIN
@@ -82,7 +92,7 @@
     </select>
     <select id="getBeforeThirty" resultMap="RankInfo">
         SELECT
-            b.`name`,a.score, count(c.score)+1 AS 'rank'
+            b.`name`,a.score, count(c.score)+1 AS rank, b.account
         FROM
             zyyj_stu_score a
         LEFT JOIN
@@ -94,7 +104,7 @@
         ORDER BY
             rank ASC
         LIMIT
-            30
+        15
     </select>
     <!--根据学生id查询该学生所到达的最大关卡-->
     <select id="havePassed" resultType="Integer">
@@ -103,7 +113,7 @@
     <!--查询所有的关卡-->
 
     <!--根据关卡id和科目id查询练习题目信息-->
-    <select id="getPracticeQuestion" resultMap="QuestionInfo">
+    <select id="getPracitceQuestion" resultMap="QuestionInfo">
         SELECT
 	        question_id,question,answer1,answer2,answer3,answer4,rightanswer
         FROM
@@ -126,7 +136,7 @@
     <!--根据学生id查询学生个人信息-->
     <select id="getPersonInfo" parameterType="Integer" resultMap="ReqPersonInfo">
         SELECT
-            a.name AS stuName, a.account, b.name AS collegeName, c.name AS majorName, d.name AS className
+            a.name AS stuName, a.account, b.name AS collegeName, c.name AS majorName, d.name AS className, a.photo
         FROM
             zyyj_student a
         LEFT JOIN
@@ -169,6 +179,39 @@
         ORDER BY create_time DESC
         LIMIT 15
 
+    </select>
+    <select id="getIntegralPractice" resultMap="IntegralRecord">
+        SELECT
+        a.create_time,a.score,b.name as activity, c.name as courseName, "闯关" as name
+        FROM
+        zyyj_student_practice a
+        LEFT JOIN
+        zyyj_checkpoint b ON a.checkpoint_id = b.checkpoint_id
+        LEFT JOIN
+        zyyj_course c ON a.course_id = c.course_id
+
+        <where>
+            1=1
+            <if test="stuId != null and stuId != 0">
+                and a.stu_id = #{stuId}
+            </if>
+        </where>
+    </select>
+    <select id="getIntegralExam" resultMap="IntegralRecord">
+    	SELECT
+        a.create_time, a.score, b.name AS activity, c.name AS courseName, "考试" as `name`
+        FROM
+        zyyj_student_exam a
+        LEFT JOIN
+        zyyj_exam_level b ON a.level_id = b.level_id
+        LEFT JOIN
+        zyyj_course c ON c.course_id = a.course_id
+        <where>
+            1=1
+            <if test="stuId != null and stuId != 0">
+                and a.stu_id = #{stuId}
+            </if>
+        </where>
     </select>
 
 </mapper>

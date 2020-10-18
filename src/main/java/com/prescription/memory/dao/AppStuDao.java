@@ -1,5 +1,6 @@
 package com.prescription.memory.dao;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.stuVo.*;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
@@ -32,4 +33,7 @@ public interface AppStuDao {
     public List<ReqExamRecord> getExamRecord(@Param("stuId") Integer stuId);
     //查询练习记录
     public List<ReqPracticeRecord> getPracticeRecord(@Param("stuId") Integer stuId);
+    //查看积分记录
+    public Page<IntegralRecord> getIntegralPractice(@Param("stuId") Integer stuId);
+    public Page<IntegralRecord> getIntegralExam(@Param("stuId") Integer stuId);
 }

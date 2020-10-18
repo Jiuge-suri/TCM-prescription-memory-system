@@ -20,6 +20,9 @@ public class ExamLevelVo implements Serializable {
     @ApiModelProperty(value = "所属考试方案名称")
     private String programName;
 
+    @ApiModelProperty(value = "方案id")
+    private String programId;
+
     @ApiModelProperty(value = "考试等级名")
     private String name;
 

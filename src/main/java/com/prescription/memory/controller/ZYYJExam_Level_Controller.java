@@ -1,5 +1,8 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjExamLevelPo;
 import com.prescription.memory.entity.vo.ExamLevelVo;
@@ -25,17 +28,20 @@ public class ZYYJExam_Level_Controller extends BaseController {
 
     @GetMapping("/exam_level")
     @ApiOperation(value = "条件查询考试等级数据")
-    public CommonreturnType ConditionQuery(@ApiParam("考试等级名") @RequestParam(value = "name",required = false) String name){
-        List<ExamLevelVo> all = service.ConditionQuery(name);
-        return CommonreturnType.create(all);
-    }
-    @GetMapping("/exam_level/pageNum/{pageNum}/pageSize/{pageSize}")
-    @ApiOperation(value = "分页查询")
-    public CommonreturnType selectByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                         @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize){
-        PageInfo<ExamLevelVo> pageInfo = service.selectByPage(pageNum,pageSize);
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                            @ApiParam("考试等级名") @RequestParam(value = "name",required = false) String name){
+
+        Page<ExamLevelVo> page = service.getExamLevelByPage(pageNum,pageSize,name);
+        PageInfo<ExamLevelVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
+    @GetMapping("/exam_level/getall")
+    @ApiOperation(value = "查询考试等级所有数据")
+    public CommonreturnType getAll(){
+        return CommonreturnType.create(service.getAll());
+    }
+
     @ApiOperation(value = "更新数据")
     @PutMapping("/exam_level")
     public CommonreturnType updateExamLevel(@RequestBody ZyyjExamLevelPo examLevelPo) throws BusinessException {
@@ -45,9 +51,9 @@ public class ZYYJExam_Level_Controller extends BaseController {
 
     @ApiOperation(value = "删除数据")
     @DeleteMapping("/exam_level")
-    public CommonreturnType deleteExamLevel(@ApiParam(value = "编号",required = true)
-                                            @RequestParam(value = "classId") Integer[] examLevelIds) throws BusinessException {
-        boolean result = service.deleteExamLevel(examLevelIds);
+    public CommonreturnType deleteExamLevel(@ApiParam(value = "编号")
+                                                @RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result = service.deleteExamLevel(deleteArr.getArray());
         return CommonreturnType.create(result);
     }
 

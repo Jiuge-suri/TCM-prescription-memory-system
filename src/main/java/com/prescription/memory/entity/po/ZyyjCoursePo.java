@@ -46,5 +46,7 @@ public class ZyyjCoursePo implements Serializable {
     @ApiModelProperty(value = "如片url")
     private String photo;
 
-
+    public Integer getParentId(){
+        return parentId;
+    }
 }

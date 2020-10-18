@@ -1,5 +1,6 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.vo.StuScoreVo;
 import com.prescription.memory.entity.vo.StudentPracticeVo;
@@ -25,27 +26,17 @@ public class ZYYJStu_Score_Controller extends BaseController{
     @Autowired
     ZyyjStuScoreService service;
     @GetMapping("/stu_score")
-    @ApiOperation(value = "查询所有的数据")
-    public CommonreturnType getAll(){
-        List<StuScoreVo> all = service.getAll();
-        return CommonreturnType.create(all);
-    }
-    @GetMapping("/stu_score/name/{name}/account/{account}/major/{major}/grade/{grade}/class/{class}")
     @ApiOperation(value = "条件查询")
-    public CommonreturnType conditionQuery(@RequestParam(value = "name",required = false) String name,
+    public CommonreturnType conditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                            @RequestParam(value = "name",required = false) String name,
                                            @RequestParam(value = "account",required = false) String account,
                                            @RequestParam(value = "majorId",required=false)Integer majorId,
                                            @RequestParam(value = "gradeId",required=false)Integer gradeId,
-                                           @RequestParam(value = "classId",required=false)Integer classId){
-        System.out.println("测试是否进入函数");
-        List<StuScoreVo> list = service.conditionQuery(name, account, majorId, gradeId, classId);
-        return CommonreturnType.create(list);
-    }
-    @GetMapping("/stu_score/pageNum/{pageNum}/pageSize/{pageSize}")
-    @ApiOperation(value = "分页查询")
-    public CommonreturnType selectByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                         @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize){
-        PageInfo<StuScoreVo> pageInfo = service.selectByPage(pageNum, pageSize);
+                                           @RequestParam(value = "classId",required=false)Integer classId,
+                                           @ApiParam(value = "学院id",required = true) @RequestParam(value = "collegeId") Integer collegeId){
+        Page<StuScoreVo> page = service.getStuScoreRangeByPage(pageNum,pageSize,name, account, majorId, gradeId, classId,collegeId);
+        PageInfo<StuScoreVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
 }

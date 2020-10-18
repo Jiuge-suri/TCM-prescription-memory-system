@@ -1,13 +1,18 @@
 package com.prescription.memory.controller;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.prescription.memory.dao.ZyyjStudentDao;
+import com.prescription.memory.entity.po.ZyyjStudentPo;
 import com.prescription.memory.entity.po.ZyyjUserPo;
 import com.prescription.memory.error.BusinessException;
 import com.prescription.memory.error.EmBusinessError;
 import com.prescription.memory.jwt.JWTService;
+import com.prescription.memory.service.RedisService;
+import com.prescription.memory.service.ZyyjStudentService;
 import com.prescription.memory.service.ZyyjUserService;
 import com.prescription.memory.utils.CommonreturnType;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.apache.commons.lang3.StringUtils;
@@ -24,6 +29,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Yinjie on 2020/5/10
@@ -37,6 +43,12 @@ public class LoginController extends BaseController {
 
     @Autowired
     private ZyyjUserService zyyjUserService;
+
+    @Autowired
+    private ZyyjStudentService studentService;
+
+    @Autowired
+    private RedisService redisService;
 
     @ApiIgnore
     @GetMapping("/toLogin")
@@ -54,27 +66,50 @@ public class LoginController extends BaseController {
         if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
             throw new BusinessException(EmBusinessError.USER_Login_Fail);
         }
-        ZyyjUserPo userInfo = zyyjUserService.
-                getOne(Wrappers.<ZyyjUserPo>lambdaQuery().
-                        eq(ZyyjUserPo::getName, username).
-                        eq(ZyyjUserPo::getPassword, password).
-                        eq(ZyyjUserPo::getPostId,postId));
-        System.out.println(userInfo);
-        if (userInfo == null) {
-            throw new BusinessException(EmBusinessError.USER_Login_Fail);
-        }
-
-        Map<String, String> user = new HashMap<String, String>() {
-            {
-                put("name", userInfo.getName());
+        if (postId == 4){
+            ZyyjStudentPo userInfo = studentService.
+                    getOne(Wrappers.<ZyyjStudentPo>lambdaQuery().
+                            eq(ZyyjStudentPo::getAccount, username).
+                            eq(ZyyjStudentPo::getPassword, password));
+            if (userInfo == null) {
+                throw new BusinessException(EmBusinessError.USER_Login_Fail);
             }
-        };
+            Map<String, String> user = new HashMap<String, String>() {
+                {
+                    put("name", userInfo.getName());
+                    put("stuId",userInfo.getStuId().toString());
+                }
+            };
+            String token = jwtService.createToken(user, 1);
+            redisService.set(userInfo.getStuId().toString(),token,60,TimeUnit.MINUTES);
+            redisService.set(token,userInfo.getStuId(),60, TimeUnit.MINUTES);
+            ServletContext context = request.getServletContext();
+            context.setAttribute(token, token);
+            return CommonreturnType.create(token);
 
-        String token = jwtService.createToken(user, 1);
-        ServletContext context = request.getServletContext();
-        context.setAttribute(token, token);
-        System.out.println("token为："+token);
-        return CommonreturnType.create(token);
+        }else{
+            ZyyjUserPo userInfo = zyyjUserService.
+                    getOne(Wrappers.<ZyyjUserPo>lambdaQuery().
+                            eq(ZyyjUserPo::getName, username).
+                            eq(ZyyjUserPo::getPassword, password).
+                            eq(ZyyjUserPo::getPostId,postId));
+            if (userInfo == null) {
+                throw new BusinessException(EmBusinessError.USER_Login_Fail);
+            }
+            Map<String, String> user = new HashMap<String, String>() {
+                {
+                    put("name", userInfo.getRealname());
+                    put("userId",userInfo.getUserId().toString());
+                    put("collegeId",userInfo.getCollegeId().toString());
+                }
+            };
+            String token = jwtService.createToken(user, 1);
+            redisService.set(userInfo.getUserId().toString(),token,60,TimeUnit.MINUTES);
+            redisService.set(token,userInfo.getUserId(),60, TimeUnit.MINUTES);
+            ServletContext context = request.getServletContext();
+            context.setAttribute(token, token);
+            return CommonreturnType.create(token);
+        }
     }
     @ApiOperation("退出登录")
     @GetMapping("/logout")

@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * 〈拦截器配置〉
+ * 拦截器策略
  *
  * @author Yinjie
  * @create 2020/5/11

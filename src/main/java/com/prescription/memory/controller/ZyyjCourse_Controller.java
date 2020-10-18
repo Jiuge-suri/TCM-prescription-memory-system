@@ -1,5 +1,8 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjCoursePo;
 import com.prescription.memory.entity.vo.CourseTreeVo;
@@ -28,17 +31,21 @@ public class ZyyjCourse_Controller extends BaseController{
 
     @GetMapping("/course")
     @ApiOperation(value = "条件查询科目信息")
-    public CommonreturnType ConditionQuery(@ApiParam(value = "科目名字")@RequestParam(value = "name",required = false) String name){
-        List<CourseVo> list = courseService.ConditionQuery(name);
-        return CommonreturnType.create(list);
-    }
-    @GetMapping("/course/pageNum/{pageNum}/pageSize/{pageSize}")
-    @ApiOperation(value = "分页查询")
-    public CommonreturnType selectByPage(@PathVariable(value = "pageNum") Integer pageNum,
-                                         @PathVariable(value = "pageSize") Integer pageSize){
-        PageInfo<CourseVo> pageInfo = courseService.getCourseByPage(pageNum,pageSize);
+    public CommonreturnType ConditionQuery(@RequestParam(value = "pageNum") Integer pageNum,
+                                           @RequestParam(value = "pageSize") Integer pageSize,
+                                            @ApiParam(value = "科目名字")@RequestParam(value = "name",required = false) String name){
+        PageHelper.startPage(pageNum,pageSize);
+        Page<CourseVo> page = courseService.getCourseByPage(name);
+        PageInfo<CourseVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
+    @GetMapping("/course/getall")
+    @ApiOperation(value = "查询科目所有信息")
+    public CommonreturnType getAll(){
+        return CommonreturnType.create(courseService.getAll());
+    }
+
+
     @GetMapping("/course/tree")
     @ApiOperation(value = "获取科目树")
     public CommonreturnType getTree(){
@@ -53,8 +60,8 @@ public class ZyyjCourse_Controller extends BaseController{
     }
     @DeleteMapping("/course")
     @ApiOperation(value = "删除科目")
-    public CommonreturnType deleteDept(@RequestParam Integer[] courseIds) throws BusinessException {
-        boolean result =  courseService.deleteCourse(courseIds);
+    public CommonreturnType deleteDept(@RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result =  courseService.deleteCourse(deleteArr.getArray());
         return CommonreturnType.create(result);
     }
     @PutMapping("/course")

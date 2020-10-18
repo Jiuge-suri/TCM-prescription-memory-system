@@ -10,10 +10,28 @@
         <result column="score" property="score" />
         <result column="comment" property="comment" />
     </resultMap>
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.ProgrammeVo">
+        <id column="programme_id" property="programmeId" />
+        <result column="name" property="name" />
+        <result column="createdate" property="createdate" />
+        <result column="score" property="score" />
+        <result column="comment" property="comment" />
+    </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         programme_id, name, createdate, score, comment
     </sql>
-
+    <select id="getProgrammeByPage" resultMap="MyResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from
+        zyyj_programme
+        <where>
+            1=1
+            <if test="name != null and name != ''">
+                and name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
 </mapper>

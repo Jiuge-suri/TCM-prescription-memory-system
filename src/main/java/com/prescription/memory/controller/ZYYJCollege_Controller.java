@@ -1,8 +1,11 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.dao.ZyyjCollegeDao;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjCollegePo;
-import com.prescription.memory.entity.po.ZyyjDepartmentPo;
 import com.prescription.memory.entity.vo.CollegeVo;
 import com.prescription.memory.error.BusinessException;
 import com.prescription.memory.service.ZyyjCollegeService;
@@ -21,19 +24,21 @@ import java.util.List;
 public class ZYYJCollege_Controller extends BaseController {
     @Autowired
     private ZyyjCollegeService collegeService;
-
     @ApiOperation(value = "条件查询学院数据")
     @GetMapping("/college")
-    public CommonreturnType ConditionQuery(@ApiParam(value = "学院id") @RequestParam(value = "collegeId",required = false) Integer collegeId) {
-        List<CollegeVo> list = collegeService.ConditionQuery(collegeId);
-        return CommonreturnType.create(list);
-    }
-    @ApiOperation(value = "多表关联分页查询")
-    @GetMapping("/college/{pageNum}/{pageSize}")
-    public CommonreturnType getCollegeByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                             @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize){
-        PageInfo<CollegeVo> pageInfo = collegeService.getCollegeByPage(pageNum,pageSize);
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                           @ApiParam(value = "学院id") @RequestParam(value = "collegeId",required = false)Integer collegeId) {
+        PageHelper.startPage(pageNum,pageSize);
+        Page<CollegeVo> page = collegeService.getCollegeByPage(collegeId);
+        PageInfo<CollegeVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
+    }
+    @ApiOperation(value = "获得所有的学院数据")
+    @GetMapping("/college/getall")
+    public CommonreturnType getAll(){
+        List<ZyyjCollegePo> all = collegeService.getAll();
+        return CommonreturnType.create(all);
     }
     @ApiOperation(value = "更新学院的数据")
     @PutMapping("/college")
@@ -44,13 +49,11 @@ public class ZYYJCollege_Controller extends BaseController {
 
     @ApiOperation(value = "批量删除学院的数据")
     @DeleteMapping("/college")
-    public CommonreturnType deleteCollege(@ApiParam(value = "学院编号数组",required = true)
-                                              @RequestParam(value = "collegeIds") Integer[] collegeIds) throws BusinessException {
-
-        boolean result = collegeService.deleteCollege(collegeIds);
+    public CommonreturnType deleteCollege(@ApiParam(value = "学院编号数组")
+                                              @RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result = collegeService.deleteCollege(deleteArr.getArray());
         return CommonreturnType.create(result);
     }
-
     @ApiOperation(value = "插入新的学院数据")
     @PostMapping("/college")
     public CommonreturnType insertCollege(@RequestBody ZyyjCollegePo collegePo) throws BusinessException {

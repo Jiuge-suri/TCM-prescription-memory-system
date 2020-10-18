@@ -1,5 +1,6 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjStudentPo;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -17,9 +18,7 @@ import java.util.List;
  * @since 2020-05-12
  */
 public interface ZyyjStudentService extends IService<ZyyjStudentPo> {
-    List<StudentVo> ConditionQuery(Integer majorId, Integer gradeId, Integer classId, Integer sex, String account, String name);
-
-    PageInfo<StudentVo> getStudentByPage(Integer pageNum, Integer pageSize) throws BusinessException;
+    Page<StudentVo> getStudentByPage(Integer majorId, Integer gradeId, Integer classId, Integer sex, String account, String name, Integer collegeId);
 
     boolean insertStudent(ZyyjStudentPo stuPo);
 

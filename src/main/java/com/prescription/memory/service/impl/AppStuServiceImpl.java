@@ -1,11 +1,12 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.*;
 import com.prescription.memory.entity.po.*;
 import com.prescription.memory.entity.stuVo.*;
 import com.prescription.memory.service.AppStuService;
-import io.swagger.models.auth.In;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,9 @@ public class AppStuServiceImpl implements AppStuService {
     ZyyjQuestionRecordDao questionRecordDao;
     @Autowired
     ZyyjStudentExamDao studentExamDao;
+    @Autowired
+    ZyyjStudentDao studentDao;
+
     @Override
     public ReqScoreRank getScoreManageRank(Integer stuId) {
         ReqScoreRank stuScoreInfo = dao.getStuScoreInfo(stuId);
@@ -125,10 +129,23 @@ public class AppStuServiceImpl implements AppStuService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean saveStudentPractice(ZyyjStudentPracticePo studentPracticePo) {
         int count = studentPracticeDao.insert(studentPracticePo);
-        if (count != 0){
+        if (count != 1){
             return false;
+        }
+        ZyyjStuScorePo stuScorePo = stuScoreDao.selectOne(new LambdaQueryWrapper<ZyyjStuScorePo>().eq(ZyyjStuScorePo::getScoreId,studentPracticePo.getStuId()));
+        if (stuScorePo != null && studentPracticePo.getScore() >= 60){
+            int score = stuScorePo.getScore()+studentPracticePo.getScore() - 60;
+            stuScorePo.setScore(score);
+            stuScoreDao.updateById(stuScorePo);
+        }else if (studentPracticePo.getScore() >= 60 && stuScorePo == null){
+            ZyyjStuScorePo stuScorePo1 = new ZyyjStuScorePo();
+            BeanUtils.copyProperties(studentPracticePo,stuScorePo1);
+            stuScorePo1.setScore(stuScorePo1.getScore() - 60);
+            System.out.println(stuScorePo1);
+            stuScoreDao.insert(stuScorePo1);
         }
         return true;
     }
@@ -168,14 +185,28 @@ public class AppStuServiceImpl implements AppStuService {
                 .eq(ZyyjStudentExamPo::getCourseId, courseId)
                 .eq(ZyyjStudentExamPo::getStuId, stuId));
 
+
         return studentExamPo;
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean saveExamRecord(ZyyjStudentExamPo studentExamPo) {
         int count = studentExamDao.insert(studentExamPo);
         if (count != 1){
             return false;
+        }
+        ZyyjStuScorePo stuScorePo = stuScoreDao.selectOne(new LambdaQueryWrapper<ZyyjStuScorePo>().eq(ZyyjStuScorePo::getStuId,studentExamPo.getStuId()));
+        if (stuScorePo != null && studentExamPo.getScore() >= 60){
+            int score = stuScorePo.getScore()+studentExamPo.getScore()-60;
+            stuScorePo.setScore(score);
+            stuScoreDao.updateById(stuScorePo);
+        }else if (stuScorePo == null && studentExamPo.getScore() >= 60){
+            ZyyjStuScorePo stuScorePo1 = new ZyyjStuScorePo();
+            BeanUtils.copyProperties(studentExamPo,stuScorePo1);
+            stuScorePo1.setScore(stuScorePo1.getScore()-60);
+            System.out.println(stuScorePo1);
+            stuScoreDao.insert(stuScorePo1);
         }
         return true;
     }
@@ -190,6 +221,36 @@ public class AppStuServiceImpl implements AppStuService {
     public List<ReqExamRecord> getExamRecord(Integer stuId) {
         List<ReqExamRecord> examRecord = dao.getExamRecord(stuId);
         return examRecord;
+    }
+
+    @Override
+    public Page<IntegralRecord> getIntegralRecode(Integer pageNum, Integer pageSize, Integer stuId) {
+        PageHelper.startPage(pageNum,pageSize);
+        Page<IntegralRecord> list = dao.getIntegralPractice(stuId);
+        int total = (int)list.getTotal();
+        if (list.getTotal() < pageSize){
+            //获得考试的记录
+            PageHelper.startPage(pageNum,(int)(pageSize - list.getTotal()));
+            Page<IntegralRecord> integralExam = dao.getIntegralExam(stuId);
+            for(IntegralRecord integralRecord:integralExam){
+                list.add(integralRecord);
+            }
+            total = (int)list.getTotal() + (int)integralExam.getTotal();
+        }
+        list.setTotal(total);
+        System.out.println(list);
+        return list;
+    }
+
+    @Override
+    public boolean changePhoto(Integer stuId, String photo) {
+        ZyyjStudentPo studentPo = studentDao.selectById(stuId);
+        studentPo.setPhoto(photo);
+        int count = studentDao.updateById(studentPo);
+        if (count != 1){
+            return false;
+        }
+        return true;
     }
 
     //获得当前积分

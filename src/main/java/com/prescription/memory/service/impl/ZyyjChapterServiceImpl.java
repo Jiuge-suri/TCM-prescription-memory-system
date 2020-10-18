@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.ZyyjCourseDao;
 import com.prescription.memory.entity.PageInfo;
@@ -35,34 +36,20 @@ public class ZyyjChapterServiceImpl extends ServiceImpl<ZyyjChapterDao, ZyyjChap
     @Autowired
     ZyyjCourseDao courseDao;
 
+
     @Override
-    public List<ChapterVo> ConditionQuery(Integer courseId, String name) {
+    public Page<ChapterVo> getChapterByPage(Integer courseId, String name) {
+        return chapterDao.getChapterByPage(courseId,name);
+    }
+
+    @Override
+    public List<ZyyjChapterPo> getAll(Integer courseId) {
         LambdaQueryWrapper<ZyyjChapterPo> queryWrapper = new LambdaQueryWrapper<>();
         if (courseId != null && courseId != 0){
             queryWrapper.eq(ZyyjChapterPo::getCourseId,courseId);
         }
-        if (name != null && name != ""){
-            queryWrapper.like(ZyyjChapterPo::getName,name);
-        }
-        List<ZyyjChapterPo> chapterPos = chapterDao.selectList(queryWrapper);
-        List<ChapterVo> result_list = new ArrayList<>();
-        for (ZyyjChapterPo chapterPo:chapterPos){
-            ChapterVo chapterVo = new ChapterVo();
-            ZyyjCoursePo coursePo = courseDao.selectById(chapterPo.getCourseId());
-            BeanUtils.copyProperties(chapterPo,chapterVo);
-            if (coursePo != null){
-                chapterVo.setCourseName(coursePo.getName());
-            }
-            result_list.add(chapterVo);
-        }
-        return result_list;
-    }
-    @Override
-    public PageInfo<ChapterVo> getChapterByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<ChapterVo> all = ConditionQuery(null,null);
-        PageInfo<ChapterVo> pageInfo = new PageInfo<>(all);
-        return pageInfo;
+        List<ZyyjChapterPo> list = chapterDao.selectList(queryWrapper);
+        return list;
     }
 
     @Override

@@ -12,7 +12,30 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        major_id, college_id, name, comment
+        a.major_id, a.college_id, a.name, a.comment,b.name as collegeName
     </sql>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.MajorVo">
+        <id column="major_id" property="majorId" />
+        <result column="collegeName" property="collegeName"/>
+        <result column="college_id" property="collegeId" />
+        <result column="name" property="name" />
+        <result column="comment" property="comment" />
+    </resultMap>
+    <select id="getMajorByPage" resultMap="MyResultMap">
+        SELECT
+            <include refid="Base_Column_List"></include>
+        FROM
+            zyyj_major a
+        LEFT JOIN
+            zyyj_college b ON a.college_id = b.college_id
+        <where>
+            1 = 1
+            <if test="collegeId != null and collegeId != 0">
+                and a.college_id = #{collegeId}
+            </if>
+            <if test="majorId != null and majorId != 0">
+                and a.major_id = #{majorId}
+            </if>
+        </where>
+    </select>
 </mapper>

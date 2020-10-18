@@ -53,4 +53,22 @@ public class QuestionVo implements Serializable {
 
     @ApiModelProperty(value = "章节名称")
     private String chapterName;
+
+    @ApiModelProperty(value = "角色名称")
+    private Integer levelId;
+
+    @ApiModelProperty(value = "知识点编号")
+    private Integer knowId;
+
+    @ApiModelProperty(value = "备注")
+    private Integer questionTypeId;
+
+    @ApiModelProperty(value = "科目编号")
+    private Integer courseId;
+
+    @ApiModelProperty(value = "章节编号")
+    private Integer chapterId;
+
+    @ApiModelProperty(value = "父节点")
+    private Integer parentId;
 }

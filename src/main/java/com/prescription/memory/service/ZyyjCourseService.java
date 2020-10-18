@@ -1,5 +1,6 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjCoursePo;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -18,9 +19,9 @@ import java.util.List;
  * @since 2020-05-12
  */
 public interface ZyyjCourseService extends IService<ZyyjCoursePo> {
-    List<CourseVo> ConditionQuery(String name);
+    Page<CourseVo> getCourseByPage(String name);
 
-    PageInfo<CourseVo> getCourseByPage(Integer pageNum, Integer pageSize);
+    List<ZyyjCoursePo> getAll();
 
     boolean insertCourse(ZyyjCoursePo coursePo);
 

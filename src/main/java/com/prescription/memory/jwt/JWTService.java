@@ -39,7 +39,7 @@ public class JWTService {
     private String issuer = "Yinjie";//发布者
     private String subject = "userLoginToken";//主题
     private String audience = "commonUser";//签名的观众 也可以理解谁接受签名的
-    private Map<String, String> claims;//私有负载
+    private Map<String, Object> claims;//私有负载
 
     /**
      * 创建 hour小时后过期的Token

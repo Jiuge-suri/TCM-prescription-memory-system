@@ -1,5 +1,8 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjUserPo;
 import com.prescription.memory.entity.vo.UserVo;
@@ -22,20 +25,17 @@ import java.util.List;
 @Api(tags = "管理人员--用户管理--用户管理")
 public class ZYYJUser_Controller extends BaseController{
     @Autowired
-    ZyyjUserService service = new ZyyjUserServiceImpl();
+    ZyyjUserService service;
 
     @GetMapping("/user")
     @ApiOperation(value = "多条件查询")
-    public CommonreturnType ConditionQuery(@ApiParam(value = "用户名字",required = false) @RequestParam(value = "name",required = false) String name,
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                    @ApiParam(value = "用户名字",required = false) @RequestParam(value = "name",required = false) String name,
                                    @ApiParam(value = "部门id",required = false)@RequestParam(value = "departmentId",required = false) Integer departmentId){
-        List<UserVo> list = service.ConditionQuery(name,departmentId);
-        return CommonreturnType.create(list);
-    }
-    @GetMapping("/user/{pageNum}/{pageSize}")
-    @ApiOperation(value = "分页查询")
-    public CommonreturnType selectByPage(@PathVariable(value = "pageNum") Integer pageNum,
-                                         @PathVariable(value = "pageSize") Integer pageSize){
-        PageInfo<UserVo> pageInfo = service.selectByPage(pageNum, pageSize);
+        PageHelper.startPage(pageNum, pageSize);
+        Page<UserVo> page = service.getUserByPage(name,departmentId);
+        PageInfo<UserVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
     @PutMapping("/user")
@@ -46,9 +46,11 @@ public class ZYYJUser_Controller extends BaseController{
     }
     @DeleteMapping("/user")
     @ApiOperation(value = "删除用户")
-    public CommonreturnType deleteUser(@ApiParam(value = "用户id",required = true)
-                                       @RequestParam(value = "userId") Integer[] userIds) throws BusinessException {
-        boolean result = service.deleteUser(userIds);
+    public CommonreturnType deleteUser(@ApiParam(value = "用户id")
+                                       @RequestBody DeleteArr deleteArr) throws BusinessException {
+
+        boolean result = service.deleteUser(deleteArr.getArray());
+
         return CommonreturnType.create(result);
     }
     @PostMapping("/user")

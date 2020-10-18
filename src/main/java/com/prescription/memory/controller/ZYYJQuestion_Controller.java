@@ -1,5 +1,8 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjQuestionPo;
 import com.prescription.memory.entity.vo.QuestionVo;
@@ -25,19 +28,15 @@ public class ZYYJQuestion_Controller extends BaseController{
 
     @ApiOperation(value = "查询题库的所有数据")
     @GetMapping("/question")
-    public CommonreturnType ConditionQuery(@ApiParam(value = "科目id")@RequestParam(value = "courseId",required = false) Integer courseId,
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize") Integer pageSize,
+                                            @ApiParam(value = "科目id")@RequestParam(value = "courseId",required = false) Integer courseId,
                                            @ApiParam(value = "章节id")@RequestParam(value = "chapterId",required = false) Integer chapterId,
                                            @ApiParam(value = "知识点id")@RequestParam(value = "knowId",required = false) Integer knowId,
                                            @ApiParam(value = "难度id")@RequestParam(value = "levelId",required = false) Integer levelId) {
-        List<QuestionVo> list = questionService.ConditionQuery(courseId,chapterId,knowId,levelId);
-        return CommonreturnType.create(list);
-    }
-
-    @ApiOperation(value = "多表关联分页查询")
-    @GetMapping("/question/pageNum/{pageNum}/pageSize/{pageSize}")
-    public CommonreturnType getQuestionByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                              @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize){
-        PageInfo<QuestionVo> pageInfo = questionService.getQuestionByPage(pageNum,pageSize);
+        PageHelper.startPage(pageNum,pageSize);
+        Page<QuestionVo> page = questionService.getQuestionByPage(courseId,chapterId,knowId,levelId);
+        PageInfo<QuestionVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
     @ApiOperation(value = "更新题库的数据")
@@ -49,8 +48,8 @@ public class ZYYJQuestion_Controller extends BaseController{
 
     @ApiOperation(value = "删除题库的数据")
     @DeleteMapping("/question")
-    public CommonreturnType deleteQuestion(@ApiParam(value = "题库编号",required = true) @RequestParam(value = "questionIds") Integer[] questionIds) throws BusinessException {
-        boolean result = questionService.deleteQuestion(questionIds);
+    public CommonreturnType deleteQuestion(@ApiParam(value = "题库编号") @RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result = questionService.deleteQuestion(deleteArr.getArray());
         return CommonreturnType.create(result);
     }
 

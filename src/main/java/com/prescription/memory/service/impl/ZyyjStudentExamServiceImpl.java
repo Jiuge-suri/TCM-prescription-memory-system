@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.*;
 import com.prescription.memory.entity.PageInfo;
@@ -29,56 +30,17 @@ public class ZyyjStudentExamServiceImpl extends ServiceImpl<ZyyjStudentExamDao, 
     ZyyjStudentExamDao studentExamDao;
     @Autowired
     ZyyjStudentDao studentDao;
-    @Autowired
-    ZyyjCourseDao courseDao;
-    @Autowired
-    ZyyjExamLevelDao examLevelDao;
-    @Autowired
-    ZyyjProgrammeDao programmeDao;
 
     @Override
-    public List<StudentExamVo> ConditionQuery(String account, String name, Integer majorId, Integer gradeId, Integer classId, Integer courseId) {
+    public Page<StudentExamVo> getStudentExamByPage(Integer pageNum, Integer pageSize, String account,
+                                                    String name, Integer majorId, Integer gradeId, Integer classId, Integer courseId, Integer collegeId) {
         List<ZyyjStudentPo> students = studentDao.ConditionQuery(account, name, majorId, gradeId, classId);
         System.out.println(students);
-        List<StudentExamVo> result_list = new ArrayList<>();
-        List<ZyyjStudentExamPo> list = new ArrayList<>();
-        for (ZyyjStudentPo studentPo: students){
-            LambdaQueryWrapper<ZyyjStudentExamPo> queryWrapper = new LambdaQueryWrapper<>();
-            queryWrapper.eq(ZyyjStudentExamPo::getStuId,studentPo.getStuId());
-            if (courseId != null && courseId != 0){
-                queryWrapper.eq(ZyyjStudentExamPo::getCourseId,courseId);
-            }
-            List<ZyyjStudentExamPo> examPos = studentExamDao.selectList(queryWrapper);
-            for (ZyyjStudentExamPo examPo: examPos){
-                StudentExamVo examVo = new StudentExamVo();
-                BeanUtils.copyProperties(examPo,examVo);
-                ZyyjCoursePo coursePo = courseDao.selectById(examPo.getCourseId());
-                ZyyjExamLevelPo levelPo = examLevelDao.selectById(examPo.getLevelId());
-                ZyyjProgrammePo programmePo = programmeDao.selectById(examPo.getProgrammeId());
-                if (coursePo != null) {
-                    examVo.setCourseName(coursePo.getName());
-                }
-                if (levelPo != null){
-                    examVo.setLevelName(levelPo.getName());
-                }
-                if (programmePo != null){
-                    examVo.setProgrammeName(programmePo.getName());
-                }
-                examVo.setStuName(studentPo.getName());
-                if (examVo != null){
-                    result_list.add(examVo);
-                }
-            }
+        Integer[] stuIdArr = new Integer[1000];
+        for (int i = 0; i < students.size(); i++){
+            stuIdArr[i] = students.get(i).getStuId();
         }
-        return result_list;
-    }
-
-    @Override
-    public PageInfo<StudentExamVo> getExamRecordByPage(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum,pageSize);
-        List<StudentExamVo> examVos = ConditionQuery(null, null, null, null, null, null);
-        PageInfo<StudentExamVo> pageInfo = new PageInfo<>(examVos);
-        return pageInfo;
+        return studentExamDao.getStudentExamByPage(stuIdArr);
     }
-
 }

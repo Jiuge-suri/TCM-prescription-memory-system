@@ -20,6 +20,7 @@ public class StudentVo implements Serializable {
     @ApiModelProperty(value = "班级名称")
     private String className;
 
+
     @ApiModelProperty(value = "学生名称")
     private String name;
 
@@ -58,4 +59,19 @@ public class StudentVo implements Serializable {
 
     @ApiModelProperty(value = "大学")
     private String universityName;
+
+    @ApiModelProperty(value = "班级编号")
+    private Integer classId;
+
+    @ApiModelProperty(value = "年纪编号")
+    private Integer gradeId;
+
+    @ApiModelProperty(value = "专业编号")
+    private Integer majorId;
+
+    @ApiModelProperty(value = "学院编号")
+    private Integer collegeId;
+
+    @ApiModelProperty(value = "大学编号")
+    private Integer universityId;
 }

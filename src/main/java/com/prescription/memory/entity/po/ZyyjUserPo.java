@@ -61,5 +61,6 @@ public class ZyyjUserPo implements Serializable {
     @ApiModelProperty(value = "照片url")
     private String photo;
 
-
+    @ApiModelProperty(value = "学院id")
+    private Integer collegeId;
 }

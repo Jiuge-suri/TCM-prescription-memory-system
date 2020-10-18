@@ -8,10 +8,30 @@
         <result column="university_id" property="universityId" />
         <result column="name" property="name" />
         <result column="comment" property="comment" />
+        <result column="university_id" property="universityId"/>
     </resultMap>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.CollegeVo">
+        <id column="college_id" property="collegeId" />
+        <result column="university_id" property="universityId" />
+        <result column="collegeName" property="name" />
+        <result column="comment" property="comment" />
+        <result column="universityName" property="universityName"/>
+    </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         college_id, university_id, name, comment
     </sql>
+    <select id="getCollegeByPage" resultMap="MyResultMap">
+        SELECT
+	        college_id, a.university_id, a.name AS collegeName, a.comment,b.name AS universityName
+        FROM
+	        zyyj_college a
+        LEFT JOIN
+	        zyyj_university b ON a.university_id = b.university_id
+        <where>
+            <if test="collegeId != 0 and collegeId != null">
+                a.college_id = #{collegeId}
+            </if>
+        </where>
+    </select>
 </mapper>

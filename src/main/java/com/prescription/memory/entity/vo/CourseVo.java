@@ -17,6 +17,9 @@ public class CourseVo implements Serializable {
     @ApiModelProperty(value = "科目编号")
     private Integer courseId;
 
+    @ApiModelProperty(value = "父节点")
+    private Integer parentId;
+
     @ApiModelProperty(value = "上级科目编号")
     private String parentName;
 
@@ -29,6 +32,6 @@ public class CourseVo implements Serializable {
     @ApiModelProperty(value = "说明")
     private String introduction;
 
-    @ApiModelProperty(value = "如片url")
+    @ApiModelProperty(value = "图片url")
     private String photo;
 }

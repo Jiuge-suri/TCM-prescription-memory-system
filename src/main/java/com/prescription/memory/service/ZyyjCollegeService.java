@@ -1,12 +1,11 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjCollegePo;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.prescription.memory.entity.po.ZyyjDepartmentPo;
 import com.prescription.memory.entity.vo.CollegeVo;
 import com.prescription.memory.error.BusinessException;
-import io.swagger.models.auth.In;
 
 import java.util.List;
 
@@ -20,9 +19,9 @@ import java.util.List;
  */
 public interface ZyyjCollegeService extends IService<ZyyjCollegePo> {
 
-    List<CollegeVo> ConditionQuery(Integer collegeId);
+    Page<CollegeVo> getCollegeByPage(Integer collegeId);
 
-    PageInfo<CollegeVo> getCollegeByPage(Integer pageNum, Integer pageSize);
+    List<ZyyjCollegePo> getAll();
 
     boolean insertCollege(ZyyjCollegePo collegePo) throws BusinessException;
 

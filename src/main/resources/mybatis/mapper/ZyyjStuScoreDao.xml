@@ -17,5 +17,39 @@
     <sql id="Base_Column_List">
         score_id, stu_id, programme_id, score, comment, create_date, type
     </sql>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.StuScoreVo">
+        <id column="score_id" property="scoreId" />
+        <result column="stuName" property="studentName" />
+        <result column="programmeName" property="programmeName" />
+        <result column="rank" property="rank"/>
+        <result column="score" property="score" />
+        <result column="comment" property="comment" />
+        <result column="create_date" property="createDate" />
+        <result column="type" property="type" />
+    </resultMap>
+    <select id="getStuScoreRangeByPage" resultMap="MyResultMap">
+        SELECT
+        a.score_id, b.name as stuName, c.name as programmeName,
+        a.score, a.comment, a.create_date, a.type,count(d.score)+1 AS 'rank'
+        FROM
+        zyyj_stu_score a
+        LEFT JOIN
+        zyyj_student b ON b.stu_id = a.stu_id
+        LEFT JOIN
+        zyyj_programme c ON c.programme_id = a.programme_id
+        LEFT JOIN
+        zyyj_stu_score d ON a.score &lt; d.score
+        <where>
+            1 =1
+            <if test="stuIdArr != null">
+                and a.stu_id in
+                <foreach collection="stuIdArr" open="(" close=")" separator="," item="item">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+        GROUP BY
+        a.score_id
+        ORDER BY a.score DESC
+    </select>
 </mapper>

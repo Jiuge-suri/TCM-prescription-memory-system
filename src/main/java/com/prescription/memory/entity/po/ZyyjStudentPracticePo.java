@@ -54,7 +54,7 @@ public class ZyyjStudentPracticePo implements Serializable {
     private Integer programmeId;
 
     @ApiModelProperty(value = "科目编号")
-    private String courseId;
+    private Integer courseId;
 
 
 }

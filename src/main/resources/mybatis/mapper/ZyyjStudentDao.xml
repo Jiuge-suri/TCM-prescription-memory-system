@@ -20,10 +20,37 @@
         <result column="college_id" property="collegeId" />
         <result column="university_id" property="universityId" />
     </resultMap>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.StudentVo">
+        <id column="stu_id" property="stuId" />
+        <result column="class_id" property="classId" />
+        <result column="className" property="className"/>
+        <result column="name" property="name" />
+        <result column="password" property="password" />
+        <result column="gender" property="gender" />
+        <result column="is_now" property="isNow" />
+        <result column="email" property="email" />
+        <result column="phone" property="phone" />
+        <result column="account" property="account" />
+        <result column="photo" property="photo" />
+        <result column="status" property="status" />
+        <result column="grade_id" property="gradeId" />
+        <result column="gradeName" property="gradeName"/>
+        <result column="major_id" property="majorId" />
+        <result column="majorName" property="majorName"/>
+        <result column="college_id" property="collegeId" />
+        <result column="collegeName" property="collegeName"/>
+        <result column="university_id" property="universityId" />
+        <result column="universityName" property="universityName"/>
+    </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         stu_id, class_id, name, password, gender, is_now, email, phone, account, photo, status, grade_id, major_id, college_id, university_id
+    </sql>
+    <sql id="My_Column_List">
+        a.stu_id, a.class_id, a.name, a.password, a.gender, a.is_now, a.email,
+        a.phone, a.account, a.photo, a.status, a.grade_id, a.major_id, a.college_id, a.university_id,
+        b.name as className,c.name as gradeName, d.name as majorName, e.name as collegeName
+
     </sql>
     <select id="ConditionQuery" resultMap="BaseResultMap">
         select <include refid="Base_Column_List"></include>
@@ -44,6 +71,44 @@
             </if>
             <if test="classId != null and classId != 0">
                 and class_id = #{classId}
+            </if>
+        </where>
+    </select>
+    <select id="getStudentByPage" resultMap="MyResultMap">
+        select
+            <include refid="My_Column_List"></include>
+        from
+            zyyj_student a
+        left join
+            zyyj_class b on a.class_id = b.class_id
+        left join
+            zyyj_grade c on a.grade_id = c.grade_id
+        left join
+            zyyj_major d on a.major_id = d.major_id
+        left join
+            zyyj_college e on e.college_id = a.college_id
+        <where>
+            1=1
+            <if test="classId != null and classId != 0">
+                and a.class_id = #{classId}
+            </if>
+            <if test="gradeId != null and gradeId != 0">
+                and a.grade_id = #{gradeId}
+            </if>
+            <if test="majorId != null and majorId != 0">
+                and a.major_id = #{majorId}
+            </if>
+            <if test="collegeId != null and collegeId != 0">
+                and a.college_id =#{collegeId}
+            </if>
+            <if test="sex != null">
+                and a.gender = #{sex}
+            </if>
+            <if test="account != null and account != 0">
+                and a.account = #{account}
+            </if>
+            <if test="name != null and name != ''">
+                and a.name like concat('%',#{name},'%')
             </if>
         </where>
     </select>

@@ -21,6 +21,10 @@ public class StuScoreVo implements Serializable {
     @ApiModelProperty(value = "学生名称")
     private String studentName;
 
+    @ApiModelProperty(value = "排名")
+    private Integer rank;
+
+
     @ApiModelProperty(value = "方案名称")
     private String programmeName;
 

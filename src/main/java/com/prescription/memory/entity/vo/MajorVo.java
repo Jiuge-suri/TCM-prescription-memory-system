@@ -17,6 +17,9 @@ public class MajorVo implements Serializable {
     @ApiModelProperty(value = "专业编号")
     private Integer majorId;
 
+    @ApiModelProperty(value = "学院编号")
+    private Integer collegeId;
+
     @ApiModelProperty(value = "学院名称")
     private String collegeName;
 

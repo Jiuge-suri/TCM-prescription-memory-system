@@ -2,6 +2,7 @@ package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.*;
 import com.prescription.memory.entity.PageInfo;
@@ -30,45 +31,9 @@ public class ZyyjStudentPracticeServiceImpl extends ServiceImpl<ZyyjStudentPract
     private ZyyjStudentPracticeDao practiceDao;
     @Autowired
     private ZyyjStudentDao studentDao;
-    @Autowired
-    private ZyyjProgrammeDao programmeDao;
-    @Autowired
-    private ZyyjCourseDao courseDao;
-    @Autowired
-    private ZyyjCheckpointDao checkpointDao;
-    @Override
-    public List<StudentPracticeVo> getAll() {
-        List<ZyyjStudentPracticePo> list = practiceDao.selectList(null);
-        List<StudentPracticeVo> result_List = new ArrayList<>();
-        for (ZyyjStudentPracticePo practicePo: list){
-            StudentPracticeVo practiceVo = new StudentPracticeVo();
-
-            ZyyjCheckpointPo checkpointPo = checkpointDao.selectById(practicePo.getCheckpointId());
-            ZyyjProgrammePo programmePo = programmeDao.selectById(practicePo.getPracticeId());
-            ZyyjCoursePo coursePo = courseDao.selectById(practicePo.getCourseId());
-            ZyyjStudentPo stuPo = studentDao.selectById(practicePo.getStuId());
-
-            BeanUtils.copyProperties(practicePo,practiceVo);
-
-            if (stuPo != null){
-                practiceVo.setStuName(stuPo.getName());
-            }
-            if (programmePo != null){
-                practiceVo.setProgrammeName(programmePo.getName());
-            }
-            if (checkpointPo != null){
-                practiceVo.setCheckpointName(checkpointPo.getName());
-            }
-            if (coursePo != null){
-                practiceVo.setCourseName(coursePo.getName());
-            }
-            result_List.add(practiceVo);
-        }
-        return result_List;
-    }
 
     @Override
-    public List<List<StudentPracticeVo>> conditionQuery(String name,String account,Integer gradeId, Integer majorId, Integer classId) {
+    public Page<StudentPracticeVo> getStudentPracticeByPage(Integer pageNum, Integer pageSize, String name, String account, Integer majorId, Integer gradeId, Integer classId, Integer collegeId) {
         //构造条件，跟具条件查询所对应的学生
         LambdaQueryWrapper<ZyyjStudentPo> queryWrapper = new LambdaQueryWrapper<>();
         if (name != null && name != ""){
@@ -86,47 +51,18 @@ public class ZyyjStudentPracticeServiceImpl extends ServiceImpl<ZyyjStudentPract
         if (classId != null && classId != 0){
             queryWrapper.eq(ZyyjStudentPo::getClassId,classId);
         }
+        if (collegeId != null && collegeId != 0){
+            queryWrapper.eq(ZyyjStudentPo::getCollegeId,collegeId);
+        }
         List<ZyyjStudentPo> list = studentDao.selectList(queryWrapper);
         System.out.println("查询出来的学生为："+list);
-        //更具条件查询对应学生的闯关记录
-        List<List<StudentPracticeVo>> result_list = new ArrayList<List<StudentPracticeVo>>();
-        for (ZyyjStudentPo stuPo: list){
-            LambdaQueryWrapper<ZyyjStudentPracticePo> queryWrapper1 = new LambdaQueryWrapper<>();
-            queryWrapper1.eq(ZyyjStudentPracticePo::getStuId,stuPo.getStuId());
-            List<ZyyjStudentPracticePo> practicePos = practiceDao.selectList(queryWrapper1);
-            List<StudentPracticeVo> practiceVos = new ArrayList<>();
-            for (ZyyjStudentPracticePo practicePo: practicePos){
-                StudentPracticeVo practiceVo = new StudentPracticeVo();
-
-                ZyyjCheckpointPo checkpointPo = checkpointDao.selectById(practicePo.getCheckpointId());
-                ZyyjProgrammePo programmePo = programmeDao.selectById(practicePo.getPracticeId());
-                ZyyjCoursePo coursePo = courseDao.selectById(practicePo.getCourseId());
-
-                BeanUtils.copyProperties(practicePo,practiceVo);
-
-                if (stuPo != null){
-                    practiceVo.setStuName(stuPo.getName());
-                }
-                if (programmePo != null){
-                    practiceVo.setProgrammeName(programmePo.getName());
-                }
-                if (checkpointPo != null){
-                    practiceVo.setCheckpointName(checkpointPo.getName());
-                }
-                if (coursePo != null){
-                    practiceVo.setCourseName(coursePo.getName());
-                }
-                practiceVos.add(practiceVo);
-            }
-            result_list.add(practiceVos);
+        //把查询出来的学生的stuId放入一个数组里面
+        Integer[] stuIdArr = new Integer[1000];
+        for (int i = 0; i < list.size(); i++){
+            stuIdArr[i] = list.get(i).getStuId();
         }
-        return result_list;
-    }
-    @Override
-    public PageInfo<StudentPracticeVo> selectByPage(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum,pageSize);
-        List<StudentPracticeVo> list = getAll();
-        PageInfo<StudentPracticeVo> pageInfo = new PageInfo<>(list);
-        return pageInfo;
+        Page<StudentPracticeVo> page = practiceDao.getStudentPracticeByPage(stuIdArr);
+        return page;
     }
 }

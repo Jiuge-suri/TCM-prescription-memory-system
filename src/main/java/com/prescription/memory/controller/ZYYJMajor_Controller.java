@@ -1,5 +1,8 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjMajorPo;
 import com.prescription.memory.entity.vo.MajorVo;
@@ -25,18 +28,22 @@ public class ZYYJMajor_Controller extends BaseController{
 
     @ApiOperation(value = "条件查寻专业数据")
     @GetMapping("/major")
-    public CommonreturnType ConditionQuery(@ApiParam(value = "学院id") @RequestParam(value = "collegeId",required = false) Integer collegeId) {
-        List<MajorVo> list = majorService.ConditionQuery(collegeId);
-        return CommonreturnType.create(list);
-    }
-
-    @ApiOperation(value = "多表关联分页查询")
-    @GetMapping("/major/{pageNum}/{pageSize}")
-    public CommonreturnType getMajorByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                           @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize){
-        PageInfo<MajorVo> pageInfo = majorService.getMajorByPage(pageNum,pageSize);
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum",required = true) Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize",required = true)Integer pageSize,
+                                            @ApiParam(value = "学院id",required = true) @RequestParam(value = "collegeId",required = true) Integer collegeId,
+                                           @ApiParam(value = "专业id",required = false) @RequestParam(value = "majorId",required = false) Integer majorId) {
+        PageHelper.startPage(pageNum,pageSize);
+        Page<MajorVo> page = majorService.getMajorByPage(collegeId, majorId);
+        PageInfo<MajorVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
+    @ApiOperation(value = "查寻专业所有数据")
+    @GetMapping("/major/getall")
+    public CommonreturnType getAll(@ApiParam("学院id") @RequestParam(value = "collegeId",required = false) Integer collegeId){
+        List<ZyyjMajorPo> all = majorService.getAll(collegeId);
+        return CommonreturnType.create(all);
+    }
+
     @ApiOperation(value = "更新数据")
     @PutMapping("/major")
     public CommonreturnType updateMajor(@RequestBody ZyyjMajorPo majorPo) throws BusinessException {
@@ -47,8 +54,8 @@ public class ZYYJMajor_Controller extends BaseController{
     @ApiOperation(value = "删除数据")
     @DeleteMapping("/major")
     public CommonreturnType deleteMajor(@ApiParam(value = "编号")
-                                            @RequestParam(value = "majorId") Integer[] majorIds) throws BusinessException {
-        boolean result = majorService.deleteMajor(majorIds);
+                                            @RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result = majorService.deleteMajor(deleteArr.getArray());
         return CommonreturnType.create(result);
     }
 

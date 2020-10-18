@@ -11,10 +11,47 @@
         <result column="name" property="name" />
         <result column="comment" property="comment" />
     </resultMap>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.KnowledgepointVo">
+        <id column="know_id" property="knowId" />
+        <result column="require_id" property="requireId" />
+        <result column="requireName" property="requireName"/>
+        <result column="course_id" property="courseId" />
+        <result column="parentId" property="parentId"/>
+        <result column="courseName" property="courseName"/>
+        <result column="chapter_id" property="chapterId" />
+        <result column="chapterName" property="chapterName"/>
+        <result column="name" property="name" />
+        <result column="comment" property="comment" />
+    </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         know_id, require_id, course_id, chapter_id, name, comment
     </sql>
-
+    <select id="getKnowledgepointByPage" resultMap="MyResultMap">
+        SELECT
+        a.*,b.name AS requirName, c.name AS courseName, d.name AS chapterName,c.parent_id as parentId
+        FROM
+        zyyj_knowledgepoint a
+        LEFT JOIN
+        zyyj_require b ON a.require_id = b.require_id
+        LEFT JOIN
+        zyyj_course c ON a.course_id = c.course_id
+        LEFT JOIN
+        zyyj_chapter d ON a.chapter_id = d.chapter_id
+        <where>
+            1=1
+            <if test="courseId != null and courseId != 0">
+                and a.course_id = #{courseId}
+            </if>
+            <if test="requireId != null and requireId != 0">
+                and a.require_id = #{requireId}
+            </if>
+            <if test="chapterId != null and chapterId != 0">
+                and a.chapter_id = #{chapterId}
+            </if>
+            <if test="name != null and name != ''">
+                and a.name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
 </mapper>

@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.ZyyjDepartmentDao;
 import com.prescription.memory.dao.ZyyjPostDao;
@@ -68,6 +69,11 @@ public class ZyyjUserServiceImpl extends ServiceImpl<ZyyjUserDao, ZyyjUserPo> im
     }
 
     @Override
+    public Page<UserVo> getUserByPage(String name, Integer departmentId) {
+        return userDao.getUserByPage(name,departmentId);
+    }
+
+    @Override
     public PageInfo<UserVo> selectByPage(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum,pageSize);
         List<UserVo> list = ConditionQuery(null,null);
@@ -102,11 +108,11 @@ public class ZyyjUserServiceImpl extends ServiceImpl<ZyyjUserDao, ZyyjUserPo> im
     public boolean deleteUser(Integer[] userIds) throws BusinessException {
         int count = 0;
         for (int i = 0; i < userIds.length; i++){
-            ZyyjUserPo userPo = userDao.selectById(userIds[i]);
-            if (userPo == null){
-                throw new BusinessException(EmBusinessError.USER_NOT_EXIST);
+            try {
+                count += userDao.deleteById(userIds[i]);
+            } catch (Exception e) {
+                throw new BusinessException(EmBusinessError.NOTALLOWDELETE);
             }
-            count += userDao.deleteById(userIds[i]);
         }
         if (count != userIds.length){
             return false;

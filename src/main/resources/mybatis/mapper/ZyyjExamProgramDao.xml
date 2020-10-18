@@ -9,10 +9,27 @@
         <result column="level_num" property="levelNum" />
         <result column="createdate" property="createdate" />
     </resultMap>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.ExamProgramVo">
+        <id column="program_id" property="programId" />
+        <result column="name" property="name" />
+        <result column="level_num" property="levelNum" />
+        <result column="createdate" property="createdate" />
+    </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         program_id, name, level_num, createdate
     </sql>
+    <select id="getExamProgrammeByPage" resultMap="MyResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from
+        zyyj_exam_program
+        <where>
+            1=1
+            <if test="name != null and name != ''">
+                and name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
 
 </mapper>

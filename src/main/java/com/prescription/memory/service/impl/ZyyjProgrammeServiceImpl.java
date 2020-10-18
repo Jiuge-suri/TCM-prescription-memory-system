@@ -2,6 +2,7 @@ package com.prescription.memory.service.impl;
 
 import ch.qos.logback.classic.pattern.ClassNameOnlyAbbreviator;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjCheckpointPo;
@@ -34,31 +35,16 @@ public class ZyyjProgrammeServiceImpl extends ServiceImpl<ZyyjProgrammeDao, Zyyj
     ZyyjProgrammeDao programmeDao;
 
     @Override
-    public List<ProgrammeVo> ConditionQuery(String name) {
-        LambdaQueryWrapper<ZyyjProgrammePo> queryWrapper = new LambdaQueryWrapper<>();
-        if (name != null && name != ""){
-            queryWrapper.like(ZyyjProgrammePo::getName,name);
-        }
-        List<ZyyjProgrammePo> programmePos = programmeDao.selectList(null);
-        List<ProgrammeVo> programmeVos = new ArrayList<>();
-        for (ZyyjProgrammePo programmePo: programmePos){
-            ProgrammeVo programmeVo = new ProgrammeVo();
-            BeanUtils.copyProperties(programmePo,programmeVo);
-            programmeVos.add(programmeVo);
-        }
-        return programmeVos;
+    public Page<ProgrammeVo> getProgrammeByPage(String name) {
+        return programmeDao.getProgrammeByPage(name);
     }
 
     @Override
-    public PageInfo<ProgrammeVo> selectByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<ProgrammeVo> all = ConditionQuery(null);
-        PageInfo<ProgrammeVo> pageInfo = new PageInfo<>(all);
-        return pageInfo;
+    public List<ZyyjProgrammePo> getAll() {
+        return programmeDao.selectList(null);
     }
 
     @Override
-
     public boolean insertProgramme(ZyyjProgrammePo programmePo) {
         int count = programmeDao.insert(programmePo);
         if (count != 1){

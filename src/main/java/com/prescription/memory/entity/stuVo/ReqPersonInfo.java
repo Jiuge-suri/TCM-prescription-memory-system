@@ -24,4 +24,6 @@ public class ReqPersonInfo implements Serializable {
     private String stuAccount;
     @ApiModelProperty(value = "学生班级")
     private String stuClass;
+    @ApiModelProperty(value = "头像")
+    private String photo;
 }

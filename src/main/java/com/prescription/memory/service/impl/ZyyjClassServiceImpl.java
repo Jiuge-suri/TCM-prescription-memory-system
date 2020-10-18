@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.ZyyjDepartmentDao;
 import com.prescription.memory.dao.ZyyjGradeDao;
@@ -39,39 +40,20 @@ public class ZyyjClassServiceImpl extends ServiceImpl<ZyyjClassDao, ZyyjClassPo>
     @Autowired
     ZyyjDepartmentDao departmentDao;
 
+
     @Override
-    public List<ClassVo> ConditionQuery(Integer gradeId, Integer majorId) {
+    public Page<ClassVo> getClassByPage(Integer gradeId) {
+        return classDao.getClassByPage(gradeId);
+    }
+
+    @Override
+    public List<ZyyjClassPo> getAll(Integer gradeId) {
         LambdaQueryWrapper<ZyyjClassPo> queryWrapper = new LambdaQueryWrapper<>();
         if (gradeId != null && gradeId != 0){
             queryWrapper.eq(ZyyjClassPo::getGradeId,gradeId);
         }
-        if (majorId != null && majorId != 0){
-            queryWrapper.eq(ZyyjClassPo::getMajorId,majorId);
-        }
-        List<ZyyjClassPo> list = classDao.selectList(null);
-        List<ClassVo> result_list = new ArrayList<>();
-        for (ZyyjClassPo classPo: list){
-            ClassVo classVo = new ClassVo();
-            ZyyjGradePo gradePo = gradeDao.selectById(classPo.getGradeId());
-            ZyyjDepartmentPo departmentPo = departmentDao.selectById(classPo.getDepartmentId());
-            BeanUtils.copyProperties(classPo,classVo);
-            if (gradePo != null){
-                classVo.setGradeName(gradePo.getName());
-            }
-            if (departmentPo != null){
-                classVo.setDepartmentName(departmentPo.getName());
-            }
-            result_list.add(classVo);
-        }
-        return result_list;
-    }
-
-    @Override
-    public PageInfo<ClassVo> getClassByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<ClassVo> list = ConditionQuery(null,null);
-        PageInfo<ClassVo> pageInfo = new PageInfo<>(list);
-        return pageInfo;
+        List<ZyyjClassPo> list = classDao.selectList(queryWrapper);
+        return list;
     }
 
     @Override

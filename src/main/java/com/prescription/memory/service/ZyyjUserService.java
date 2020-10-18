@@ -2,6 +2,7 @@ package com.prescription.memory.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjCollegePo;
 import com.prescription.memory.entity.po.ZyyjUserPo;
@@ -21,7 +22,7 @@ import java.util.List;
  */
 public interface ZyyjUserService extends IService<ZyyjUserPo> {
     List<UserVo> ConditionQuery(String name, Integer departmentId);
-
+    Page<UserVo> getUserByPage(String name, Integer departmentId);
     PageInfo<UserVo> selectByPage(Integer pageNum, Integer pageSize);
 
     boolean insertUser(ZyyjUserPo userPo) throws BusinessException;

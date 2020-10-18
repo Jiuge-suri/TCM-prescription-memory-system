@@ -1,8 +1,10 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjCheckpointPo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.prescription.memory.entity.po.ZyyjProgrammePo;
 import com.prescription.memory.entity.vo.CheckpointVo;
 import com.prescription.memory.error.BusinessException;
 
@@ -17,9 +19,9 @@ import java.util.List;
  * @since 2020-05-12
  */
 public interface ZyyjCheckpointService extends IService<ZyyjCheckpointPo> {
-    List<CheckpointVo> ConditionQuery(String name);
+    Page<CheckpointVo> getCheckpointByPage(String name);
 
-    PageInfo<CheckpointVo> getCheckpointByPage(Integer pageNum, Integer pageSize);
+    List<ZyyjCheckpointPo> getAll();
 
     boolean insertCheckpoint(ZyyjCheckpointPo checkpointPo);
 

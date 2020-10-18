@@ -1,5 +1,6 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjGradePo;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -18,9 +19,9 @@ import java.util.List;
  */
 public interface ZyyjGradeService extends IService<ZyyjGradePo> {
 
-    List<GradeVo> ConditionQuery(Integer majorId);
+    Page<GradeVo> getGradeByPage(Integer majorId);
 
-    PageInfo<GradeVo> getGradeByPage(Integer pageNum, Integer pageSize);
+    List<ZyyjGradePo> getAll(Integer majorId);
 
     boolean insertGrade(ZyyjGradePo gradePo);
 

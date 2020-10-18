@@ -1,5 +1,6 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjKnowledgepointPo;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -18,9 +19,9 @@ import java.util.List;
  * @since 2020-05-12
  */
 public interface ZyyjKnowledgepointService extends IService<ZyyjKnowledgepointPo> {
-    List<KnowledgepointVo> ConditionQuery(Integer courseId,Integer chapterId, Integer requirId, String name);
+    Page<KnowledgepointVo> getKnowledgepointByPage(Integer courseId, Integer chapterId, Integer requirId, String name);
 
-    PageInfo<KnowledgepointVo> getKnowledgepointByPage(Integer pageNum, Integer pageSize);
+    List<ZyyjKnowledgepointPo> getAll(Integer chapterId);
 
     boolean insertKnowledgepoint(ZyyjKnowledgepointPo knowlegepointPo);
 

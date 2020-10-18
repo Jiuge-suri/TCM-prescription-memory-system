@@ -20,6 +20,8 @@ public class ReqScoreRank implements Serializable {
     private Integer myscore;
     @ApiModelProperty(value = "当前用户姓名")
     private String myname;
+    @ApiModelProperty(value = "学号")
+    private String account;
     @ApiModelProperty(value = "为数据数组，前30名的积分情况")
     private List<RankInfo> ranklist;
 }

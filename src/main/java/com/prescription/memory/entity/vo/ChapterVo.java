@@ -18,7 +18,13 @@ public class ChapterVo implements Serializable {
     @ApiModelProperty(value = "章节姓名")
     private String name;
 
-    @ApiModelProperty(value = "课程名称")
+    @ApiModelProperty(value = "科目编号")
+    private Integer courseId;
+
+    @ApiModelProperty(value = "科目父节点")
+    private Integer parentId;
+
+    @ApiModelProperty(value = "科目名称")
     private String courseName;
 
     @ApiModelProperty(value = "图片")

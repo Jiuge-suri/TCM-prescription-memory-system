@@ -1,5 +1,6 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjExchangerulePo;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -18,9 +19,9 @@ import java.util.List;
  */
 public interface ZyyjExchangeruleService extends IService<ZyyjExchangerulePo> {
 
-    List<ExchangeruleVo> ConditionQuery(String name);
+    Page<ZyyjExchangerulePo> getExchangeruleByPage(String name);
 
-    PageInfo<ExchangeruleVo> getExchangeruleByPage(Integer pageNum, Integer pageSize);
+    List<ZyyjExchangerulePo> getAll();
 
     boolean insertExchangerule(ZyyjExchangerulePo rulePo);
 

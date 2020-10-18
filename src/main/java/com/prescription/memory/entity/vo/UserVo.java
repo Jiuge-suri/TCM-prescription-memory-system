@@ -15,6 +15,12 @@ public class UserVo implements Serializable {
     @ApiModelProperty(value = "用户编号")
     private Integer userId;
 
+    @ApiModelProperty(value = "角色编号")
+    private Integer postId;
+
+    @ApiModelProperty(value = "部门编号")
+    private Integer departmentId;
+
     @ApiModelProperty(value = "角色名称")
     private String postName;
 

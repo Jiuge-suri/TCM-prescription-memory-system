@@ -1,5 +1,8 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjChapterPo;
 import com.prescription.memory.entity.vo.ChapterVo;
@@ -25,18 +28,22 @@ public class ZyyjChapter_Controller extends BaseController{
 
     @GetMapping("/chapter")
     @ApiOperation(value = "多条件查询章节数据")
-    public CommonreturnType ConditionQuery(@ApiParam("科目id")@RequestParam(value = "courseId",required = false) Integer courseId,
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                            @ApiParam("科目id")@RequestParam(value = "courseId",required = false) Integer courseId,
                                            @ApiParam("章节名称")@RequestParam(value = "name",required = false) String name){
-        List<ChapterVo> all = service.ConditionQuery(courseId, name);
-        return CommonreturnType.create(all);
-    }
-    @GetMapping("/chapter/pageNum/{pageNum}/pageSize/{pageSize}")
-    @ApiOperation(value = "分页查询")
-    public CommonreturnType selectByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                         @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize){
-        PageInfo<ChapterVo> pageInfo = service.getChapterByPage(pageNum,pageSize);
+        PageHelper.startPage(pageNum,pageSize);
+        Page<ChapterVo> page = service.getChapterByPage(courseId, name);
+        PageInfo<ChapterVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
+    @GetMapping("/chapter/getall")
+    @ApiOperation(value = "查询章节所有数据")
+    public CommonreturnType getAll(@ApiParam("科目id")@RequestParam(value = "courseId",required = false) Integer courseId){
+        return CommonreturnType.create(service.getAll(courseId));
+    }
+
+
     @ApiOperation(value = "更新数据")
     @PutMapping("/chapter")
     public CommonreturnType updateChapter(@RequestBody ZyyjChapterPo chapterPo) throws BusinessException {
@@ -47,8 +54,9 @@ public class ZyyjChapter_Controller extends BaseController{
     @ApiOperation(value = "删除数据")
     @DeleteMapping("/chapter")
     public CommonreturnType deleteChapter(@ApiParam(value = "编号")
-                                          @RequestParam(value = "classIds",required = true) Integer[] chapterIds) throws BusinessException {
-        boolean result = service.deleteChapter(chapterIds);
+                                          @RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result = service.deleteChapter(deleteArr.getArray());
+
         return CommonreturnType.create(result);
     }
 

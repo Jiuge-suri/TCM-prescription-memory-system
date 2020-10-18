@@ -1,7 +1,6 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.ZyyjUniversityDao;
@@ -21,7 +20,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * <p>
@@ -35,35 +33,16 @@ import java.util.UUID;
 public class ZyyjCollegeServiceImpl extends ServiceImpl<ZyyjCollegeDao, ZyyjCollegePo> implements ZyyjCollegeService {
     @Autowired
     ZyyjCollegeDao collegeDao;
-    @Autowired
-    ZyyjUniversityDao universityDao;
 
     @Override
-    public List<CollegeVo> ConditionQuery(Integer collegeId) {
-        LambdaQueryWrapper<ZyyjCollegePo> queryWrapper = new LambdaQueryWrapper<>();
-        if (collegeId != null && collegeId != 0){
-            queryWrapper.eq(ZyyjCollegePo::getCollegeId,collegeId);
-        }
-        List<ZyyjCollegePo> list = collegeDao.selectList(queryWrapper);
-        List<CollegeVo> result_list = new ArrayList<>();
-        for (ZyyjCollegePo collegePo: list){
-            CollegeVo collegeVo = new CollegeVo();
-            ZyyjUniversityPo universityPo = universityDao.selectById(collegePo.getUniversityId());
-            BeanUtils.copyProperties(collegePo,collegeVo);
-            if (universityPo != null){
-                collegeVo.setUniversityName(universityPo.getName());
-            }
-            result_list.add(collegeVo);
-        }
-        return result_list;
+    public Page<CollegeVo> getCollegeByPage(Integer collegeId) {
+        Page<CollegeVo> page = collegeDao.getCollegeByPage(collegeId);
+        return page;
     }
 
     @Override
-    public PageInfo<CollegeVo> getCollegeByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<CollegeVo> collegeVos = ConditionQuery(null);
-        PageInfo<CollegeVo> pageInfo = new PageInfo<>(collegeVos);
-        return pageInfo;
+    public List<ZyyjCollegePo> getAll() {
+        return collegeDao.selectList(null);
     }
 
     @Override
@@ -93,11 +72,11 @@ public class ZyyjCollegeServiceImpl extends ServiceImpl<ZyyjCollegeDao, ZyyjColl
     public boolean deleteCollege(Integer[] collegeIds) throws BusinessException {
         int count = 0;
         for (int i = 0; i < collegeIds.length; i++){
-            ZyyjCollegePo collegePo = collegeDao.selectById(collegeIds[i]);
-            if (collegePo == null){
-                throw new BusinessException(EmBusinessError.USER_NOT_EXIST);
+            try {
+                count = count + collegeDao.deleteById(collegeIds[i]);
+            } catch (Exception e) {
+                throw new BusinessException(EmBusinessError.NOTALLOWDELETE);
             }
-            count = count + collegeDao.deleteById(collegeIds[i]);
         }
         if (count != collegeIds.length){
             return false;

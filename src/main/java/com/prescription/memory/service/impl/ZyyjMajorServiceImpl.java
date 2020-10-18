@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.ZyyjCollegeDao;
 import com.prescription.memory.entity.PageInfo;
@@ -36,31 +37,18 @@ public class ZyyjMajorServiceImpl extends ServiceImpl<ZyyjMajorDao, ZyyjMajorPo>
     ZyyjCollegeDao collegeDao;
 
     @Override
-    public List<MajorVo> ConditionQuery(Integer collegeId) {
+    public Page<MajorVo> getMajorByPage(Integer collegeId, Integer majorId) {
+        return majorDao.getMajorByPage(collegeId,majorId);
+    }
+
+    @Override
+    public List<ZyyjMajorPo> getAll(Integer collegeId) {
         LambdaQueryWrapper<ZyyjMajorPo> queryWrapper = new LambdaQueryWrapper<>();
         if (collegeId != null && collegeId != 0){
             queryWrapper.eq(ZyyjMajorPo::getCollegeId,collegeId);
         }
         List<ZyyjMajorPo> list = majorDao.selectList(queryWrapper);
-        List<MajorVo> result_list = new ArrayList<>();
-        for (ZyyjMajorPo majorPo:list){
-            MajorVo majorVo = new MajorVo();
-            BeanUtils.copyProperties(majorPo,majorVo);
-            ZyyjCollegePo collegePo = collegeDao.selectById(majorPo.getCollegeId());
-            if (collegePo != null){
-                majorVo.setCollegeName(collegePo.getName());
-            }
-            result_list.add(majorVo);
-        }
-        return result_list;
-    }
-
-    @Override
-    public PageInfo<MajorVo> getMajorByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<MajorVo> majorVos = ConditionQuery(null);
-        PageInfo<MajorVo> pageInfo = new PageInfo<>(majorVos);
-        return pageInfo;
+        return list;
     }
 
     @Override
@@ -90,9 +78,9 @@ public class ZyyjMajorServiceImpl extends ServiceImpl<ZyyjMajorDao, ZyyjMajorPo>
     @Transactional(rollbackFor = Exception.class)
     public boolean deleteMajor(Integer[] majorIds) throws BusinessException {
         int count = 0;
-        for (int i = 0; i <= majorIds.length; i++){
-            ZyyjMajorPo majorPo = majorDao.selectById(majorIds[i]);
-            if (majorPo == null){
+        for (int i = 0; i < majorIds.length; i++){
+            ZyyjMajorPo majorPo1 = majorDao.selectById(majorIds[i]);
+            if (majorPo1 == null){
                 throw new BusinessException(EmBusinessError.USER_NOT_EXIST);
             }
             count += majorDao.deleteById(majorIds[i]);

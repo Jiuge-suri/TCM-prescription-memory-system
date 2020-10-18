@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjExchangerulePo;
@@ -32,28 +33,15 @@ public class ZyyjExchangeruleServiceImpl extends ServiceImpl<ZyyjExchangeruleDao
     @Autowired
     private ZyyjExchangeruleDao ruledao;
 
+
     @Override
-    public List<ExchangeruleVo> ConditionQuery(String name) {
-        LambdaQueryWrapper<ZyyjExchangerulePo> queryWrapper = new LambdaQueryWrapper<>();
-        if (name != null && name != ""){
-            queryWrapper.like(ZyyjExchangerulePo::getName,name);
-        }
-        List<ZyyjExchangerulePo>  list = ruledao.selectList(queryWrapper);
-        List<ExchangeruleVo>  result_list = new ArrayList<>();
-        for (ZyyjExchangerulePo rulePo: list){
-            ExchangeruleVo ruleVo = new ExchangeruleVo();
-            BeanUtils.copyProperties(rulePo,ruleVo);
-            result_list.add(ruleVo);
-        }
-        return result_list;
+    public Page<ZyyjExchangerulePo> getExchangeruleByPage(String name) {
+        return ruledao.getExchangeruleByPage(name);
     }
 
-     @Override
-    public PageInfo<ExchangeruleVo> getExchangeruleByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<ExchangeruleVo> list = ConditionQuery(null);
-        PageInfo<ExchangeruleVo> pageInfo = new PageInfo<>(list);
-        return pageInfo;
+    @Override
+    public List<ZyyjExchangerulePo> getAll() {
+        return ruledao.selectList(null);
     }
 
     @Override

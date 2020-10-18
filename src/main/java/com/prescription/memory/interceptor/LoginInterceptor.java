@@ -4,10 +4,14 @@ package com.prescription.memory.interceptor;
 import com.auth0.jwt.exceptions.AlgorithmMismatchException;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
+import com.prescription.memory.error.BusinessException;
+import com.prescription.memory.error.EmBusinessError;
 import com.prescription.memory.jwt.JWTService;
 import com.prescription.memory.jwt.Payload;
+import com.prescription.memory.service.RedisService;
 import com.prescription.memory.utils.ContextUtil;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -30,7 +34,8 @@ public class LoginInterceptor implements HandlerInterceptor {
      */
     @Value("${spring.profiles.active}")
     private String env;
-
+    @Autowired
+    RedisService redisService;
 
     private JWTService jwtService;
 
@@ -41,23 +46,26 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         System.out.println("在请求处理之前进行调用Controller方法调用之前");
         //认证验证
-        if ("dev".equals(env)) { //开发环境忽略签名认证
+        if ("dev".equals(env) || "prov".equals(env)) { //开发环境忽略签名认证
             return true;
         }
 
         response.setCharacterEncoding("UTF-8");
         response.setHeader("Content-Type", "text/html;charset=UTF-8");
-        String token = request.getHeader("X-Auth-Token");
-
+        /*String token = request.getHeader("X-Auth-Token");*/
+        String token = request.getHeader("token");
+        System.out.println("token:"+token);
         //token is null，判断是否携带凭证，若token为空，则跳转到登陆界面
         if (StringUtils.isEmpty(token)) {
             String url = "/toLogin";
             response.sendRedirect(url);
             return false;
         }
-
+        String userId = (String)redisService.get(token);
+        if (redisService.hasKey(userId)&&!token.equals(redisService.get(userId))){
+            throw new BusinessException(EmBusinessError.REMOTELOGIN);
+        }
         String tokenInServletContext = (String)request.getServletContext().getAttribute(token);
-
         //未登录或者过期   ServletContext中找不到这个token
         if(StringUtils.isEmpty(tokenInServletContext)) {
             String url = "/toLogin";

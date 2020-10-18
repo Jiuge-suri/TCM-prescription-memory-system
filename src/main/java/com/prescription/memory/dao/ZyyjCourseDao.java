@@ -1,7 +1,10 @@
 package com.prescription.memory.dao;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.po.ZyyjCoursePo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.prescription.memory.entity.vo.CourseVo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,5 +17,5 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public interface ZyyjCourseDao extends BaseMapper<ZyyjCoursePo> {
-
+    public Page<CourseVo> getCourseByPage(@Param("name") String name);
 }

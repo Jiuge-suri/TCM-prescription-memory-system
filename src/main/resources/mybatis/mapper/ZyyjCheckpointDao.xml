@@ -13,10 +13,32 @@
         <result column="pass_score" property="passScore" />
         <result column="comment" property="comment" />
     </resultMap>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.CheckpointVo">
+        <id column="checkpoint_id" property="checkpointId" />
+        <result column="name" property="name" />
+        <result column="programme_id" property="programmeId" />
+        <result column="programmeName" property="programmeName"/>
+        <result column="limit_time" property="limitTime" />
+        <result column="question_num" property="questionNum" />
+        <result column="total_score" property="totalScore" />
+        <result column="pass_score" property="passScore" />
+        <result column="comment" property="comment" />
+    </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         checkpoint_id, name, programme_id, limit_time, question_num, total_score, pass_score, comment
     </sql>
-
+    <select id="getCheckpointByPage" resultMap="MyResultMap">
+        SELECT
+        a.*,b.name AS programmeName
+        FROM
+        zyyj_checkpoint a
+        LEFT JOIN
+        zyyj_programme b ON a.programme_id = b.programme_id
+        <where>
+            <if test="name != null and name != ''">
+                a.name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
 </mapper>

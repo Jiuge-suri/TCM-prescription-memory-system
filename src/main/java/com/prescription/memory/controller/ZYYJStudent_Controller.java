@@ -1,5 +1,8 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjStudentPo;
 import com.prescription.memory.entity.vo.StudentVo;
@@ -24,25 +27,23 @@ public class ZYYJStudent_Controller extends BaseController{
     @Autowired
     private ZyyjStudentService studentService;
 
-    @ApiOperation(value = "查询所有数据")
+    @ApiOperation(value = "多条件查询")
     @GetMapping("/student")
-    public CommonreturnType selectAll(@ApiParam("专业id") @RequestParam(value = "majorId",required = false) Integer majorId,
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum",required = true) Integer pageNum,
+                                      @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize",required = true)Integer pageSize,
+                                           @ApiParam("专业id") @RequestParam(value = "majorId",required = false) Integer majorId,
                                       @ApiParam("年级id") @RequestParam(value = "gradeId",required = false) Integer gradeId,
                                       @ApiParam("班级id") @RequestParam(value = "classId",required = false)Integer classId,
                                       @ApiParam("性别") @RequestParam(value = "sex",required = false)Integer sex,
                                       @ApiParam("学号") @RequestParam(value = "account",required = false)String account,
-                                      @ApiParam("姓名") @RequestParam(value = "name",required = false)String name){
-        List<StudentVo> list = studentService.ConditionQuery(majorId, gradeId, classId, sex, account, name);
-        return CommonreturnType.create(list);
-    }
-
-    @ApiOperation(value = "多表关联分页查询")
-    @GetMapping("/student/{pageNum}/{pageSize}")
-    public CommonreturnType getStudentByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                             @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize) throws BusinessException {
-        PageInfo<StudentVo> pageInfo = studentService.getStudentByPage(pageNum,pageSize);
+                                      @ApiParam("姓名") @RequestParam(value = "name",required = false)String name,
+                                      @ApiParam(value = "学院id",required = true) @RequestParam(value = "collegeId",required = true)Integer collegeId){
+        PageHelper.startPage(pageNum,pageSize);
+        Page<StudentVo> page = studentService.getStudentByPage(majorId, gradeId, classId, sex, account, name, collegeId);
+        PageInfo<StudentVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
+
     @ApiOperation(value = "更新数据")
     @PutMapping("/student")
     public CommonreturnType updateStudent(@RequestBody ZyyjStudentPo studentPo) throws BusinessException {
@@ -52,16 +53,15 @@ public class ZYYJStudent_Controller extends BaseController{
 
     @ApiOperation(value = "删除数据")
     @DeleteMapping("/student")
-    public CommonreturnType deleteStudent(@ApiParam(value = "编号",required = true)
-                                          @RequestParam(value = "studentId") Integer[] studentIds) throws BusinessException {
-        boolean result = studentService.deleteStudent(studentIds);
+    public CommonreturnType deleteStudent(@ApiParam(value = "编号")
+                                              @RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result = studentService.deleteStudent(deleteArr.getArray());
         return CommonreturnType.create(result);
     }
 
     @ApiOperation(value = "插入数据")
     @PostMapping("/student")
     public CommonreturnType insertStudent(@RequestBody ZyyjStudentPo studentPo){
-        //将Vo转换成Po
         boolean result = studentService.insertStudent(studentPo);
         return CommonreturnType.create(result);
     }

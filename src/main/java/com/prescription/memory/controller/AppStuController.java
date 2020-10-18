@@ -1,5 +1,7 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjQuestionRecordPo;
 import com.prescription.memory.entity.po.ZyyjStudentExamPo;
 import com.prescription.memory.entity.po.ZyyjStudentPracticePo;
@@ -58,9 +60,12 @@ public class AppStuController extends BaseController{
     }
     @ApiOperation(value = "积分管理--个人积分记录")
     @PostMapping("/ScoreManage/ScoreManage_Myscore")
-    public CommonreturnType getScoreManageMyscore(@ApiParam(value = "学生id") @RequestParam(value = "stuId") Integer stuId){
-
-        return CommonreturnType.create("");
+    public CommonreturnType getScoreManageMyscore(@ApiParam(value = "页数") @RequestParam(value = "pageNum") Integer pageNum,
+            @ApiParam(value = "每页的数据大小") @RequestParam(value = "pageSize") Integer pageSize,
+            @ApiParam(value = "学生id") @RequestParam(value = "stuId") Integer stuId){
+        Page<IntegralRecord> page = stuService.getIntegralRecode(pageNum, pageSize, stuId);
+        PageInfo<IntegralRecord> pageInfo = new PageInfo<>(page);
+        return CommonreturnType.create(pageInfo);
     }
     @ApiOperation(value = "科目管理--获取科目树")
     @PostMapping("/Course/get_all_nochield_courses")
@@ -88,7 +93,7 @@ public class AppStuController extends BaseController{
     }
     @ApiOperation(value = "练习管理--题目信息")
     @PostMapping("/QuestionInterface/get_question")
-    public CommonreturnType getQuestion(@ApiParam(value = "科目id,多个科目用；隔开") @RequestParam(value = "courseId") Integer courseId,
+    public CommonreturnType getQuestion(@ApiParam(value = "科目id") @RequestParam(value = "courseId") Integer courseId,
                                         @ApiParam(value = "获取关卡id或者考试id") @RequestParam(value = "checkpointId") Integer checkpointId){
         return CommonreturnType.create(stuService.getPracticeQuestion(courseId,checkpointId));
     }
@@ -121,8 +126,8 @@ public class AppStuController extends BaseController{
     }
     @ApiOperation(value = "考试管理--判断是否已经考了该科目")
     @PostMapping("/ExamManager/judge_hasExamed")
-    public CommonreturnType hasExamed(@Param(value = "stuId") @RequestParam(value = "学生id") Integer stuId,
-                                      @Param(value = "courseId") @RequestParam(value = "科目id") Integer courseId){
+    public CommonreturnType hasExamed(@Param(value = "学生id") @RequestParam(value = "stuId") Integer stuId,
+                                      @Param(value = "科目id") @RequestParam(value = "courId") Integer courseId){
         ZyyjStudentExamPo studentExamPo = stuService.hasExamed(stuId, courseId);
         if (studentExamPo != null){
             return CommonreturnType.create(studentExamPo,"不能重复考试",0);
@@ -161,7 +166,9 @@ public class AppStuController extends BaseController{
     }
     @ApiOperation(value = "学生个人信息管理--学生头像上传")
     @PostMapping("/StudentUpdateIcon/do_upload")
-    public CommonreturnType doUploead(@ApiParam(value = "学生Id") @RequestParam(value = "stuId") Integer stuId){
-        return CommonreturnType.create("");
+    public CommonreturnType doUploead(@ApiParam("新头像") @RequestParam("photo") String photo,
+            @ApiParam(value = "学生Id") @RequestParam(value = "stuId") Integer stuId){
+
+        return CommonreturnType.create(stuService.changePhoto(stuId,photo));
     }
 }

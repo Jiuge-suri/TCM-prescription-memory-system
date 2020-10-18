@@ -1,5 +1,8 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjExchangerulePo;
 import com.prescription.memory.entity.vo.ExchangeruleVo;
@@ -25,18 +28,21 @@ public class ZYYJExchangerule_Controller extends BaseController{
 
     @ApiOperation(value = "条件查询积分兑换规则数据")
     @GetMapping("/exchangerule")
-    public CommonreturnType ConditionQuery(@ApiParam("规则名") @RequestParam(value = "name",required = false) String name) {
-        List<ExchangeruleVo> list = exchangeruleService.ConditionQuery(name);
-        return CommonreturnType.create(list);
-    }
-
-    @ApiOperation(value = "多表关联分页查询")
-    @GetMapping("/exchangerule/{pageNum}/{pageSize}")
-    public CommonreturnType getExchangeruleByPage(@ApiParam(value = "页码",required = true) @PathVariable(value = "pageNum") Integer pageNum,
-                                                  @ApiParam(value = "每页数据量",required = true) @PathVariable(value = "pageSize")Integer pageSize){
-        PageInfo<ExchangeruleVo> pageInfo = exchangeruleService.getExchangeruleByPage(pageNum,pageSize);
+    public CommonreturnType ConditionQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                           @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                            @ApiParam("规则名") @RequestParam(value = "name",required = false) String name) {
+        PageHelper.startPage(pageNum,pageSize);
+        Page<ZyyjExchangerulePo> page = exchangeruleService.getExchangeruleByPage(name);
+        PageInfo<ZyyjExchangerulePo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
     }
+    @ApiOperation(value = "查询积分兑换规则所有的数据")
+    @GetMapping("/exchangerule/getall")
+    public CommonreturnType getAll(){
+        return CommonreturnType.create(exchangeruleService.getAll());
+    }
+
+
     @ApiOperation(value = "更新数据")
     @PutMapping("/exchangerule")
     public CommonreturnType updateExchangerule(@RequestBody ZyyjExchangerulePo exchangerulePo) throws BusinessException {
@@ -46,9 +52,9 @@ public class ZYYJExchangerule_Controller extends BaseController{
 
     @ApiOperation(value = "删除数据")
     @DeleteMapping("/exchangerule")
-    public CommonreturnType deleteExchangerule(@ApiParam(value = "编号",required = true)
-                                               @RequestParam(value = "exchangeruleId") Integer[] ruleIds) throws BusinessException {
-        boolean result = exchangeruleService.deleteExchangerule(ruleIds);
+    public CommonreturnType deleteExchangerule(@ApiParam(value = "编号")
+                                                   @RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result = exchangeruleService.deleteExchangerule(deleteArr.getArray());
         return CommonreturnType.create(result);
     }
 

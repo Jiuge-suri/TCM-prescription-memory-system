@@ -15,6 +15,8 @@ public class CollegeVo implements Serializable {
 
     @ApiModelProperty(value = "学院编号")
     private Integer collegeId;
+    @ApiModelProperty(value = "大学编号")
+    private Integer universityId;
     @ApiModelProperty(value = "所属大学名")
     private String universityName;
     @ApiModelProperty(value = "学院名")

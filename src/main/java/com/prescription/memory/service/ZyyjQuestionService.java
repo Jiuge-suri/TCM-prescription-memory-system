@@ -1,5 +1,6 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjQuestionPo;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -17,9 +18,7 @@ import java.util.List;
  * @since 2020-05-12
  */
 public interface ZyyjQuestionService extends IService<ZyyjQuestionPo> {
-    List<QuestionVo> ConditionQuery(Integer courseId,Integer chapterId,Integer knowId,Integer levelId);
-
-    PageInfo<QuestionVo> getQuestionByPage(Integer pageNum, Integer pageSize);
+    Page<QuestionVo> getQuestionByPage(Integer courseId, Integer chapterId, Integer knowId, Integer levelId);
 
     boolean insertQuestion(ZyyjQuestionPo questionPo);
 

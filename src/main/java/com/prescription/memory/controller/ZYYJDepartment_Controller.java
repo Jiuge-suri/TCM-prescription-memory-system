@@ -1,7 +1,11 @@
 package com.prescription.memory.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.prescription.memory.entity.DeleteArr;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjDepartmentPo;
+import com.prescription.memory.entity.vo.CollegeVo;
 import com.prescription.memory.entity.vo.DepartmentVo;
 import com.prescription.memory.entity.vo.DeptRespNodeVo;
 import com.prescription.memory.error.BusinessException;
@@ -26,16 +30,14 @@ public class ZYYJDepartment_Controller extends BaseController{
 
     @GetMapping("/department")
     @ApiOperation(value = "条件查询部门数据")
-    public CommonreturnType ConditonQuery(@ApiParam(value = "部门名称") @RequestParam(value = "name",required = false) String name){
-        List<DepartmentVo> list = departmentService.ConditionQuery(name);
-        return CommonreturnType.create(list);
-    }
-    @GetMapping("/department/{pageNum}/{pageSize}")
-    @ApiOperation(value = "分页查询")
-    public CommonreturnType selectByPage(@PathVariable(value = "pageNum") Integer pageNum,
-                                         @PathVariable(value = "pageSize") Integer pageSize){
-        PageInfo<DepartmentVo> pageInfo = departmentService.selectByPage(pageNum, pageSize);
+    public CommonreturnType ConditonQuery(@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum") Integer pageNum,
+                                          @ApiParam(value = "每页数据量",required = true) @RequestParam(value = "pageSize")Integer pageSize,
+                                          @ApiParam(value = "部门名称") @RequestParam(value = "name",required = false) String name){
+        PageHelper.startPage(pageNum,pageSize);
+        Page<DepartmentVo> page = departmentService.getDepartmentByPage(name);
+        PageInfo<DepartmentVo> pageInfo = new PageInfo<>(page);
         return CommonreturnType.create(pageInfo);
+
     }
     @GetMapping("/department/tree")
     @ApiOperation(value = "获取部门树")
@@ -51,8 +53,8 @@ public class ZYYJDepartment_Controller extends BaseController{
     }
     @DeleteMapping("/department")
     @ApiOperation(value = "删除部门")
-    public CommonreturnType deleteDept(@RequestParam Integer[] departmentIds){
-        boolean result =  departmentService.deleteDept(departmentIds);
+    public CommonreturnType deleteDept(@RequestBody DeleteArr deleteArr) throws BusinessException {
+        boolean result =  departmentService.deleteDept(deleteArr.getArray());
         return CommonreturnType.create(result);
     }
     @PutMapping("/department")

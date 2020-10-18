@@ -18,6 +18,9 @@ public class GradeVo implements Serializable {
     private Integer gradeId;
 
     @ApiModelProperty(value = "专业编号")
+    private Integer majorId;
+
+    @ApiModelProperty(value = "专业名称")
     private String majorName;
 
     @ApiModelProperty(value = "年级名称")

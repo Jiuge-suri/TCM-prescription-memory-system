@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.ZyyjExamProgramDao;
 import com.prescription.memory.entity.PageInfo;
@@ -35,33 +36,17 @@ public class ZyyjExamLevelServiceImpl extends ServiceImpl<ZyyjExamLevelDao, Zyyj
     ZyyjExamLevelDao examLevelDao;
     @Autowired
     ZyyjExamProgramDao examProgramDao;
-    @Override
-    public List<ExamLevelVo> ConditionQuery(String name) {
-        LambdaQueryWrapper<ZyyjExamLevelPo> queryWrapper = new LambdaQueryWrapper<>();
-        if (name != null && name != ""){
-            queryWrapper.eq(ZyyjExamLevelPo::getName,name);
-        }
-        List<ZyyjExamLevelPo> examLevelPos = examLevelDao.selectList(queryWrapper);
-        List<ExamLevelVo> result_list = new ArrayList<>();
-        for (ZyyjExamLevelPo examLevelPo:examLevelPos){
-            ExamLevelVo examLevelVo = new ExamLevelVo();
-            BeanUtils.copyProperties(examLevelPo,examLevelVo);
-            ZyyjExamProgramPo examProgramPo = examProgramDao.selectById(examLevelPo.getProgramId());
-            if (examProgramPo != null){
-                examLevelVo.setProgramName(examProgramPo.getName());
-            }
-            result_list.add(examLevelVo);
-        }
-        return result_list;
 
+
+    @Override
+    public Page<ExamLevelVo> getExamLevelByPage(Integer pageNum, Integer pageSize, String name) {
+        PageHelper.startPage(pageNum,pageSize);
+        return examLevelDao.getExamLevelByPage(name);
     }
 
     @Override
-    public PageInfo<ExamLevelVo> selectByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<ExamLevelVo> all = ConditionQuery(null);
-        PageInfo<ExamLevelVo> pageInfo = new PageInfo<>(all);
-        return pageInfo;
+    public List<ZyyjExamLevelPo> getAll() {
+        return examLevelDao.selectList(null);
     }
 
     @Override

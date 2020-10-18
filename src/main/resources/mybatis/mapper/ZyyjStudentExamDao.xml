@@ -14,10 +14,44 @@
         <result column="programme_id" property="programmeId" />
         <result column="course_id" property="courseId" />
     </resultMap>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.StudentExamVo">
+        <id column="exam_id" property="examId" />
+        <result column="stuName" property="stuName" />
+        <result column="levelName" property="levelName" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="score" property="score" />
+        <result column="type" property="type" />
+        <result column="programmeName" property="programmeName" />
+        <result column="courseName" property="courseName" />
+    </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         exam_id, stu_id, level_id, status, create_time, score, type, programme_id, course_id
     </sql>
+    <select id="getStudentExamByPage" resultMap="MyResultMap">
+        SELECT
+        a.exam_id, b.name AS stuName, c.name AS levelName, a.`status`,
+        a.create_time, a.score, a.type, d.name AS programmeName, e.`name` AS courseName
+        FROM
+        zyyj_student_exam a
+        LEFT JOIN
+        zyyj_student b ON a.stu_id = b.stu_id
+        LEFT JOIN
+        zyyj_exam_level c ON a.level_id = c.level_id
+        LEFT JOIN
+        zyyj_programme d ON d.programme_id = a.programme_id
+        LEFT JOIN
+        zyyj_course e ON a.course_id = e.course_id
+        <where>
+            1=1
+            <if test="stuIdArr != null">
+                and a.stu_id in
+                <foreach collection="stuIdArr" open="(" close=")" separator="," item="item">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+    </select>
 
 </mapper>

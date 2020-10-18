@@ -11,10 +11,35 @@
         <result column="score" property="score" />
         <result column="integral" property="integral" />
     </resultMap>
-
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.ExchangeintegralVo">
+        <id column="exchange_id" property="exchangeId" />
+        <result column="ruleName" property="ruleName" />
+        <result column="stuName" property="studentName" />
+        <result column="createdate" property="createdate" />
+        <result column="score" property="score" />
+        <result column="integral" property="integral" />
+    </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         exchange_id, rule_id, stu_id, createdate, score, integral
     </sql>
-
+    <select id="getIntegralByPage" resultMap="MyResultMap">
+        SELECT
+        a.exchange_id, c.name AS ruleName, b.name as stuName, a.createdate, a.score, a.integral
+        FROM
+        zyyj_exchangeintegral a
+        LEFT JOIN
+        zyyj_student b ON a.stu_id = b.stu_id
+        LEFT JOIN
+        zyyj_exchangerule c ON a.rule_id = c.rule_id
+        <where>
+            1=1
+            <if test="stuIdArr != null">
+                and a.stu_id in
+                <foreach collection="stuIdArr" open="(" close=")" separator="," item="item">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+    </select>
 </mapper>

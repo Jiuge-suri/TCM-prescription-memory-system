@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjExamProgramPo;
@@ -31,28 +32,15 @@ public class ZyyjExamProgramServiceImpl extends ServiceImpl<ZyyjExamProgramDao, 
     @Autowired
     ZyyjExamProgramDao examProgramDao;
 
+
     @Override
-    public List<ExamProgramVo> ConditionQuery(String name) {
-        LambdaQueryWrapper<ZyyjExamProgramPo> queryWrapper = new LambdaQueryWrapper<>();
-        if (name != null && name != ""){
-            queryWrapper.eq(ZyyjExamProgramPo::getName,name);
-        }
-        List<ZyyjExamProgramPo> examProgramPos = examProgramDao.selectList(queryWrapper);
-        List<ExamProgramVo> result_list = new ArrayList<>();
-        for (ZyyjExamProgramPo examProgramPo:examProgramPos){
-            ExamProgramVo examProgramVo = new ExamProgramVo();
-            BeanUtils.copyProperties(examProgramPo,examProgramVo);
-            result_list.add(examProgramVo);
-        }
-        return result_list;
+    public Page<ExamProgramVo> getExamProgrammeByPage(String name) {
+        return examProgramDao.getExamProgrammeByPage(name);
     }
 
     @Override
-    public PageInfo<ExamProgramVo> selectByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<ExamProgramVo> all = ConditionQuery(null);
-        PageInfo<ExamProgramVo> pageInfo = new PageInfo<>(all);
-        return pageInfo;
+    public List<ZyyjExamProgramPo> getAll() {
+        return examProgramDao.selectList(null);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.ZyyjChapterDao;
 import com.prescription.memory.dao.ZyyjCourseDao;
@@ -43,49 +44,20 @@ public class ZyyjKnowledgepointServiceImpl extends ServiceImpl<ZyyjKnowledgepoin
     @Autowired
     ZyyjChapterDao chapterDao;
 
+
     @Override
-    public List<KnowledgepointVo> ConditionQuery(Integer courseId,Integer chapterId, Integer requirId, String name) {
-        LambdaQueryWrapper<ZyyjKnowledgepointPo> queryWrapper = new LambdaQueryWrapper<>();
-        if (courseId != null && courseId != 0){
-            queryWrapper.eq(ZyyjKnowledgepointPo::getCourseId,chapterId);
-        }
-        if (chapterId != null && chapterId != 0){
-            queryWrapper.eq(ZyyjKnowledgepointPo::getChapterId,chapterId);
-        }
-        if (requirId != null && requirId != 0){
-            queryWrapper.eq(ZyyjKnowledgepointPo::getRequireId,requirId);
-        }
-        if (name != null && name != ""){
-            queryWrapper.like(ZyyjKnowledgepointPo::getName,name);
-        }
-        List<ZyyjKnowledgepointPo> knowledgepointPos = knowledgepointDao.selectList(queryWrapper);
-        List<KnowledgepointVo> result_list = new ArrayList<>();
-        for (ZyyjKnowledgepointPo knowledgepointPo:knowledgepointPos){
-            KnowledgepointVo knowledgepointVo = new KnowledgepointVo();
-            ZyyjRequirePo requirePo = requireDao.selectById(knowledgepointPo.getRequireId());
-            ZyyjCoursePo coursePo = courseDao.selectById(knowledgepointPo.getCourseId());
-            ZyyjChapterPo chapterPo = chapterDao.selectById(knowledgepointPo.getChapterId());
-            BeanUtils.copyProperties(knowledgepointPo,knowledgepointVo);
-            if (requirePo != null){
-                knowledgepointVo.setRequireName(requirePo.getName());
-            }
-            if (coursePo != null){
-                knowledgepointVo.setCourseName(coursePo.getName());
-            }
-            if (chapterPo != null){
-                knowledgepointVo.setChapterName(chapterPo.getName());
-            }
-            result_list.add(knowledgepointVo);
-        }
-        return result_list;
+    public Page<KnowledgepointVo> getKnowledgepointByPage(Integer courseId, Integer chapterId, Integer requirId, String name) {
+        return knowledgepointDao.getKnowledgepointByPage(courseId,chapterId,requirId,name);
     }
 
     @Override
-    public PageInfo<KnowledgepointVo> getKnowledgepointByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<KnowledgepointVo> list = ConditionQuery(null,null,null,null);
-        PageInfo<KnowledgepointVo> pageInfo = new PageInfo<>(list);
-        return pageInfo;
+    public List<ZyyjKnowledgepointPo> getAll(Integer chapterId) {
+        LambdaQueryWrapper<ZyyjKnowledgepointPo> queryWrapper = new LambdaQueryWrapper<>();
+        if (chapterId != null && chapterId != 0){
+            queryWrapper.eq(ZyyjKnowledgepointPo::getChapterId,chapterId);
+        }
+        List<ZyyjKnowledgepointPo> list = knowledgepointDao.selectList(queryWrapper);
+        return list;
     }
 
     @Override
@@ -100,10 +72,6 @@ public class ZyyjKnowledgepointServiceImpl extends ServiceImpl<ZyyjKnowledgepoin
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean updateKnowledgepoint(ZyyjKnowledgepointPo knowledgepointPo) throws BusinessException {
-        ZyyjChapterPo chapterPo = chapterDao.selectById(knowledgepointPo.getKnowId());
-        if (chapterPo == null){
-            throw new BusinessException(EmBusinessError.USER_NOT_EXIST);
-        }
         int count = knowledgepointDao.updateById(knowledgepointPo);
         if (count != 1){
             return false;

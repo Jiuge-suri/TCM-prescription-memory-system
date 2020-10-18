@@ -1,6 +1,7 @@
 package com.prescription.memory.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.prescription.memory.dao.ZyyjMajorDao;
 import com.prescription.memory.entity.PageInfo;
@@ -31,36 +32,20 @@ import java.util.List;
 public class ZyyjGradeServiceImpl extends ServiceImpl<ZyyjGradeDao, ZyyjGradePo> implements ZyyjGradeService {
     @Autowired
     ZyyjGradeDao gradeDao;
-    @Autowired
-    ZyyjMajorDao majorDao;
 
     @Override
-    public List<GradeVo> ConditionQuery(Integer majorId) {
+    public Page<GradeVo> getGradeByPage(Integer majorId) {
+        return gradeDao.getGradeByPage(majorId);
+    }
+
+    @Override
+    public List<ZyyjGradePo> getAll(Integer majorId) {
         LambdaQueryWrapper<ZyyjGradePo> queryWrapper = new LambdaQueryWrapper<>();
         if (majorId != null && majorId != 0){
             queryWrapper.eq(ZyyjGradePo::getMajorId,majorId);
         }
         List<ZyyjGradePo> list = gradeDao.selectList(queryWrapper);
-        List<GradeVo> result_list = new ArrayList<>();
-        for (ZyyjGradePo gradePo:list){
-            GradeVo gradeVo = new GradeVo();
-            BeanUtils.copyProperties(gradePo,gradeVo);
-            ZyyjMajorPo collegePo = majorDao.selectById(gradePo.getMajorId());
-            if (collegePo != null){
-                gradeVo.setMajorName(collegePo.getName());
-            }
-            result_list.add(gradeVo);
-        }
-        return result_list;
-
-    }
-
-    @Override
-    public PageInfo<GradeVo> getGradeByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<GradeVo> gradeVos = ConditionQuery(null);
-        PageInfo<GradeVo> pageInfo = new PageInfo<>(gradeVos);
-        return pageInfo;
+        return list;
     }
 
     @Override

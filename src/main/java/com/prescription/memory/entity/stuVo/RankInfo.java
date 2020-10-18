@@ -18,4 +18,6 @@ public class RankInfo implements Serializable {
     private Integer tscore;
     @ApiModelProperty(value = "排名")
     private Integer rank;
+    @ApiModelProperty(value = "学号")
+    private String account;
 }

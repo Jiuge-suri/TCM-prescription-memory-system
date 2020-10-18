@@ -17,7 +17,43 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        practice_id, stu_id, checkpoint_id, status, create_time, score, type, programme_id, course_id
+        practice_id, stu_id, checkpoint_id, status, create_time,
+        score, type, programme_id, course_id
     </sql>
+    <resultMap id="MyResultMap" type="com.prescription.memory.entity.vo.StudentPracticeVo">
+        <id column="practice_id" property="practiceId" />
+        <result column="stuName" property="stuName" />
+        <result column="checkpointName" property="checkpointName" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="score" property="score" />
+        <result column="type" property="type" />
+        <result column="programmeName" property="programmeName" />
+        <result column="courseName" property="courseName" />
+    </resultMap>
 
+    <select id="getStudentPracticeByPage" resultMap="MyResultMap">
+        SELECT
+        a.practice_id,b.name as stuName, c.name as checkpointName, a.status, a.create_time,
+        a.score, a.type, d.`name` AS programmeName, e.`name` AS courseName
+        FROM
+        zyyj_student_practice a
+        LEFT JOIN
+        zyyj_student b ON a.stu_id = b.stu_id
+        LEFT JOIN
+        zyyj_checkpoint c ON a.checkpoint_id = c.checkpoint_id
+        LEFT JOIN
+        zyyj_programme d ON a.programme_id = d.programme_id
+        LEFT JOIN
+        zyyj_course e ON e.course_id = a.course_id
+        <where>
+            1=1
+            <if test="stuIdArr != null">
+                and a.stu_id in
+                <foreach collection="stuIdArr" open="(" close=")" separator="," item="item">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+    </select>
 </mapper>

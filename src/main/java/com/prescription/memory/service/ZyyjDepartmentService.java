@@ -1,5 +1,6 @@
 package com.prescription.memory.service;
 
+import com.github.pagehelper.Page;
 import com.prescription.memory.entity.PageInfo;
 import com.prescription.memory.entity.po.ZyyjDepartmentPo;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -23,11 +24,13 @@ public interface ZyyjDepartmentService extends IService<ZyyjDepartmentPo> {
 
     List<DepartmentVo> ConditionQuery(String name);
 
+    Page<DepartmentVo> getDepartmentByPage(String name);
+
     List<DeptRespNodeVo> deptTreeList();
 
     boolean addDept(ZyyjDepartmentPo departmentPo);
 
-    boolean deleteDept(Integer[] departmentIds);
+    boolean deleteDept(Integer[] departmentIds) throws BusinessException;
 
     boolean updateDept(ZyyjDepartmentPo departmentPo) throws BusinessException;
 
