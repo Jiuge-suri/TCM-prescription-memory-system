@@ -1,0 +1,61 @@
+2020-06-09 11:14:27.001 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-TQ2T3C2 with PID 4200 (C:\Users\admin\Desktop\memory\target\classes started by admin in C:\Users\admin\Desktop\memory)
+2020-06-09 11:14:27.006 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: prov
+2020-06-09 11:14:27.079 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-09 11:14:27.080 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-09 11:14:30.454 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-09 11:14:30.460 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-06-09 11:14:30.736 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 248ms. Found 0 Redis repository interfaces.
+2020-06-09 11:14:32.615 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-06-09 11:14:32.635 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-09 11:14:32.636 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-09 11:14:32.637 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-09 11:14:32.949 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-09 11:14:32.950 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 5870 ms
+2020-06-09 11:14:38.342 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-06-09 11:14:38.492 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-09 11:14:38.558 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-06-09 11:14:39.261 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-06-09 11:14:39.276 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-06-09 11:14:39.358 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-06-09 11:14:39.661 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_1
+2020-06-09 11:14:39.667 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-06-09 11:14:39.680 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_2
+2020-06-09 11:14:39.686 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-06-09 11:14:39.699 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_3
+2020-06-09 11:14:39.704 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-06-09 11:14:39.715 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_4
+2020-06-09 11:14:39.725 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-06-09 11:14:39.738 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-06-09 11:14:39.741 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-06-09 11:14:39.742 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-06-09 11:14:39.744 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-06-09 11:14:39.748 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_5
+2020-06-09 11:14:39.753 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-06-09 11:14:39.765 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_6
+2020-06-09 11:14:39.768 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-06-09 11:14:39.784 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_7
+2020-06-09 11:14:39.788 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-06-09 11:14:39.800 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_8
+2020-06-09 11:14:39.805 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_8
+2020-06-09 11:14:39.816 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_9
+2020-06-09 11:14:39.820 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_9
+2020-06-09 11:14:39.831 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_10
+2020-06-09 11:14:39.834 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_10
+2020-06-09 11:14:39.842 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_11
+2020-06-09 11:14:39.846 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_11
+2020-06-09 11:14:39.853 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_12
+2020-06-09 11:14:39.875 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-06-09 11:14:39.880 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_13
+2020-06-09 11:14:39.900 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_14
+2020-06-09 11:14:39.904 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-06-09 11:14:39.907 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_15
+2020-06-09 11:14:39.962 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-06-09 11:14:40.001 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-09 11:14:40.006 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 14.135 seconds (JVM running for 16.15)
+2020-06-09 11:15:21.653 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-09 11:15:21.655 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-09 11:15:21.668 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+2020-06-09 11:15:41.259 [http-nio-8080-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-06-09 11:15:43.885 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjKnowledgepointDao.updateById - ==>  Preparing: UPDATE zyyj_knowledgepoint SET require_id=?, course_id=?, chapter_id=?, name=?, comment=? WHERE know_id=? 
+2020-06-09 11:15:43.970 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjKnowledgepointDao.updateById - ==> Parameters: 0(Integer), 0(Integer), 0(Integer), string(String), string(String), 23(Integer)
+2020-06-09 11:15:44.091 [http-nio-8080-exec-7] DEBUG c.p.memory.dao.ZyyjKnowledgepointDao.updateById - <==    Updates: 1

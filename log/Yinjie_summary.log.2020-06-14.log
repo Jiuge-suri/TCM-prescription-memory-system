@@ -1,0 +1,245 @@
+2020-06-14 16:12:06.318 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-JB2451M with PID 28852 (C:\Users\admin\IdeaProjects\memory\target\classes started by admin in C:\Users\admin\IdeaProjects\memory)
+2020-06-14 16:12:06.320 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: prov
+2020-06-14 16:12:06.385 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-14 16:12:06.386 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-14 16:12:08.012 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-14 16:12:08.015 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-06-14 16:12:08.181 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 151ms. Found 0 Redis repository interfaces.
+2020-06-14 16:12:08.924 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-06-14 16:12:08.935 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-14 16:12:08.935 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-14 16:12:08.936 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-14 16:12:09.153 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-14 16:12:09.154 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2768 ms
+2020-06-14 16:12:14.129 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-06-14 16:12:14.232 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-14 16:12:14.271 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-06-14 16:12:14.860 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-06-14 16:12:14.875 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-06-14 16:12:14.937 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-06-14 16:12:15.119 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_1
+2020-06-14 16:12:15.121 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-06-14 16:12:15.127 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_2
+2020-06-14 16:12:15.129 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-06-14 16:12:15.135 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_3
+2020-06-14 16:12:15.138 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-06-14 16:12:15.143 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_4
+2020-06-14 16:12:15.148 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-06-14 16:12:15.153 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-06-14 16:12:15.154 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-06-14 16:12:15.155 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-06-14 16:12:15.156 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-06-14 16:12:15.158 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_5
+2020-06-14 16:12:15.160 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-06-14 16:12:15.165 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_6
+2020-06-14 16:12:15.168 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-06-14 16:12:15.174 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_7
+2020-06-14 16:12:15.176 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-06-14 16:12:15.181 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_8
+2020-06-14 16:12:15.183 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_8
+2020-06-14 16:12:15.187 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_9
+2020-06-14 16:12:15.189 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_9
+2020-06-14 16:12:15.194 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_10
+2020-06-14 16:12:15.195 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_10
+2020-06-14 16:12:15.200 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_11
+2020-06-14 16:12:15.202 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_11
+2020-06-14 16:12:15.207 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_12
+2020-06-14 16:12:15.214 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-06-14 16:12:15.216 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_13
+2020-06-14 16:12:15.224 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_14
+2020-06-14 16:12:15.226 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-06-14 16:12:15.227 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_15
+2020-06-14 16:12:15.248 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-06-14 16:12:15.283 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-14 16:12:15.286 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 9.788 seconds (JVM running for 12.864)
+2020-06-14 16:19:45.484 [main] INFO  com.prescription.memory.MemoryApplicationTests - Starting MemoryApplicationTests on DESKTOP-JB2451M with PID 10388 (started by admin in C:\Users\admin\IdeaProjects\memory)
+2020-06-14 16:19:45.505 [main] INFO  com.prescription.memory.MemoryApplicationTests - The following profiles are active: prov
+2020-06-14 16:20:04.623 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-14 16:20:04.630 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-06-14 16:20:05.001 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 338ms. Found 0 Redis repository interfaces.
+2020-06-14 16:20:16.139 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-06-14 16:20:17.077 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-14 16:20:18.324 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-06-14 16:20:18.364 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-06-14 16:20:18.502 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-06-14 16:20:19.025 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_1
+2020-06-14 16:20:19.035 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-06-14 16:20:19.066 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_2
+2020-06-14 16:20:19.071 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-06-14 16:20:19.099 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_3
+2020-06-14 16:20:19.106 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-06-14 16:20:19.121 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_4
+2020-06-14 16:20:19.134 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-06-14 16:20:19.160 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-06-14 16:20:19.162 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-06-14 16:20:19.167 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-06-14 16:20:19.170 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-06-14 16:20:19.175 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_5
+2020-06-14 16:20:19.181 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-06-14 16:20:19.194 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_6
+2020-06-14 16:20:19.199 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-06-14 16:20:19.223 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_7
+2020-06-14 16:20:19.231 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-06-14 16:20:19.249 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_8
+2020-06-14 16:20:19.257 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_8
+2020-06-14 16:20:19.281 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_9
+2020-06-14 16:20:19.292 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_9
+2020-06-14 16:20:19.362 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_10
+2020-06-14 16:20:19.368 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_10
+2020-06-14 16:20:19.384 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_11
+2020-06-14 16:20:19.403 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_11
+2020-06-14 16:20:19.415 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_12
+2020-06-14 16:20:19.435 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-06-14 16:20:19.453 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_13
+2020-06-14 16:20:19.494 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_14
+2020-06-14 16:20:19.513 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-06-14 16:20:19.546 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_15
+2020-06-14 16:20:19.654 [main] INFO  com.prescription.memory.MemoryApplicationTests - Started MemoryApplicationTests in 47.136 seconds (JVM running for 90.226)
+2020-06-14 16:20:21.188 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-06-14 16:20:26.912 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department 
+2020-06-14 16:20:26.980 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - ==> Parameters: 
+2020-06-14 16:20:27.085 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - <==      Total: 12
+2020-06-14 16:20:27.108 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-06-14 16:20:27.109 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 3(Integer)
+2020-06-14 16:20:27.157 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-06-14 16:20:27.160 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-06-14 16:20:27.160 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 5(Integer)
+2020-06-14 16:20:27.209 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-06-14 16:20:27.211 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-06-14 16:20:27.211 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 6(Integer)
+2020-06-14 16:20:27.259 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-06-14 16:20:27.261 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-06-14 16:20:27.262 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 17(Integer)
+2020-06-14 16:20:27.313 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-06-14 16:20:27.386 [main] DEBUG c.prescription.memory.dao.ZyyjGradeDao.selectList - ==>  Preparing: SELECT grade_id,major_id,name,comment FROM zyyj_grade 
+2020-06-14 16:20:27.393 [main] DEBUG c.prescription.memory.dao.ZyyjGradeDao.selectList - ==> Parameters: 
+2020-06-14 16:20:27.443 [main] DEBUG c.prescription.memory.dao.ZyyjGradeDao.selectList - <==      Total: 12
+2020-06-14 16:20:27.469 [main] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course 
+2020-06-14 16:20:27.469 [main] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==> Parameters: 
+2020-06-14 16:20:27.526 [main] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - <==      Total: 25
+2020-06-14 16:20:27.559 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-14 16:20:27.612 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-06-14 16:36:00.631 [main] INFO  com.prescription.memory.MemoryApplicationTests - Starting MemoryApplicationTests on DESKTOP-JB2451M with PID 31088 (started by admin in C:\Users\admin\IdeaProjects\memory)
+2020-06-14 16:36:00.638 [main] INFO  com.prescription.memory.MemoryApplicationTests - The following profiles are active: prov
+2020-06-14 16:36:03.483 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-14 16:36:03.490 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-06-14 16:36:03.857 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 337ms. Found 0 Redis repository interfaces.
+2020-06-14 16:36:13.990 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-06-14 16:36:15.163 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-14 16:36:17.217 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-06-14 16:36:17.286 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-06-14 16:36:17.570 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-06-14 16:36:18.204 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_1
+2020-06-14 16:36:18.215 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-06-14 16:36:18.244 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_2
+2020-06-14 16:36:18.251 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-06-14 16:36:18.268 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_3
+2020-06-14 16:36:18.279 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-06-14 16:36:18.293 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_4
+2020-06-14 16:36:18.307 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-06-14 16:36:18.335 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-06-14 16:36:18.340 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-06-14 16:36:18.344 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-06-14 16:36:18.348 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-06-14 16:36:18.354 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_5
+2020-06-14 16:36:18.359 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-06-14 16:36:18.374 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_6
+2020-06-14 16:36:18.383 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-06-14 16:36:18.409 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_7
+2020-06-14 16:36:18.420 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-06-14 16:36:18.443 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_8
+2020-06-14 16:36:18.447 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_8
+2020-06-14 16:36:18.464 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_9
+2020-06-14 16:36:18.473 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_9
+2020-06-14 16:36:18.496 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_10
+2020-06-14 16:36:18.503 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_10
+2020-06-14 16:36:18.517 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_11
+2020-06-14 16:36:18.525 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_11
+2020-06-14 16:36:18.550 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_12
+2020-06-14 16:36:18.584 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-06-14 16:36:18.591 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_13
+2020-06-14 16:36:18.622 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_14
+2020-06-14 16:36:18.630 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-06-14 16:36:18.635 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_15
+2020-06-14 16:36:18.743 [main] INFO  com.prescription.memory.MemoryApplicationTests - Started MemoryApplicationTests in 19.755 seconds (JVM running for 23.368)
+2020-06-14 16:36:20.191 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-06-14 16:36:27.662 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department 
+2020-06-14 16:36:27.714 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - ==> Parameters: 
+2020-06-14 16:36:27.847 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectList - <==      Total: 12
+2020-06-14 16:36:27.863 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-06-14 16:36:27.864 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 3(Integer)
+2020-06-14 16:36:28.132 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-06-14 16:36:28.134 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-06-14 16:36:28.134 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 5(Integer)
+2020-06-14 16:36:28.285 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-06-14 16:36:28.286 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-06-14 16:36:28.287 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 6(Integer)
+2020-06-14 16:36:28.337 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-06-14 16:36:28.339 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==>  Preparing: SELECT department_id,college_id,parent_id,name,comment,tree_code FROM zyyj_department WHERE department_id=? 
+2020-06-14 16:36:28.340 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - ==> Parameters: 17(Integer)
+2020-06-14 16:36:28.501 [main] DEBUG c.p.memory.dao.ZyyjDepartmentDao.selectById - <==      Total: 1
+2020-06-14 16:36:28.573 [main] DEBUG c.prescription.memory.dao.ZyyjGradeDao.selectList - ==>  Preparing: SELECT grade_id,major_id,name,comment FROM zyyj_grade 
+2020-06-14 16:36:28.574 [main] DEBUG c.prescription.memory.dao.ZyyjGradeDao.selectList - ==> Parameters: 
+2020-06-14 16:36:28.942 [main] DEBUG c.prescription.memory.dao.ZyyjGradeDao.selectList - <==      Total: 12
+2020-06-14 16:36:28.973 [main] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==>  Preparing: SELECT course_id,parent_id,name,tree_code,introduction,photo FROM zyyj_course 
+2020-06-14 16:36:28.973 [main] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - ==> Parameters: 
+2020-06-14 16:36:29.796 [main] DEBUG c.prescription.memory.dao.ZyyjCourseDao.selectList - <==      Total: 25
+2020-06-14 16:36:29.821 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-14 16:36:29.864 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-06-14 16:39:51.026 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Starting MemoryApplication on DESKTOP-JB2451M with PID 33040 (C:\Users\admin\IdeaProjects\memory\target\classes started by admin in C:\Users\admin\IdeaProjects\memory)
+2020-06-14 16:39:51.031 [restartedMain] INFO  com.prescription.memory.MemoryApplication - The following profiles are active: prov
+2020-06-14 16:39:51.105 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-14 16:39:51.105 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-14 16:39:52.859 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-14 16:39:52.863 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-06-14 16:39:53.122 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 240ms. Found 0 Redis repository interfaces.
+2020-06-14 16:39:54.034 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-06-14 16:39:54.050 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-14 16:39:54.051 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-14 16:39:54.052 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-14 16:39:54.278 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-14 16:39:54.279 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3174 ms
+2020-06-14 16:39:58.916 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-06-14 16:39:59.052 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-14 16:39:59.100 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-06-14 16:39:59.855 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-06-14 16:39:59.872 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-06-14 16:39:59.942 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-06-14 16:40:00.213 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_1
+2020-06-14 16:40:00.219 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+2020-06-14 16:40:00.229 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_2
+2020-06-14 16:40:00.233 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+2020-06-14 16:40:00.247 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_3
+2020-06-14 16:40:00.251 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+2020-06-14 16:40:00.263 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_4
+2020-06-14 16:40:00.273 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_4
+2020-06-14 16:40:00.284 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addDeptUsingPOST_1
+2020-06-14 16:40:00.286 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteDeptUsingDELETE_1
+2020-06-14 16:40:00.288 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getTreeUsingGET_1
+2020-06-14 16:40:00.290 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateDeptUsingPUT_1
+2020-06-14 16:40:00.292 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_5
+2020-06-14 16:40:00.295 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_5
+2020-06-14 16:40:00.304 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_6
+2020-06-14 16:40:00.309 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_6
+2020-06-14 16:40:00.324 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_7
+2020-06-14 16:40:00.327 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_7
+2020-06-14 16:40:00.335 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_8
+2020-06-14 16:40:00.339 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_8
+2020-06-14 16:40:00.346 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_9
+2020-06-14 16:40:00.349 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_9
+2020-06-14 16:40:00.354 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_10
+2020-06-14 16:40:00.357 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_10
+2020-06-14 16:40:00.362 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_11
+2020-06-14 16:40:00.365 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_11
+2020-06-14 16:40:00.375 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_12
+2020-06-14 16:40:00.390 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_1
+2020-06-14 16:40:00.393 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_13
+2020-06-14 16:40:00.408 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_14
+2020-06-14 16:40:00.415 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: conditionQueryUsingGET_2
+2020-06-14 16:40:00.419 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: ConditionQueryUsingGET_15
+2020-06-14 16:40:00.468 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-06-14 16:40:00.529 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-14 16:40:00.538 [restartedMain] INFO  com.prescription.memory.MemoryApplication - Started MemoryApplication in 10.407 seconds (JVM running for 14.206)
+2020-06-14 16:41:27.886 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-14 16:41:27.898 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-14 16:41:28.328 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 357 ms
